@@ -1,0 +1,18 @@
+$context.setTitle("Welcome")
+$context.setTitle("Welcome")
+$context.inlineCSS("header h2{ color: white; } #container{width: 400px; margin-left: auto; margin-right: auto;");
+
+<section class="content">
+
+<h1>Interface de connexion</h1>
+
+<div id="container">
+</div>
+
+
+</section>
+#set ($js = $context.getProperties().get("context")+"/res/js/table.js")
+$context.addJSDependancy($js)
+#set ($js = $context.getProperties().get("context")+"/res/js/user/connect.js")
+$context.addJSDependancy($js)
+$context.addOnJsReady("new Esgi.module.user.Connect({ id : '#container'})")
