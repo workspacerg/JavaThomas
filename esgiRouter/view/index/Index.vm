@@ -1,5 +1,4 @@
 $context.setTitle("Welcome")
-$context.setTitle("Welcome")
 $context.inlineCSS("header h2{ color: white; } #container{width: 400px; margin-left: auto; margin-right: auto;");
 
 <section class="content">
