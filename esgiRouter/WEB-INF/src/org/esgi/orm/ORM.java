@@ -1,6 +1,5 @@
 package org.esgi.orm;
 
-import java.awt.Window.Type;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.sql.Date;
@@ -8,12 +7,10 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
-import org.esgi.orm.BDD;
-import org.esgi.orm.my.annotations.ORM_COMPOSITION;
 import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.model.User;
-
 
 public class ORM implements IORM {
 
@@ -251,12 +248,8 @@ public class ORM implements IORM {
 
 				else
 				{
-					System.out.println(" _load type non géré "+type.getCanonicalName().toString());
+					System.out.println(" _load type non gï¿½rï¿½ "+type.getCanonicalName().toString());
 				}
-
-
-
-
 			}
 			return myObject;
 			//System.out.println("<<<"+myObject);
@@ -324,8 +317,25 @@ public class ORM implements IORM {
 	static public List <Object> find (Class<?> clazz, Map<String, Object> where, Map<String, Object> sort, Integer limit, Integer offset)
 	{
 		List res = new LinkedList<>();		
-		String table_name = clazz.getSimpleName();				
-		LinkedList<String> find = bdd.requeteToLinkedList(table_name, clazz.getFields()[getPositionID(clazz)].getName(), where, limit);
+		String tables_name = clazz.getSimpleName();
+
+		int pos;
+		for (Entry<String,Object> ent : where.entrySet())
+			if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
+			{
+				if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
+					tables_name += ", " + ent.getKey().substring(0, pos);
+			}
+		
+		for (Object ent : where.values())
+			if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire
+			{
+				if (!tables_name.toLowerCase().contains(ent.toString().substring(0, pos).toLowerCase()))
+					tables_name += ", " + ent.toString().substring(0, pos);
+			}		
+		
+		LinkedList<String> find = bdd.requeteToLinkedList(tables_name, clazz.getFields()[getPositionID(clazz)].getName(), where, limit);
+		//System.out.println("len ="+find.size());
 
 		//System.out.println("String = "+find);
 		for (int i = 0; i < find.size(); i++) 
@@ -343,7 +353,7 @@ public class ORM implements IORM {
 				o =  ORM.load(clazz, id_to_find.toString());
 
 			else
-				System.out.println("list type non géré");
+				System.out.println("list type non gï¿½rï¿½");
 
 			res.add(o);
 

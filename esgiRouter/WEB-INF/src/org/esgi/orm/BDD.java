@@ -1,10 +1,18 @@
 package org.esgi.orm;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.Statement;
+import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Vector;
-import java.util.Map.Entry;
 
 
 public class BDD
@@ -38,15 +46,16 @@ public class BDD
 	{
 		String url_base = "jdbc:mysql://localhost/"+bdd_cible;
 		try {
-			this.maconnexion = DriverManager.getConnection(url_base, "root", "");
+			this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
+			System.out.println( "Chargement de la base reussi" );
 		}
 		catch (SQLException exp) {
 			try {
 				String url_src = "jdbc:mysql://localhost/";
-				this.maconnexion = DriverManager.getConnection(url_src, "root", "");
+				this.maconnexion = DriverManager.getConnection(url_src, "root", "root");
 				CreationBase();
 				System.out.println( "Creation de la base reussi" );
-				this.maconnexion = DriverManager.getConnection(url_base, "root", "");
+				this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -102,8 +111,8 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
-			System.out.println("Problème d'insertion : "+sql);
+			//JOptionPane.showMessageDialog(null,"Problï¿½me d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			System.out.println("Problï¿½me d'insertion : "+sql);
 			return;
 		}
 	}
@@ -153,7 +162,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			//System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null,"Problï¿½me d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
 			System.out.println("probleme d'update "+e);
 			System.out.println("Avec la requete : "+ sql);
 			return false;
@@ -182,7 +191,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			//System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Problème de supression : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null,"Problï¿½me de supression : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
 			System.out.println("probleme de supression "+e);
 			return false;
 		}
@@ -201,7 +210,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de creation de base");
+			System.out.println("Problï¿½me de creation de base");
 		}
 	}
 
@@ -250,7 +259,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete");
+			System.out.println("Problï¿½me de requete");
 		}
 		return lesLignesString;
 	}
@@ -265,12 +274,28 @@ public class BDD
 
 			int i;
 
+			Map<String, Object> where_without_jointure = new Hashtable();
 			if(where !=null && where.size() >0 )
 			{
 				sql+="WHERE ";
 				StringBuilder sb = new StringBuilder();
-				for (Entry<String,Object> ent : where.entrySet())
-					sb.append(ent.getKey() + " = ? and ");
+
+				Iterator iterator = where.entrySet().iterator();
+				while (iterator.hasNext()) {
+					Map.Entry ent = (Map.Entry) iterator.next();
+					String key = ent.getKey().toString();
+					String value = ent.getValue().toString();
+
+					if(key.contains(".") && value.contains(".")) //jointure
+					{
+						sb.append(key +"="+value+" and ");
+					}
+					else
+					{
+						sb.append(ent.getKey() + " = ? and ");
+						where_without_jointure.put(key, value);
+					}
+				}
 
 				sql += sb.delete(sb.length()-4, sb.length()-1).append(" ").toString();
 			}
@@ -283,16 +308,18 @@ public class BDD
 
 
 			int count = 1;
-			if(where !=null && where.size() >0 )
+			if(where_without_jointure !=null && where_without_jointure.size() >0 )
 			{
-				for (Object ent : where.values())
-					ps.setString(count++, ent.toString());
+				for (Object ent : where_without_jointure.values())
+				{
+					ps.setObject(count++, ent.toString());
+					//System.out.println("? = "+ent.toString());
+				}	
 			}
 			ResultSet rs = ps.executeQuery();
 
 			ResultSetMetaData md = rs.getMetaData();
 			int nbColonnes = md.getColumnCount();
-
 			Vector lesColonnes = new Vector(nbColonnes);
 
 			for(i=1; i<=nbColonnes; i++)
@@ -314,7 +341,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete :"+sql);
+			System.out.println("Problï¿½me de requete :"+sql);
 		}
 		return lesLignesString;
 	}
@@ -362,7 +389,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete");
+			System.out.println("Problï¿½me de requete");
 		}
 		return new LinkedList<>();
 	}
@@ -402,7 +429,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete");
+			System.out.println("Problï¿½me de requete");
 		}
 		return lesLignesString;
 	}
@@ -415,7 +442,7 @@ public class BDD
 			st.execute(createTableSQL);
 		} catch (SQLException e) {
 			System.out.println(e);
-			System.out.println("Problème de create table");
+			System.out.println("Problï¿½me de create table");
 		}	
 	}
 

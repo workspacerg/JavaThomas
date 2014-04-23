@@ -2,3 +2,6 @@ eclipse.preferences.version=1
 encoding//WEB-INF/src/org/esgi/module/file/FileList.java=UTF-8
 encoding//WEB-INF/src/org/esgi/module/file/FileUpload.java=UTF-8
 encoding//WEB-INF/src/org/esgi/module/index/Index.java=UTF-8
+encoding//WEB-INF/src/org/esgi/orm/Application.java=UTF-8
+encoding//WEB-INF/src/org/esgi/orm/BDD.java=UTF-8
+encoding//WEB-INF/src/org/esgi/orm/ORM.java=UTF-8
