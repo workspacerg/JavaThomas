@@ -1,0 +1,104 @@
+html{
+
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+
+	margin: 0;
+	padding: 0;
+
+}
+
+header{
+
+	width: 100%;
+	height: 6px; 
+	background-color: #FF9500;
+
+
+}
+
+nav{
+
+	width: 100%;
+	height: 55px; 
+	background-color: #343443;
+
+}
+
+footer{
+
+
+}
+
+
+#TabMenu{
+
+	padding: 0;
+	width:300px; 
+	color: white;
+	margin: auto;
+	height: 55px;
+
+
+}
+
+#TabMenu  td{
+
+	padding: 0;
+	text-align: center;
+	height: 50px;
+
+
+}
+
+#TabMenu td:hover{
+
+	background-color: #FF9500;
+
+}
+
+.Film{
+	
+	display: block;
+	background-color: blue;
+	margin: auto;
+	margin-top: 50px;
+	width: 80%;
+	
+}
+.Film-Pic{
+	
+	display: block;
+	width: 100%;
+	height: 350px;
+	
+
+}
+.Film-Doc{
+
+	display: block;
+	width: 100%;
+	height: 60px;
+	background-color: #343443;
+	border-top: 6px solid #FF9500;
+	
+}
+
+#TabFilm-Doc {
+	padding: 0;
+	width: 100%;
+	color: white;
+}
+
+#TabFilm-Doc td{
+	height: 50px;
+	font-size: 1.3em;
+}
+
+.Film-Descr{
+	
+}
