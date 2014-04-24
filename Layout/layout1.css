@@ -9,6 +9,7 @@ body{
 
 	margin: 0;
 	padding: 0;
+	background-color: #898E92;
 
 }
 
@@ -34,14 +35,6 @@ footer{
 
 }
 
-#Content{
-
-	background-color: #898E92;
-	padding-top: 50px;
-
-}
-
-
 #TabMenu{
 
 	padding: 0;
@@ -58,12 +51,19 @@ footer{
 	text-align: center;
 	height: 50px;
 
-
 }
 
 #TabMenu td:hover{
 
 	background-color: #FF9500;
+
+}
+
+
+#Content{
+
+	
+	padding-top: 50px;
 
 }
 
@@ -74,7 +74,9 @@ footer{
 	margin: auto;
 	margin-top: 0px;
 	width: 80%;
+	height: 406px;
 	margin-bottom: 20px;
+	overflow: hidden;
 	
 }
 .Film-Pic{
@@ -85,20 +87,42 @@ footer{
 	
 
 }
+.Box-Doc-Descr{
+	-webkit-transition-property: margin-top;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-property: margin-top;
+	-moz-transition-duration: .5s;
+	-moz-transition-timing-function: ease-out;
+	-o-transition-property: margin-top;
+	-o-transition-duration: .5s;
+	-o-transition-timing-function: ease-out;
+	transition-property: margin-top;
+	transition-duration: .5s;
+	transition-timing-function: ease-out;
+
+}
+
+.Box-Doc-Descr:hover{
+	margin-top: -350px;
+}
 .Film-Doc{
 
 	display: block;
 	width: 100%;
-	height: 60px;
+	height: 54px;
 	background-color: #343443;
 	border-top: 6px solid #FF9500;
 	
 }
 
+
 #TabFilm-Doc {
+
 	padding: 0;
 	width: 100%;
 	color: white;
+
 }
 
 #TabFilm-Doc td{
@@ -107,5 +131,41 @@ footer{
 }
 
 .Film-Descr{
-	
+	background-color: #343443;
+	height: 350px;
+
+}
+.TableFilm{
+	margin-left: 25px;
+	padding-top: 20px;
+	text-align: ;
+	color: white;
+}
+
+.TableFilm-Descr-Img{
+	width: 200px;
+	height: 262px;
+
+}
+
+.TableFilm-Descr-Label{
+
+	width: 100px;
+ 	padding-left: 20px;
+ 	/*border: 1px solid red;*/
+ 	vertical-align: top;
+ 	color: #FF9500;
+
+}
+.TableFilm-Descr-Label2{
+ 	/*border: 1px solid red;*/
+ 	vertical-align: top;
+ 	padding-right: 15px;
+}
+.TableFilm-Descr-value{
+ 	/*border: 1px solid red;*/
+ 	vertical-align: top;
+ 	text-align: justify;
+ 	padding-right: 30px;
+
 }
