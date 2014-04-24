@@ -9,7 +9,7 @@ body{
 
 	margin: 0;
 	padding: 0;
-	background-color: #898E92;
+	background-color: #DCDCDC;
 
 }
 
@@ -70,7 +70,6 @@ footer{
 .Film{
 	
 	display: block;
-	background-color: blue;
 	margin: auto;
 	margin-top: 0px;
 	width: 80%;
@@ -79,39 +78,42 @@ footer{
 	overflow: hidden;
 	
 }
+
 .Film-Pic{
 	
 	display: block;
 	width: 100%;
-	height: 350px;
+	height: 400px;
 	
 
 }
 .Box-Doc-Descr{
-	-webkit-transition-property: margin-top;
+	margin-top: -50px;
+	background-color:  rgba(52, 52, 67, 1);
+
+	-webkit-transition-property: margin-top, background-color;
 	-webkit-transition-duration: .5s;
 	-webkit-transition-timing-function: ease-out;
-	-moz-transition-property: margin-top;
+	-moz-transition-property: margin-top, background-color;
 	-moz-transition-duration: .5s;
 	-moz-transition-timing-function: ease-out;
-	-o-transition-property: margin-top;
-	-o-transition-duration: .5s;
-	-o-transition-timing-function: ease-out;
-	transition-property: margin-top;
+	transition-property: margin-top , background-color;
 	transition-duration: .5s;
 	transition-timing-function: ease-out;
 
 }
 
 .Box-Doc-Descr:hover{
-	margin-top: -350px;
+	margin-top: -400px;
+	background-color:  rgba(52, 52, 67, 0.8);
+	
 }
 .Film-Doc{
 
 	display: block;
 	width: 100%;
 	height: 54px;
-	background-color: #343443;
+	//background-color:  rgba(52, 52, 67, 0.7);
 	border-top: 6px solid #FF9500;
 	
 }
@@ -131,7 +133,7 @@ footer{
 }
 
 .Film-Descr{
-	background-color: #343443;
+	
 	height: 350px;
 
 }
