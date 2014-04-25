@@ -9,15 +9,15 @@ body{
 
 	margin: 0;
 	padding: 0;
-	background-color: #DCDCDC;
+	background-color: #343443;/*NOIR BLEU*/
 
 }
 
 header{
 
 	width: 100%;
-	height: 6px; 
-	background-color: #FF9500;
+	height: 0px; 
+	background-color: #FF9500; /*ORANGE*/
 
 
 }
@@ -25,8 +25,14 @@ header{
 nav{
 
 	width: 100%;
-	height: 55px; 
-	background-color: #343443;
+	height: 45px; 
+	background-color: white; 
+	border-bottom: 4px solid #61D7A4 ; /*Vert claire*/
+	font-family: 'Varela Round', 'sans-serif';
+	font-family: 'Montserrat', 'sans-serif';
+	font-family: 'Dancing Script', 'cursive';
+	font-size: 1.4em;
+
 
 }
 
@@ -38,24 +44,31 @@ footer{
 #TabMenu{
 
 	padding: 0;
-	width:300px; 
-	color: white;
-	margin: auto;
-	height: 55px;
+	/*width: 350px; */
+	color: #343443; /*NOIR BLEU*/
+	margin: 0;
+		margin-left: 20px;
+	height: 40px;
+
 
 }
 
 #TabMenu  td{
 
 	padding: 0;
-	text-align: center;
+	text-align: ;
 	height: 50px;
-
+	padding-left: 40px;
+	padding-right: 10px;
+	background:url(icn/coupon@2x.png);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 0px 5px;	
 }
 
 #TabMenu td:hover{
 
-	background-color: #FF9500;
+	color: #61D7A4;
 
 }
 
@@ -63,7 +76,18 @@ footer{
 #Content{
 
 	
-	padding-top: 50px;
+	padding-top: 0px;
+	margin-top: -20px;
+
+}
+
+#Content>h1{
+
+	color: #61D7A4;
+	font-family: 'Dancing Script', 'cursive';
+	text-align: right;
+	font-size: 3em;
+	padding-right: 50px;
 
 }
 
@@ -114,7 +138,7 @@ footer{
 	width: 100%;
 	height: 54px;
 	//background-color:  rgba(52, 52, 67, 0.7);
-	border-top: 6px solid #FF9500;
+	border-top: 4px solid #61D7A4;
 	
 }
 
@@ -151,21 +175,19 @@ footer{
 }
 
 .TableFilm-Descr-Label{
-
 	width: 100px;
  	padding-left: 20px;
- 	/*border: 1px solid red;*/
  	vertical-align: top;
  	color: #FF9500;
+ 	font-size: 1.2em;
 
 }
 .TableFilm-Descr-Label2{
- 	/*border: 1px solid red;*/
  	vertical-align: top;
  	padding-right: 15px;
+ 	font-size: 1.2em;
 }
 .TableFilm-Descr-value{
- 	/*border: 1px solid red;*/
  	vertical-align: top;
  	text-align: justify;
  	padding-right: 30px;
