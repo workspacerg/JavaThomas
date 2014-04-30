@@ -1,5 +1,4 @@
 package org.esgi.web;
-import org.esgi.module.news.NewsDisplay;
 
 
 public class Application {

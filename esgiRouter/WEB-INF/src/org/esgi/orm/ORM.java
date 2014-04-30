@@ -319,20 +319,22 @@ public class ORM implements IORM {
 		List res = new LinkedList<>();		
 		String tables_name = clazz.getSimpleName();
 
-		int pos;
-		for (Entry<String,Object> ent : where.entrySet())
-			if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
-			{
-				if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
-					tables_name += ", " + ent.getKey().substring(0, pos);
-			}
-		
-		for (Object ent : where.values())
-			if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire
-			{
-				if (!tables_name.toLowerCase().contains(ent.toString().substring(0, pos).toLowerCase()))
-					tables_name += ", " + ent.toString().substring(0, pos);
-			}		
+		if(where != null){
+			int pos;
+			for (Entry<String,Object> ent : where.entrySet())
+				if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
+				{
+					if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
+						tables_name += ", " + ent.getKey().substring(0, pos);
+				}
+			
+			for (Object ent : where.values())
+				if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire
+				{
+					if (!tables_name.toLowerCase().contains(ent.toString().substring(0, pos).toLowerCase()))
+						tables_name += ", " + ent.toString().substring(0, pos);
+				}
+		}
 		
 		LinkedList<String> find = bdd.requeteToLinkedList(tables_name, clazz.getFields()[getPositionID(clazz)].getName(), where, limit);
 		//System.out.println("len ="+find.size());

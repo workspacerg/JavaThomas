@@ -10,13 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.esgi.module.action.HelloWorld;
 import org.esgi.module.file.FileDelete;
 import org.esgi.module.file.FileDownload;
 import org.esgi.module.file.FileList;
 import org.esgi.module.file.FileUpload;
 import org.esgi.module.index.Index;
-import org.esgi.module.news.NewsDisplay;
+import org.esgi.module.menu.contact.Contact;
 import org.esgi.module.user.Connect;
 import org.esgi.module.user.Delete;
 import org.esgi.web.action.IAction;
@@ -61,10 +60,11 @@ public class FrontController extends HttpServlet{
 		//		}
 
 		
-		registerAction(new FileList());
+		/*registerAction(new FileList());
 		registerAction(new FileDownload());
 		registerAction(new FileUpload());
-		registerAction(new FileDelete());
+		registerAction(new FileDelete());*/
+		registerAction(new Contact());
 		registerAction(new Index());
 		registerAction(new Connect());
 		registerAction(new Delete());

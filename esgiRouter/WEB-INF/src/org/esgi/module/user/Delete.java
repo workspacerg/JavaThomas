@@ -22,7 +22,7 @@ public class Delete extends AbstractAction {
 	}
 	@Override
 	public void execute(IContext context) throws Exception {
-		String id = context.getRequest().getParameter("id");
+		String id = context.getRequest().getParameter("id_user");
 		boolean result = ORM.remove(User.class,id);
 		
 		ObjectMapper mapper = new ObjectMapper();

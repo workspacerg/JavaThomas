@@ -33,12 +33,10 @@
 
 
 <body>
+#set ($login = $context.getRequest().getSession(true).getAttribute("login"))
   $context.getFragment("shared/MainHeader")
-
-    $context.getFragment("__CURRENT__")
-
-  $context.getFragment("shared/MainFooter")
-
+  $context.getFragment("__CURRENT__")
+  $context.getFragment("shared/MainFooter") 
    <script>
      var APP_CONTEXT = '$context.getProperties().get("context")';
    </script> 
@@ -65,7 +63,6 @@
       #end
   });
 </script>
-
 
 </body> 
 </html>

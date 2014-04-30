@@ -1,4 +1,4 @@
-package org.esgi.module.contact;
+package org.esgi.module.menu.contact;
 
 import java.io.File;
 
@@ -9,18 +9,12 @@ public class Contact extends AbstractAction {
 
 	@Override
 	public void execute(IContext context) throws Exception {
-	
-		
+		context.setTitle("Contact");
 	}
 
 	@Override
 	public String getRoute() {
-		return "/contact/contact/";
-	}
-
-	@Override
-	public String[] getRewriteGroups() { 
-		return new String[]{"path"};
+		return "/contact";
 	}
 
 }

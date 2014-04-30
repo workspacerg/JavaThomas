@@ -34,6 +34,8 @@ loadMyLib = function(onloaded){
 				me.table = $('<table/>');
 				me.table.css("background-color","rgba(99,99,99,0.5)");
 				me.table.css("padding","20px 20px 20px 20px");
+				me.table.css("margin","auto");
+				me.table.css("margin-top","15%");
 
 				var colgroup = $('<colgroup/>');
 				var col1 = $('<col/>');
@@ -47,7 +49,7 @@ loadMyLib = function(onloaded){
 
 				var tfoot = $('<tfoot/>');
 				me.table.append(tfoot);
-
+				
 				var ligneFoot = $("<tr />");
 				var cellFoot = $("<td colspan=\"2\"/>");
 				cellFoot.css("height","40px");
@@ -84,12 +86,12 @@ loadMyLib = function(onloaded){
 
 						if(obj["success"]){
 							//Pour vider avant de commencer
-							$("#container").html("");
-							$("#container").append("<h1> Liste des utilisateurs </h2>");
+							/*$("#container").html("");
+							$("#container").append("<h2> Liste des utilisateurs </h2>");
 
 							var table = new Esgi.html.Table({
 								renderTo : "#container",
-								columns : ['login', 'actions'],
+								columns : ['nom', 'actions'],
 								itemActions : [{
 									type : 'button',
 									label : 'Supprimer',
@@ -98,12 +100,13 @@ loadMyLib = function(onloaded){
 								]
 							});
 
-							table.setItems(obj["users"]);
+							table.setItems(obj["users"]);*/
+							window.location.reload();
 
 						}
 						else
 						{
-
+							$("#container").append("<br> Login ou mot de passe incorrect.")
 						}
 					}
 

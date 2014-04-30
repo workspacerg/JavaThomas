@@ -27,7 +27,6 @@ public class LayoutRenderer {
 		
 		Properties p = new Properties();
 		p.setProperty("file.resource.loader.path", (String) context.getProperties().getProperty("real.path")+"view");
-		//System.out.println(" " + context.getProperties().getProperty("real.path")+"view");
 		Velocity.init(p);
 		
 		boolean current = false;
@@ -63,7 +62,9 @@ public class LayoutRenderer {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
+			
+			if(context.getRequest().getSession().getAttribute("login")==null && current)
+				nameVelocity = "index/connexion";
 			File tpl = new File(tplRepo, nameVelocity+".vm");
 			System.out.println(tpl.getPath());
 			VelocityContext contextv = new VelocityContext();

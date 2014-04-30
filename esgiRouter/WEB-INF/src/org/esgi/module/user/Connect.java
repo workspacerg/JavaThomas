@@ -5,9 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import net.sf.json.JSONObject;
 
 import org.esgi.orm.ORM;
+import org.esgi.orm.my.model.Film;
+import org.esgi.orm.my.model.Identifiant;
 import org.esgi.orm.my.model.User;
 import org.esgi.web.action.AbstractAction;
 import org.esgi.web.action.IContext;
@@ -30,26 +34,37 @@ public class Connect extends AbstractAction{
 	@Override
 	public void execute(IContext context) throws Exception {
 		Map<String,Object> mapWhere = new HashMap<String, Object>();
-		mapWhere.put("login",context.getRequest().getParameter("login"));
+		String login = context.getRequest().getParameter("login");
+		mapWhere.put("login",login);
 		mapWhere.put("password", context.getRequest().getParameter("password"));
 
-		//ORM.save(u);
+		List<Object> ids = ORM.find(Identifiant.class, mapWhere, null, null, null);
+		
+		int id = -1;
+		if(ids.size() == 1)
+			id = ((Identifiant)ids.get(0)).id_i;
+		
+		mapWhere.clear();
+		mapWhere.put("identifiant", id);
+		
 		ObjectMapper mapper = new ObjectMapper();
 		StringWriter sw = new StringWriter();
 		Map<String,Object> map = new HashMap<String, Object>();
 
 		if(ORM.find(User.class, mapWhere, null, null, null).size() == 1)
 		{
-			List<Object> users = ORM.find(User.class, null,null,null,null);
 			map.put("success", true);
-			map.put("users", users);
-			mapper.writeValue(sw, map);
-			context.getResponse().getWriter().print(sw.toString());
+						
+			HttpSession session = context.getRequest().getSession(true);
+			session.setAttribute("login",login);
+			
+			context.setAttribute("login", login);
 		}
 		else{		
 			map.put("success", false);
 		}
 
-		System.out.println(sw.toString());
+		mapper.writeValue(sw, map);
+		context.getResponse().getWriter().print(sw.toString());
 	}
 }
