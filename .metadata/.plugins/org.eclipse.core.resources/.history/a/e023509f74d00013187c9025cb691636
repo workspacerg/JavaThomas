@@ -1,0 +1,33 @@
+#set ($login = $context.getRequest().getSession(true).getAttribute("login"))
+#if ($login)
+<header></header>
+        
+        <nav>
+
+            <table id="TabMenu">
+                <tr>
+                     
+                    <td style="padding-right: 2px;">Accueil</td>        
+                    <td style="background:url(/esgiRouter/res/style/icn/mail@2x.png);
+                                background-repeat: no-repeat;
+                                background-size: 30px;
+                                background-position: 6px 9px;
+                                padding-right: 0px;">Contact</td>
+                    <td style="background:url(/esgiRouter/res/style/icn/tshirt@2x.png);
+                                background-repeat: no-repeat;
+                                background-size: 30px;
+                                background-position: 6px 9px; ">Profil</td>
+                    <td style="background:url(/esgiRouter/res/style/icn/setting@2x.png);
+                                background-repeat: no-repeat;
+                                background-size: 30px;
+                                background-position: 6px 9px;
+                                padding-right: 2px;">Admin</td>
+                    <td style="background:url(/esgiRouter/res/style/icn/no-entry@2x.png);
+                                background-repeat: no-repeat;
+                                background-size: 25px;
+                                background-position: 6px 11px;">Log out</td>
+                </tr>
+            </table>
+
+        </nav>   
+#end

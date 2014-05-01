@@ -1,0 +1,274 @@
+html{
+
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+
+	margin: 0;
+	padding: 0;
+	background-color: #343443;/*NOIR BLEU*/
+
+}
+
+header{
+
+	width: 100%;
+	height: 0px; 
+	background-color: #FF9500; /*ORANGE*/
+
+
+}
+
+nav{
+
+	width: 100%;
+	height: 45px; 
+	background-color: white; 
+	border-bottom: 4px solid #61D7A4 ; /*Vert claire*/
+	font-family: 'Varela Round', 'sans-serif';
+	font-family: 'Montserrat', 'sans-serif';
+	font-family: 'Dancing Script', 'cursive';
+	font-size: 1.4em;
+		cusor:pointer;
+
+}
+
+footer{
+
+
+}
+
+#TabMenu{
+
+	padding: 0;
+	/*width: 350px; */
+	color: #343443; /*NOIR BLEU*/
+	margin: 0;
+		margin-left: 20px;
+	height: 40px;
+
+
+}
+
+#TabMenu  td{
+
+	padding: 0;
+	text-align: ;
+	height: 50px;
+	padding-left: 40px;
+	padding-right: 10px;
+	background:url(icn/coupon@2x.png);
+	background-repeat: no-repeat;
+	background-size: 40px;
+	background-position: 0px 5px;	
+}
+
+#TabMenu td:hover{
+
+	color: #61D7A4;
+
+}
+
+
+#Content{
+
+	
+	padding-top: 0px;
+	margin-top: -20px;
+
+}
+
+#Content>h1{
+
+	color: #61D7A4;
+	font-family: 'Dancing Script', 'cursive';
+	text-align: right;
+	font-size: 3em;
+	padding-right: 50px;
+
+}
+
+.Film{
+	
+	display: block;
+	margin: auto;
+	margin-top: 0px;
+	width: 80%;
+	height: 356px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	
+}
+
+.Film-Pic{
+	
+	display: block;
+	width: 100%;
+	height: 350px;
+	
+
+}
+.Film>.Box-Doc-Descr{
+	margin-top: -50px;
+	background-color:  rgba(52, 52, 67, 1);
+
+	-webkit-transition-property: margin-top, background-color;
+	-webkit-transition-duration: .5s;
+	-webkit-transition-timing-function: ease-out;
+	-moz-transition-property: margin-top, background-color;
+	-moz-transition-duration: .5s;
+	-moz-transition-timing-function: ease-out;
+	transition-property: margin-top , background-color;
+	transition-duration: .5s;
+	transition-timing-function: ease-out;
+
+}
+
+.Film>.Box-Doc-Descr:hover{
+	margin-top: -350px;
+	background-color:  rgba(52, 52, 67, 0.8);
+	
+}
+.Film-Doc{
+
+	display: block;
+	width: 100%;
+	height: 54px;
+	//background-color:  rgba(52, 52, 67, 0.7);
+	border-top: 4px solid #61D7A4;
+	
+}
+
+
+#TabFilm-Doc {
+
+	padding: 0;
+	width: 100%;
+	color: white;
+
+}
+
+#TabFilm-Doc td{
+	height: 50px;
+	font-size: 1.3em;
+}
+
+.Film-Descr{
+	
+	height: 350px;
+
+}
+.TableFilm{
+	margin-left: 25px;
+	padding-top: 5px;
+	text-align: ;
+	color: white;
+}
+
+.TableFilm-Descr-Img{
+	width: 200px;
+	height: 262px;
+
+}
+
+.TableFilm-Descr-Label{
+	width: 100px;
+ 	padding-left: 20px;
+ 	vertical-align: top;
+ 	color: #FF9500;
+ 	font-size: 1.2em;
+
+}
+.TableFilm-Descr-Label2{
+ 	vertical-align: top;
+ 	padding-right: 15px;
+ 	font-size: 1.2em;
+}
+.TableFilm-Descr-value{
+ 	vertical-align: top;
+ 	text-align: justify;
+ 	padding-right: 30px;
+
+}
+
+
+
+/*---------------------------------------------------------------*/
+
+
+
+.Film2{
+	
+	display: block;
+	margin: auto;
+	margin-top: 0px;
+	width: 80%;
+	margin-bottom: 30px;
+	overflow: hidden;
+	border-bottom: 4px solid #61D7A4 ; /*Vert claire*/
+	
+}
+
+#box-Commentaire{
+
+	display: block;
+	margin: auto;
+	margin-top: 0px;
+	width: 80%;
+	height: 800px;
+
+}
+
+.Com{
+
+	display: block;
+	margin: auto;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	width: 80%;
+	
+	background-color: rgba(255, 255, 255, 1);
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+.TableCom{
+	margin-left: 20px;
+	margin-right: 30px;
+	text-align: justify;
+}
+
+.TableCom-Header{
+
+	color: #FF9500; /*ORANGE*/
+	font-family: 'Dancing Script', 'cursive';
+	font-size: 2em;
+
+}
+.TableCom-Value{
+
+	padding-top: 20px;
+}
+
+
+/*----------------------------------------------------------------*/
+
+.ContactForm{
+
+	display: block;
+	width: 50%;
+	height: 500px;
+	background-color: white;
+	margin: auto;
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	border-top: 4px solid #61D7A4 ; /*Vert claire*/
+
+}
+
+
+

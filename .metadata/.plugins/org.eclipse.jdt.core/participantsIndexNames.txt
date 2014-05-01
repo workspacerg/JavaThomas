@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+C:\Users\Rayane\Documents\GitHub\JavaThomas\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3497998351.index
+\esgiRouter\WEB-INF\src

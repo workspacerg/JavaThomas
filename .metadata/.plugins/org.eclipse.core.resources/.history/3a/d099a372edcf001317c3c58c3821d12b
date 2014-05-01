@@ -1,0 +1,85 @@
+#set ($login = $context.getRequest().getSession(true).getAttribute("login"))
+
+$context.setTitle("Home")
+
+#if (!$login)
+	$context.addOnJsReady("new Esgi.module.user.Connect({ id : '#container'})")
+	<div id="container">
+
+	</div>
+#else
+
+#set ($films = $context.getAttribute("films"))
+	<div id="Content">   
+
+        <h1>Films</h1>
+
+		#foreach($film in $films)
+		#set ($url = "/esgiRouter/res/style/img/Films/fond_$film.getId()")
+
+		
+		<article>
+            
+            <div class="Film">
+
+                <section class="Film-Pic" style="background:url(#evaluate($url).jpg);">
+
+                </section>
+                <section class="Box-Doc-Descr">
+                    
+               
+                <section class="Film-Doc">
+                    <table id="TabFilm-Doc">
+                        <tr>
+                            <td style="padding-left: 20px; font-size: 1.5em;">$film.getTitre()</td>
+                                
+                            <td style="text-align: right; padding-right: 20px;">Nombre de commentaires</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section class="Film-Descr">
+
+                    <table class="TableFilm">
+                    <tr>
+                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_$film.getId().jpg); background-size: 200px;">
+                          </td>
+                      </td>
+                      <td class="TableFilm-Descr-Label">Realisateur</td> 
+                      <td class="TableFilm-Descr-Label2">:</td>      
+                      <td class="TableFilm-Descr-value">Ridley Scott</td>
+                      </tr>
+                    <tr>
+                      
+                      <td class="TableFilm-Descr-Label">Participants </td>       
+                      <td class="TableFilm-Descr-Label2">:</td>       
+                      <td class="TableFilm-Descr-value">Russell Crowe, Joaquin Phoenix, Connie Nielsen</td>
+                    </tr>
+                    <tr>
+                      <td class="TableFilm-Descr-Label">Description</td>
+                      <td class="TableFilm-Descr-Label2">:</td>             
+                      <td class="TableFilm-Descr-value">Desciption</td>
+                    </tr>
+                    </table>
+                    
+                </section>
+
+                </section>
+            </div>
+
+        </article>
+		#end
+        
+        
+        
+        
+     </div>
+   #end    
+
+
+
+
+#set ($js = $context.getProperties().get("context")+"/res/js/table.js")
+$context.addJSDependancy($js)
+#set ($js = $context.getProperties().get("context")+"/res/js/user/connect.js")
+$context.addJSDependancy($js)

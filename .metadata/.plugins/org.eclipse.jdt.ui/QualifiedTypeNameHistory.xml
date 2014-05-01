@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Identifiant"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Film"/>
+<fullyQualifiedTypeName name="org.esgi.module.contact.Contact"/>
+</qualifiedTypeNameHistroy>
