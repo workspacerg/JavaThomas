@@ -34,9 +34,14 @@
 
 <body>
 #set ($login = $context.getRequest().getSession(true).getAttribute("login"))
+#if ($login)
   $context.getFragment("shared/MainHeader")
+#end
   $context.getFragment("__CURRENT__")
+#if ($login)
   $context.getFragment("shared/MainFooter") 
+#end
+
    <script>
      var APP_CONTEXT = '$context.getProperties().get("context")';
    </script> 
