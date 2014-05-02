@@ -32,16 +32,13 @@ loadMyLib = function(onloaded){
 				var me = this;
 				me._inputs = {};
 				me.table = $('<table/>');
-				me.table.css("background-color","rgba(99,99,99,0.5)");
-				me.table.css("padding","20px 20px 20px 20px");
-				me.table.css("margin","auto");
-				me.table.css("margin-top","0");
-
+				
+				
 				var colgroup = $('<colgroup/>');
 				var col1 = $('<col/>');
-				col1.css("width","150px");
+				col1.css("width","130px");
 				var col2 = $('<col/>')
-				col2.css("width","150px");
+				col2.css("width","140px");
 				colgroup.append(col1,col2);
 
 				me.table.append(colgroup);
@@ -65,7 +62,7 @@ loadMyLib = function(onloaded){
 					var elem = $("<tr/>");
 					me.table.append(elem);
 					item.renderTo = elem;
-					me._inputs[item.name] = new Esgi.html.inputs[item.type](item);            
+					me._inputs[item.name] = new Esgi.html.inputs[item.type](item); 
 				});
 			},
 			render : function(){

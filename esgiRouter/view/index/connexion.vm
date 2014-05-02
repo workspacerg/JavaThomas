@@ -1,7 +1,25 @@
 $context.addOnJsReady("new Esgi.module.user.Connect({ id : '#container'})")
-	<div id="container">
+
+<STYLE type="text/css">
+html{
+
+}
+
+		body{
+
+			margin: 0;
+			padding: 0;
+			background-image: url(/esgiRouter/res/style/img/Background.jpg);
+			background-size: 100%;
+			
+		
+		}
+
+</STYLE>	
 	
-	</div>
+		<div id="container">
+	
+		</div>
 	
 #set ($js = $context.getProperties().get("context")+"/res/js/table.js")
 $context.addJSDependancy($js)

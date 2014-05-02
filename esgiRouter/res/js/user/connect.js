@@ -11,11 +11,12 @@ $(function(){
 			        	  type : "Text",
 			        	  name : 'login',
 			        	  label : "Login",
-			        	  emptyText : 'Saisir votre login' 
+			        	  emptyText : 'Login' 
 			          },{
 			        	  type : "Password",
 			        	  label : "Password",
 			        	  name : 'password',
+			        	  emptyText : 'Password' 
 			          }
 			          ]
 		});

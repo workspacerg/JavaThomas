@@ -1,5 +1,6 @@
 html{
 
+	height: 100%;
 	margin: 0;
 	padding: 0;
 
@@ -11,6 +12,7 @@ body{
 	padding: 0;
 	background-color: #343443;/*NOIR BLEU*/
 
+
 }
 
 header{
@@ -18,6 +20,7 @@ header{
 	width: 100%;
 	height: 0px; 
 	background-color: #FF9500; /*ORANGE*/
+	
 
 
 }
@@ -269,6 +272,33 @@ footer{
 
 #container{
 	
+	height: 138px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -69px;
+	margin-left: -239px;
 	
 }
 
+
+
+#container input {
+	height: 30px;
+	width: 300px;
+	border-radius: 10px;
+	
+}
+
+#container table{
+	
+	background-color: rgba(99,99,99,0.5);
+	padding: 20px;
+	border-radius: 20px;
+	
+}
+
+#container button {
+	width: 100px;
+	height: 25px;
+}
