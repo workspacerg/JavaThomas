@@ -45,10 +45,9 @@ footer{
 	/*width: 350px; */
 	color: #343443; /*NOIR BLEU*/
 	margin: 0;
-		margin-left: 20px;
+	margin-left: 20px;
 	height: 40px;
-
-
+	
 }
 
 #TabMenu  td{
@@ -268,5 +267,8 @@ footer{
 
 }
 
-
+#container{
+	
+	
+}
 

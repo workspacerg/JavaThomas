@@ -35,7 +35,7 @@ loadMyLib = function(onloaded){
 				me.table.css("background-color","rgba(99,99,99,0.5)");
 				me.table.css("padding","20px 20px 20px 20px");
 				me.table.css("margin","auto");
-				me.table.css("margin-top","15%");
+				me.table.css("margin-top","0");
 
 				var colgroup = $('<colgroup/>');
 				var col1 = $('<col/>');
