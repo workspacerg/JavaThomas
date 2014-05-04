@@ -9,15 +9,21 @@ html{
 
 			margin: 0;
 			padding: 0;
-			background-image: url(/esgiRouter/res/style/img/Background.jpg);
+			background-image: url(/esgiRouter/res/style/img/Back.jpg);
 			background-size: 100%;
 			
 		
 		}
 
 </STYLE>	
+<div id="Content">   
+
+        <h1>Connect toi !</h1>
+
+</div>
 	
 		<div id="container">
+		
 	
 		</div>
 	

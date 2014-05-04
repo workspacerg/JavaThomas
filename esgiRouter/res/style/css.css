@@ -277,7 +277,7 @@ footer{
 	top: 50%;
 	left: 50%;
 	margin-top: -69px;
-	margin-left: -239px;
+	margin-left: -155px;
 	
 }
 
@@ -286,19 +286,41 @@ footer{
 #container input {
 	height: 30px;
 	width: 300px;
-	border-radius: 10px;
+	border-radius: 0px;
+	border: 0px;
+	border-bottom: 2px solid #61D7A4 ; /*Vert claire*/
+	font-size: 1em;
+	
 	
 }
 
 #container table{
 	
 	background-color: rgba(99,99,99,0.5);
+	background-color: white;
 	padding: 20px;
-	border-radius: 20px;
+	border-radius: 0px;
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	border-top: 4px solid #61D7A4 ; /*Vert claire*/
+	
 	
 }
 
+#container table td{
+	color: black;
+}
+
 #container button {
-	width: 100px;
-	height: 25px;
+	margin-top: 20px;
+	width: 110px;
+	height: 27px;
+	border: none;
+	background-color: 61D7A4 ; /*Vert claire*/
+	color: white;
+	font-size: 1em;
+}
+
+#container button:HOVER {
+	background-color: white ; /*Vert claire*/
+	color: 61D7A4;
 }
