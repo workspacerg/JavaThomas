@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.esgi.db.BDD;
+import org.esgi.orm.my.ORM;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
 import org.esgi.orm.my.model.Genre;

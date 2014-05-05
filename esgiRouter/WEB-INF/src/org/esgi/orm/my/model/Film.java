@@ -30,6 +30,14 @@ public class Film {
 	public List<Evaluation> Evaluation;
 	public List<Seance> Seance;
 	
+	public String getTitre(){
+		return titre;
+	}
+	
+	public Integer getId(){
+		return id_film;
+	}
+	
 	public String toString() {
 		return " FILM[id_film=" + id_film + ", titre=" + titre + ", " +realisateur + ", " +genre +"]";
 	}

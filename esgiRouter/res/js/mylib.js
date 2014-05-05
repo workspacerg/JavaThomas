@@ -31,7 +31,8 @@ loadMyLib = function(onloaded){
 			initInputs : function(){
 				var me = this;
 				me._inputs = {};
-				me.table = $('<table/>');
+				me.table = $('<table id="connexion" />');
+				
 				
 				var colgroup = $('<colgroup/>');
 				var col1 = $('<col/>');

@@ -20,6 +20,8 @@ public class Index extends AbstractAction{
 		context.addCSSDependancy((String)context.getProperties().get("file.css"));
 		if(context.getRequest().getSession().getAttribute("login") != null){
 			List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
+			for(Film f : films)
+			System.out.println(f.toString());
 			context.setAttribute("films", films);
 		}
 	}

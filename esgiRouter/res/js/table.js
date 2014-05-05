@@ -13,6 +13,11 @@ $(function(){
 				me.table = $('<table/>');
 				$(me.cfg.renderTo).append(me.table);
 				me.table.append(tr);
+				/*$.each(me.cfg.columns, function(idx, label){
+					var th = $('<th/>');
+					th.text(label);
+					tr.append(th);
+				});*/
 			},
 			setItems : function(items){
 				var me = this;

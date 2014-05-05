@@ -1,0 +1,33 @@
+$context.addOnJsReady("new Esgi.module.user.Connect({ id : '#container'})")
+
+<STYLE type="text/css">
+html{
+
+}
+
+		body{
+
+			margin: 0;
+			padding: 0;
+			background-image: url(/esgiRouter/res/style/img/Back.jpg);
+			background-size: 100%;
+			
+		
+		}
+
+</STYLE>	
+<div id="Content">   
+
+        <h1>Connect toi ! <br><a href="http://www.mozilla.com/"style="color: #FF9500; font-size: 0.6em; text-decoration: none;">ou inscrit toi !</a></h1>
+
+</div>
+	
+		<div id="container">
+		
+	
+		</div>
+	
+#set ($js = $context.getProperties().get("context")+"/res/js/table.js")
+$context.addJSDependancy($js)
+#set ($js = $context.getProperties().get("context")+"/res/js/user/connect.js")
+$context.addJSDependancy($js)

@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.esgi.db.BDD;
+import org.esgi.orm.my.IORM;
+import org.esgi.orm.my.ORM;
 import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.model.User;
 
