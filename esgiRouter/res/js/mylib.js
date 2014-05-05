@@ -31,7 +31,7 @@ loadMyLib = function(onloaded){
 			initInputs : function(){
 				var me = this;
 				me._inputs = {};
-				me.table = $('<table/>');
+				me.table = $('<table id="connexion" />');
 				me.table.css("background-color","rgba(99,99,99,0.5)");
 				me.table.css("padding","20px 20px 20px 20px");
 				me.table.css("margin","auto");
