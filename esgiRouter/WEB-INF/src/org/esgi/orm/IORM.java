@@ -6,10 +6,12 @@ public interface IORM {
 	public Object _save(Object o);
 	
 	/** return an instance of clazz */
-	public Object _load(Class clazz, Object id);
+	//public Object _load(Class clazz, Object id);
 	
 	/** delete an record from clazz persistence layer */
 	public boolean _remove(Class clazz, Object id);
+
+	Object _load(Class clazz, Object id, Object father);
 	
 	
 	

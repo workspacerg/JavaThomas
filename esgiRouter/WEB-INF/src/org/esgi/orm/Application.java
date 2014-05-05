@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.esgi.db.BDD;
+import org.esgi.orm.my.ORM;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
 import org.esgi.orm.my.model.Genre;
@@ -189,38 +191,19 @@ public class Application {
 		
 		System.out.println("\n----------------------");
 		int id_film = 1;
-		float sommeNotes = 0;
-		int nbFilm = 0;
-		Film film = (Film)ORM.load(Film.class, id_film);
+		//float sommeNotes = 0;
+		//int nbFilm = 0;
+		Film film = (Film)ORM.load(Film.class, id_film, null);
 		System.out.println("Affichage de la classe FILM :\n\t"+film);
 		
-		Map<String, Object> where3 = new Hashtable() ;
-		where3.put("film.id_film","evaluation.film"); //jointure
-		where3.put("film",id_film);
-		List<Object> res3 = ORM.find(Evaluation.class, where3, sort, limit, offset);
-		System.out.println("Ses evaluation :");
-		for(Object o : res3)
-			{
-				nbFilm++;
-				sommeNotes += ((Evaluation) o).note;
-				System.out.println("\t"+(Evaluation)o);
-			}
+		System.out.println("Ses evaluation :v2");
+		System.out.println("\t"+film.Evaluation);
 		
-		System.out.println("Sa moyenne :"+sommeNotes/nbFilm);
+		//System.out.println("Sa moyenne :"+sommeNotes/nbFilm);
 		
 		Map<String, Object> where4 = new Hashtable() ;
-		where4.put("film.id_film","seance.film"); //jointure
-		where4.put("film",id_film);
-		List<Object> res4 = ORM.find(Seance.class, where4, sort, limit, offset);
-		System.out.println("Ses seances:");
-		for(Object o : res4)
-		{
-			Seance s = (Seance) o;
-			System.out.println("\n\tDate : "+s.jour+"/"+s.mois+" � "+s.heure
-								+"\n\tVersion : " +s.version
-								+"\n\tNumero de salle:"+s.salle.numero + " etage:"+s.salle.etage);
-		}
-		
+		System.out.println("Ses seances:v2");
+		System.out.println("\t"+film.Seance);
 		System.out.println("----------------------");
 	}
 	

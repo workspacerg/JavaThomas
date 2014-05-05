@@ -1,5 +1,7 @@
 package org.esgi.orm.my.model;
 
+import java.util.List;
+
 import org.esgi.orm.my.annotations.ORM_COMPOSITION;
 import org.esgi.orm.my.annotations.ORM_PK;
 import org.esgi.orm.my.annotations.ORM_RELATION;
@@ -14,7 +16,7 @@ public class Genre {
 	@ORM_PK
 	public Integer id_genre;
 	public String intitule;
-	
+	public List<Film> Film;
 	public String toString() {
 		return " Genre[id_genre=" + id_genre + ", intitule=" + intitule + "]";
 	}

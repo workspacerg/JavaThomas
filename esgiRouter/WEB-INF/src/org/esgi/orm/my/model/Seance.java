@@ -32,3 +32,4 @@ public class Seance {
 		return " SEANCE[id_seance=" + id_seance + ", jour=" + jour +", mois=" + mois +", heure=" + heure + ", version=" + version + "," + film + "," + salle +"]";
 	}
 }
+

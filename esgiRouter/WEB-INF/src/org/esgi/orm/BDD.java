@@ -55,6 +55,7 @@ public class BDD
 				this.maconnexion = DriverManager.getConnection(url_src, "root", "");
 				CreationBase();
 				System.out.println( "Creation de la base reussi" );
+				this.maconnexion = DriverManager.getConnection(url_base, "root", "");
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -305,7 +306,8 @@ public class BDD
 
 			ps = this.maconnexion.prepareStatement(sql);
 
-
+			//System.out.println(sql);
+			
 			int count = 1;
 			if(where_without_jointure !=null && where_without_jointure.size() >0 )
 			{
@@ -356,7 +358,7 @@ public class BDD
 			for (i = 0; i < champs_where.size()-1; i++)
 				sql+= champs_where.get(i) + " = ?,";
 			sql+= champs_where.get(i) + " = ?";
-
+			
 			ps = this.maconnexion.prepareStatement(sql);
 
 			for (int y = 0; y < values_where.size(); y++)
