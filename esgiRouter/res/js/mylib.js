@@ -31,17 +31,13 @@ loadMyLib = function(onloaded){
 			initInputs : function(){
 				var me = this;
 				me._inputs = {};
-				me.table = $('<table id="connexion" />');
-				me.table.css("background-color","rgba(99,99,99,0.5)");
-				me.table.css("padding","20px 20px 20px 20px");
-				me.table.css("margin","auto");
-				me.table.css("margin-top","0");
-
+				me.table = $('<table/>');
+				
 				var colgroup = $('<colgroup/>');
 				var col1 = $('<col/>');
-				col1.css("width","150px");
+				col1.css("width","0px");
 				var col2 = $('<col/>')
-				col2.css("width","150px");
+				col2.css("width","140px");
 				colgroup.append(col1,col2);
 
 				me.table.append(colgroup);
@@ -65,7 +61,7 @@ loadMyLib = function(onloaded){
 					var elem = $("<tr/>");
 					me.table.append(elem);
 					item.renderTo = elem;
-					me._inputs[item.name] = new Esgi.html.inputs[item.type](item);            
+					me._inputs[item.name] = new Esgi.html.inputs[item.type](item); 
 				});
 			},
 			render : function(){
@@ -139,12 +135,12 @@ loadMyLib = function(onloaded){
 				var me = this;
 				if (me.cfg.label) {
 					var label = $('<label>');
-					label.css("color","white");
+					label.css("color","black");
 					td1 = $('<td/>');
 					td1.append(label)
 					td2 = $('<td/>');
 					td2.append(me.el);
-					label.text(me.cfg.label);
+					//label.text(me.cfg.label);
 					$(me.cfg.renderTo).append(td1,td2);
 				}
 				else
@@ -159,7 +155,8 @@ loadMyLib = function(onloaded){
 	Esgi.html.inputs.Text = function(cfg){
 		var me = this;
 		me.cfg = cfg;
-		me.el = $("<input/>");
+		
+		me.el = $("<input placeholder=\"Login\"/>");
 		this.init();
 
 	}
@@ -169,7 +166,7 @@ loadMyLib = function(onloaded){
 	Esgi.html.inputs.Password = function(cfg){
 		var me = this;
 		me.cfg = cfg;
-		me.el = $("<input type='password'/>");
+		me.el = $("<input type='password' placeholder=\"Password\"/>");
 		me.init();
 
 	}

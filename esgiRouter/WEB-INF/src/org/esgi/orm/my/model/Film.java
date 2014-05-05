@@ -1,6 +1,7 @@
 package org.esgi.orm.my.model;
 
 import java.util.Date;
+import java.util.List;
 
 import org.esgi.orm.my.annotations.ORM_COMPOSITION;
 import org.esgi.orm.my.annotations.ORM_PK;
@@ -26,13 +27,8 @@ public class Film {
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Genre genre;
 	
-	public String getTitre(){
-		return titre;
-	}
-	
-	public Integer getId(){
-		return id_film;
-	}
+	public List<Evaluation> Evaluation;
+	public List<Seance> Seance;
 	
 	public String toString() {
 		return " FILM[id_film=" + id_film + ", titre=" + titre + ", " +realisateur + ", " +genre +"]";

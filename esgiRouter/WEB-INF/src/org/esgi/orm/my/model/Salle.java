@@ -6,7 +6,6 @@ import org.esgi.orm.my.annotations.ORM_RELATION;
 import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.annotations.ORM_TABLE;
 
-
 @ORM_SCHEMA("esgi")
 @ORM_TABLE("salle")
 public class Salle {

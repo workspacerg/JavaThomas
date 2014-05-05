@@ -10,6 +10,7 @@ import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.annotations.ORM_TABLE;
 
 
+
 @ORM_SCHEMA("esgi")
 @ORM_TABLE("user")
 public class User {
@@ -24,9 +25,11 @@ public class User {
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Identifiant identifiant = null;
 	
+	
 	@Override
 	public String toString() {
 		return "USER[id=" + id_user + ", nom=" + nom + ", prenom=" + prenom
 				+ ", connectedAt=" + connectedAt + ", "+identifiant+"]";
 	}
 }
+

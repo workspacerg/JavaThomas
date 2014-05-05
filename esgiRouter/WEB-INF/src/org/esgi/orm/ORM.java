@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import org.esgi.db.BDD;
+import org.esgi.orm.my.IORM;
+import org.esgi.orm.my.ORM;
 import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.model.User;
 
@@ -36,8 +39,8 @@ public class ORM implements IORM {
 		return instance._save(o);
 	}
 
-	public static Object load(Class<?> clazz, Object id) {
-		return instance._load(clazz, id);
+	public static Object load(Class<?> clazz, Object id, Object father) {
+		return instance._load(clazz, id, father);
 	}
 
 	public static boolean remove(Class clazz, Object id) {
@@ -100,8 +103,14 @@ public class ORM implements IORM {
 			LinkedList<String> mes_types = new LinkedList<String>();
 
 			for (Field field : o.getClass().getFields()) {
+
 				String name = field.getName();
 				String type = field.getType().getSimpleName();
+
+				if(type.equals("List"))
+				{
+					continue;
+				}
 
 				String value;
 				if(o.getClass().getField(name).get(o) != null)
@@ -183,7 +192,7 @@ public class ORM implements IORM {
 
 
 	@Override
-	public Object _load(Class clazz, Object id) {
+	public Object _load(Class clazz, Object id, Object father) {
 
 		try {
 			//String res = bdd.requeteToString(value_TABLE, "login");
@@ -207,7 +216,10 @@ public class ORM implements IORM {
 
 			LinkedList<String> res = bdd.requeteToLinkedList(table_name, "*", champs_where, values_where);
 			if(res.size() == 0)
-				return null;
+				{
+				System.out.println("---DEBUG  Table="+table_name+" "+champ_name +"="+champ_value);
+					return null;
+				}
 
 			Object myObject= clazz.newInstance();
 
@@ -222,6 +234,33 @@ public class ORM implements IORM {
 
 				Class<?> type = field.getType();
 				String name = field.getName();
+				
+				if(type.getSimpleName().toString().equals("List"))
+				{
+										
+					Map<String, Object> where = new Hashtable() ;
+					where.put(table_name,champ_value);
+					LinkedList<String> list_id = bdd.requeteToLinkedList(name, "id_"+name, where, null);
+					
+					List<Object> listIntoClass = new LinkedList<Object>(); 
+					
+					for (String id_value : list_id)
+					{
+						int idToFind = Integer.valueOf(id_value.replace("[", "").replace("]", ""));
+						
+						
+						String classLocalisation = myObject.getClass().getName();
+						classLocalisation = classLocalisation.substring(0, classLocalisation.lastIndexOf(".")+1)+name;
+						Class childClass = Class.forName (classLocalisation);			
+						
+						Object eval = ORM.load(childClass, idToFind, myObject);
+						listIntoClass.add(eval);
+					}
+					field.set(myObject, (listIntoClass));
+
+					continue;
+
+				}
 				String value = res.get(count++);
 
 				//System.out.println(type.toString() +" "+name+" = "+value);
@@ -229,8 +268,11 @@ public class ORM implements IORM {
 				//System.out.println("->"+clazz.getFields()[4]);
 
 				//System.out.println(type.getCanonicalName()+" = "+Integer.class.getName());
-
-				if(type.getCanonicalName().toString().equals(Integer.class.getName()) || type.getCanonicalName().toString().equalsIgnoreCase("int"))
+				
+				if(father != null && type.getCanonicalName().toString().equals(father.getClass().getCanonicalName()))
+						field.set(myObject, (father));	
+				
+				else if(type.getCanonicalName().toString().equals(Integer.class.getName()) || type.getCanonicalName().toString().equalsIgnoreCase("int"))
 					field.set(myObject, (Integer.valueOf(value)));
 
 				else if(type.getCanonicalName().toString().equals(String.class.getName()))
@@ -243,8 +285,10 @@ public class ORM implements IORM {
 				else if(containsAnotations(field.getAnnotations(), "ORM_COMPOSITION"))
 				{
 					//System.out.println("fk = "+value);
-					field.set(myObject, ORM.load(field.getType(), value));
+					field.set(myObject, ORM.load(field.getType(), value, null));
 				}
+
+
 
 				else
 				{
@@ -263,7 +307,7 @@ public class ORM implements IORM {
 
 	private boolean containsAnotations(Annotation[] annotations, String value) {
 		// TODO Auto-generated method stub
-		
+
 		for (int i = 0; i < annotations.length; i++) {
 			if(annotations[i].annotationType().getSimpleName().equals(value))
 				return true;
@@ -319,23 +363,23 @@ public class ORM implements IORM {
 		List res = new LinkedList<>();		
 		String tables_name = clazz.getSimpleName();
 
-		if(where != null){
-			int pos;
+		int pos;
+		if(where != null && !where.isEmpty())
+		{
 			for (Entry<String,Object> ent : where.entrySet())
 				if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
 				{
 					if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
 						tables_name += ", " + ent.getKey().substring(0, pos);
 				}
-			
+
 			for (Object ent : where.values())
 				if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire
 				{
 					if (!tables_name.toLowerCase().contains(ent.toString().substring(0, pos).toLowerCase()))
 						tables_name += ", " + ent.toString().substring(0, pos);
-				}
+				}		
 		}
-		
 		LinkedList<String> find = bdd.requeteToLinkedList(tables_name, clazz.getFields()[getPositionID(clazz)].getName(), where, limit);
 		//System.out.println("len ="+find.size());
 
@@ -349,10 +393,10 @@ public class ORM implements IORM {
 			id_to_find.deleteCharAt(id_to_find.length()-1).deleteCharAt(0);
 
 			if(clazz.getFields()[getPositionID(clazz)].getType().getCanonicalName().toString().equals(Integer.class.getName()))
-				o =  ORM.load(clazz, Integer.valueOf(id_to_find.toString()));
+				o =  ORM.load(clazz, Integer.valueOf(id_to_find.toString()), null);
 
 			else if(clazz.getFields()[getPositionID(clazz)].getType().getCanonicalName().toString().equals(String.class.getName()))
-				o =  ORM.load(clazz, id_to_find.toString());
+				o =  ORM.load(clazz, id_to_find.toString(), null);
 
 			else
 				System.out.println("list type non g�r�");

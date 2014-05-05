@@ -7,6 +7,7 @@ import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.annotations.ORM_TABLE;
 
 
+
 @ORM_SCHEMA("esgi")
 @ORM_TABLE("realisateur")
 public class Realisateur {
@@ -20,3 +21,4 @@ public class Realisateur {
 		return " REALISATEUR[id_realisateur=" + id_realisateur + ", nom=" + nom + ", prenom=" + prenom +"]";
 	}
 }
+
