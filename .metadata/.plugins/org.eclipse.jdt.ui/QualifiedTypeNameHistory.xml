@@ -5,4 +5,5 @@
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Film"/>
 <fullyQualifiedTypeName name="org.esgi.module.contact.Contact"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
 </qualifiedTypeNameHistroy>

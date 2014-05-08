@@ -38,6 +38,14 @@ public class Film {
 		return id_film;
 	}
 	
+	public Realisateur getRealisateur(){
+		return realisateur;
+	}
+	
+	public List<Evaluation> getEvaluations(){	
+		return Evaluation;
+	}
+	
 	public String toString() {
 		return " FILM[id_film=" + id_film + ", titre=" + titre + ", " +realisateur + ", " +genre +"]";
 	}

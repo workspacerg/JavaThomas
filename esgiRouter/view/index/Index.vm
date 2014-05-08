@@ -23,7 +23,7 @@ $context.setTitle("Accueil")
                         <tr>
                             <td style="padding-left: 20px; font-size: 1.5em;">$film.getTitre()</td>
                                 
-                            <td style="text-align: right; padding-right: 20px;">Nombre de commentaires</td>
+                            <td style="text-align: right; padding-right: 20px;">$film.getEvaluations().size() commentaires</td>
                         </tr>
                     </table>
                 </section>
@@ -37,7 +37,7 @@ $context.setTitle("Accueil")
                       </td>
                       <td class="TableFilm-Descr-Label">Realisateur</td> 
                       <td class="TableFilm-Descr-Label2">:</td>      
-                      <td class="TableFilm-Descr-value">Ridley Scott</td>
+                      <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
                       </tr>
                     <tr>
                       

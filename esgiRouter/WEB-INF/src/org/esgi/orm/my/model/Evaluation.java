@@ -24,6 +24,14 @@ public class Evaluation {
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Film film;
 	
+	public Integer getNote(){
+		return note;
+	}
+	
+	public String getCommentaire(){
+		return commentaire;
+	}
+	
 	public String toString() {
 		return " EVALUATION[id_evaluation=" + id_evaluation + ", note=" + note + ", commentaire=" + commentaire + ", " + user + film +"]";
 	}

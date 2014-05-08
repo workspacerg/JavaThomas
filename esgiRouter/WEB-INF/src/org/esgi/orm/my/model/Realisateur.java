@@ -17,6 +17,10 @@ public class Realisateur {
 	public String nom;
 	public String prenom;
 	
+	public String getIdentity(){
+		return String.format("%s %s", prenom,nom);
+	}
+	
 	public String toString() {
 		return " REALISATEUR[id_realisateur=" + id_realisateur + ", nom=" + nom + ", prenom=" + prenom +"]";
 	}
