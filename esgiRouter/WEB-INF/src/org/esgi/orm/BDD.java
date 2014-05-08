@@ -111,8 +111,8 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Probl�me d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
-			System.out.println("Probl�me d'insertion : "+sql);
+			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			System.out.println("Problème d'insertion : "+sql);
 			return;
 		}
 	}
@@ -162,7 +162,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			//System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Probl�me d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
 			System.out.println("probleme d'update "+e);
 			System.out.println("Avec la requete : "+ sql);
 			return false;
@@ -191,7 +191,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			//System.out.println(e);
-			//JOptionPane.showMessageDialog(null,"Probl�me de supression : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showMessageDialog(null,"Problème de supression : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
 			System.out.println("probleme de supression "+e);
 			return false;
 		}
@@ -210,7 +210,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Probl�me de creation de base");
+			System.out.println("Problème de creation de base");
 		}
 	}
 
@@ -259,7 +259,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Probl�me de requete");
+			System.out.println("Problème de requete");
 		}
 		return lesLignesString;
 	}
@@ -267,6 +267,10 @@ public class BDD
 	public LinkedList<String> requeteToLinkedList(String table, String champs,Map<String, Object> where, Integer limit)  					// Surcharge en fonction de la recherche
 	{ //Resultat ligne par ligne
 		LinkedList<String> lesLignesString = new LinkedList<String>();
+		
+		if(countRows(table) < 1)
+			return lesLignesString;
+		
 		String sql = "";
 		try {
 
@@ -342,7 +346,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Probl�me de requete :"+sql);
+			System.out.println("Problème de requete :"+sql);
 		}
 		return lesLignesString;
 	}
@@ -390,7 +394,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Probl�me de requete");
+			System.out.println("Problème de requete");
 		}
 		return new LinkedList<>();
 	}
@@ -430,7 +434,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Probl�me de requete");
+			System.out.println("Problème de requete");
 		}
 		return lesLignesString;
 	}
@@ -443,7 +447,7 @@ public class BDD
 			st.execute(createTableSQL);
 		} catch (SQLException e) {
 			System.out.println(e);
-			System.out.println("Probl�me de create table");
+			System.out.println("Problème de create table");
 		}	
 	}
 
@@ -485,5 +489,24 @@ public class BDD
 
 		//System.out.println(res);
 		createTable(res);
+	}
+	
+	public int countRows(String tableName) {
+		// TODO Auto-generated method stub
+		
+		Statement st;
+		int rowCount = -1;
+
+		
+			try {
+				st = this.maconnexion.createStatement();
+				ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM "+tableName);
+				rs.next();
+				rowCount = rs.getInt(1);
+				
+			} catch (SQLException e) {
+				return -1;
+			}	
+		return rowCount;
 	}
 }

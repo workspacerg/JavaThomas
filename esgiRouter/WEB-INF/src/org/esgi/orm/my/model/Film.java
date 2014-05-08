@@ -18,7 +18,7 @@ public class Film {
 	@ORM_PK
 	public Integer id_film;
 	public String titre;
-	
+	public String description;
 	@ORM_COMPOSITION
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Realisateur realisateur;
@@ -29,14 +29,7 @@ public class Film {
 	
 	public List<Evaluation> Evaluation;
 	public List<Seance> Seance;
-	
-	public String getTitre(){
-		return titre;
-	}
-	
-	public Integer getId(){
-		return id_film;
-	}
+	public List<Participant> Participant;
 	
 	public Realisateur getRealisateur(){
 		return realisateur;
@@ -47,6 +40,6 @@ public class Film {
 	}
 	
 	public String toString() {
-		return " FILM[id_film=" + id_film + ", titre=" + titre + ", " +realisateur + ", " +genre +"]";
+		return " FILM[id_film=" + id_film + ", titre=" + titre + ", " +realisateur + ", " +genre +" ,"+Participant+"]";
 	}
 }

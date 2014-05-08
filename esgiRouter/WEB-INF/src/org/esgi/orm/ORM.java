@@ -12,6 +12,8 @@ import java.util.Map.Entry;
 import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.model.User;
 
+
+
 public class ORM implements IORM {
 
 	static ORM instance;
@@ -125,7 +127,7 @@ public class ORM implements IORM {
 						fk = true;
 						//System.out.println(a.annotationType().getSimpleName() +" = "+name);
 						//_save(champsToCreate)
-
+						
 						String fk_type = getTypeID(field.getType());
 						//System.out.println("FK_TYPE = "+fk_type);
 
@@ -182,7 +184,7 @@ public class ORM implements IORM {
 			String table_name = o.getClass().getSimpleName();
 			bdd.createTableIfNotExists(table_name, champsToCreate, mes_types);
 			bdd.insertion(table_name, mes_champs, mes_valeurs);		
-		} catch (Exception e) {e.printStackTrace();}
+		} catch (Exception e) {System.out.println("--->1");e.printStackTrace();}
 
 		return o;
 	}
@@ -289,14 +291,14 @@ public class ORM implements IORM {
 
 				else
 				{
-					System.out.println(" _load type non g�r� "+type.getCanonicalName().toString());
+					System.out.println(" _load type non géré "+type.getCanonicalName().toString());
 				}
 			}
 			return myObject;
 			//System.out.println("<<<"+myObject);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("--->2");e.printStackTrace();
 		}
 
 		return null;
@@ -357,9 +359,10 @@ public class ORM implements IORM {
 
 	static public List <Object> find (Class<?> clazz, Map<String, Object> where, Map<String, Object> sort, Integer limit, Integer offset)
 	{
+		
 		List res = new LinkedList<>();		
 		String tables_name = clazz.getSimpleName();
-
+		
 		int pos;
 		if(where != null && !where.isEmpty())
 		{
@@ -396,7 +399,7 @@ public class ORM implements IORM {
 				o =  ORM.load(clazz, id_to_find.toString(), null);
 
 			else
-				System.out.println("list type non g�r�");
+				System.out.println("list type non géré");
 
 			res.add(o);
 
