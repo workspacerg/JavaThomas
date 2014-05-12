@@ -216,7 +216,7 @@ public class ORM implements IORM {
 			LinkedList<String> res = bdd.requeteToLinkedList(table_name, "*", champs_where, values_where);
 			if(res.size() == 0)
 				{
-				System.out.println("---DEBUG  Table="+table_name+" "+champ_name +"="+champ_value);
+				//System.out.println("---DEBUG  Table="+table_name+" "+champ_name +"="+champ_value);
 					return null;
 				}
 

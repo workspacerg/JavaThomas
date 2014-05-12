@@ -259,7 +259,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete");
+			System.out.println("Problème de requete 3");
 		}
 		return lesLignesString;
 	}
@@ -393,8 +393,8 @@ public class BDD
 
 		catch (SQLException e) 
 		{
-			System.out.println(e);
-			System.out.println("Problème de requete");
+			//System.out.println(e);
+			//System.out.println("Problème de requete 1");
 		}
 		return new LinkedList<>();
 	}
@@ -434,7 +434,7 @@ public class BDD
 		catch (SQLException e) 
 		{
 			System.out.println(e);
-			System.out.println("Problème de requete");
+			System.out.println("Problème de requete 2");
 		}
 		return lesLignesString;
 	}
