@@ -227,8 +227,7 @@ public class ORM implements IORM {
 			//System.out.println(">>>"+res);
 
 			for (Field field : (clazz).getFields()) {
-
-				if(count > res.size())
+				if(count >= res.size())
 					return myObject;
 
 				Class<?> type = field.getType();

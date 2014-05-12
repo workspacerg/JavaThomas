@@ -31,12 +31,28 @@ public class Film {
 	public List<Seance> Seance;
 	public List<Participant> Participant;
 	
+	public String getTitre(){
+		return titre;
+	}
+	
+	public String getDescription(){
+		return description;
+	}
+	
+	public Integer getId(){
+		return id_film;
+	}
+	
 	public Realisateur getRealisateur(){
 		return realisateur;
 	}
 	
 	public List<Evaluation> getEvaluations(){	
 		return Evaluation;
+	}
+	
+	public List<Participant> getParticipants(){
+		return Participant;
 	}
 	
 	public String toString() {

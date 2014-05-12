@@ -24,6 +24,14 @@ public class Participant {
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Film film = null;
 	
+	public String getIdentifiant(){
+		return String.format("%s %s", prenom,nom);
+	}
+	
+	public String getRole(){
+		return String.format("%s %s", prenom_role, nom_role);
+	}
+	
 	public String toString() {
 		return " Participant[id_participant=" + id_participant + ", nom=" + nom + ", prenom=" + prenom +", nom_role=" + nom_role + ", prenom_role=" + prenom_role +"]";
 	}
