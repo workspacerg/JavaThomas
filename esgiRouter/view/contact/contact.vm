@@ -1,1 +1,9 @@
-fghgfhf
+$context.setTitle("Contact")
+
+$context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")
+
+<div id="container">
+</div>
+
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/contact.js")
+$context.addJSDependancy($js)

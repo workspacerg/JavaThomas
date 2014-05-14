@@ -9,7 +9,14 @@ $context.setTitle("Accueil")
 
 		#foreach($film in $films)
 		
-		$film.getParticipants().size()
+		#set($parti = "")
+				
+		#foreach($participant in $film.getParticipants())
+			#set($parti = $!parti + $!participant.getIdentifiant() + ", ")
+		#end
+		
+		#set($lastComma = $parti.lastIndexOf(","))
+		
 		<article>
             
             <div class="Film">
@@ -45,7 +52,7 @@ $context.setTitle("Accueil")
                       
                       <td class="TableFilm-Descr-Label">Participants </td>       
                       <td class="TableFilm-Descr-Label2">:</td>       
-                      <td class="TableFilm-Descr-value"></td>
+                      <td class="TableFilm-Descr-value">$parti.substring(0,$lastComma)</td>
                     </tr>
                     <tr>
                       <td class="TableFilm-Descr-Label">Description</td>

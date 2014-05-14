@@ -65,6 +65,7 @@ public class LayoutRenderer {
 			
 			if(context.getRequest().getSession().getAttribute("login")==null && current)
 				nameVelocity = "index/connexion";
+			
 			File tpl = new File(tplRepo, nameVelocity+".vm");
 			System.out.println(tpl.getPath());
 			VelocityContext contextv = new VelocityContext();

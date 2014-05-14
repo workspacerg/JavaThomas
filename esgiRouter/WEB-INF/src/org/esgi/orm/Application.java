@@ -23,10 +23,10 @@ public class Application {
 
 
 
-		System.out.println("--------------------TEST----------------------");
+		//System.out.println("--------------------TEST----------------------");
 		createBDD_ifNotExist();
-		ShowDataUsingClass();
-		ShowDataUsingNoClass();
+		//ShowDataUsingClass();
+		//ShowDataUsingNoClass();
 	}
 
 	public static void createBDD_ifNotExist()

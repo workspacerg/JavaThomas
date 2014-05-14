@@ -1,22 +1,27 @@
 $(function(){
 	Esgi.module = Esgi.module || {}
-	Esgi.module.user = Esgi.module.user || {}
+	Esgi.module.Contact = Esgi.module.Contact || {}
 
-	Esgi.module.user.Connect = function (cfg) {
+	Esgi.module.Contact.Form = function (cfg) {
 		new Esgi.html.Form({
-			url : APP_CONTEXT+'/user/connect',
+			url : APP_CONTEXT+'/menu/contact/Contact',
 			renderTo : cfg.id,
 			inputs : [
 			          {
 			        	  type : "Text",
 			        	  name : 'login',
-			        	  label : "Login",
+			        	  label : "Blah",
 			        	  emptyText : 'Login' 
 			          },{
 			        	  type : "Password",
 			        	  label : "Password",
 			        	  name : 'password',
 			        	  emptyText : 'Password' 
+			          },{
+			        	  type : "Select",
+			        	  label : "Blah",
+			        	  name : 'select',
+			        	  emptyText : 'Blah' 
 			          }
 			          ]
 		});

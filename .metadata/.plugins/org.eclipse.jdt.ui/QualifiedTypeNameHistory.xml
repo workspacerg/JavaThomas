@@ -6,4 +6,5 @@
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Film"/>
 <fullyQualifiedTypeName name="org.esgi.module.contact.Contact"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Participant"/>
 </qualifiedTypeNameHistroy>

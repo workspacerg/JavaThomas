@@ -17,12 +17,9 @@ public class Index extends AbstractAction{
 	@Override
 	public void execute(IContext context) throws Exception {		
 		//Initialisation des paramètres de la vue
-		context.setTitle("Home");
 		context.addCSSDependancy((String)context.getProperties().get("file.css"));
 		if(context.getRequest().getSession().getAttribute("login") != null){
 			List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
-			System.out.println(films.get(0).getParticipants());
-			System.out.println(films.get(0).getEvaluations());
 			context.setAttribute("films", films);
 		}
 	}

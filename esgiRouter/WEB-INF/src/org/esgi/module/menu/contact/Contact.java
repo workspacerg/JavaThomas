@@ -14,7 +14,7 @@ public class Contact extends AbstractAction {
 
 	@Override
 	public String getRoute() {
-		return "/contact";
+		return "/Contact";
 	}
 
 }

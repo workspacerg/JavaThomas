@@ -82,28 +82,11 @@ loadMyLib = function(onloaded){
 						obj = JSON.parse(response);
 
 						if(obj["success"]){
-							//Pour vider avant de commencer
-							/*$("#container").html("");
-							$("#container").append("<h2> Liste des utilisateurs </h2>");
-
-							var table = new Esgi.html.Table({
-								renderTo : "#container",
-								columns : ['nom', 'actions'],
-								itemActions : [{
-									type : 'button',
-									label : 'Supprimer',
-									callback : function(item,idx){deleteUser(item,idx)}
-								}
-								]
-							});
-
-							table.setItems(obj["users"]);*/
 							window.location.reload();
-
 						}
 						else
 						{
-							$("#container").append("<br> Login ou mot de passe incorrect.")
+							$("#errorMsg").html("<br> Login ou mot de passe incorrect.")
 						}
 					}
 
@@ -157,7 +140,7 @@ loadMyLib = function(onloaded){
 		var me = this;
 		me.cfg = cfg;
 		
-		me.el = $("<input placeholder=\"Login\"/>");
+		me.el = $("<input placeholder='"+me.cfg.label+"'/>");
 		this.init();
 
 	}
@@ -167,7 +150,7 @@ loadMyLib = function(onloaded){
 	Esgi.html.inputs.Password = function(cfg){
 		var me = this;
 		me.cfg = cfg;
-		me.el = $("<input type='password' placeholder=\"Password\"/>");
+		me.el = $("<input type='password' placeholder='"+me.cfg.label+"'/>");
 		me.init();
 
 	}
