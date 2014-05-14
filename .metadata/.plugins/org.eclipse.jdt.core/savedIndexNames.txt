@@ -8,7 +8,6 @@ INDEX VERSION 1.126+C:\Users\Rayane\Documents\GitHub\JavaThomas\.metadata\.plugi
 3065916431.index
 3769286168.index
 654904862.index
-3497998351.index
 4134997194.index
 305854171.index
 4165869830.index

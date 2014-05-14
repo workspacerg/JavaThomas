@@ -52,14 +52,6 @@ public class Application {
 			ORM.save(id2);
 
 		//////////////////////////USER//////////////////////////
-		User u = new User();
-		u.id_user = 10;
-		u.nom = "Bourda";
-		u.prenom = "Arnaud";
-		u.identifiant = id;
-		if(ORM.load(User.class, u.id_user, null) == null)
-			ORM.save(u);
-
 		User u2 = new User();
 		u2.id_user = 11;
 		u2.nom = "Rabbit";
