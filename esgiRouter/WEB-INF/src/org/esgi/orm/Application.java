@@ -8,7 +8,6 @@ import java.util.Map;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
 import org.esgi.orm.my.model.Genre;
-import org.esgi.orm.my.model.Identifiant;
 import org.esgi.orm.my.model.Participant;
 import org.esgi.orm.my.model.Realisateur;
 import org.esgi.orm.my.model.Salle;
@@ -25,48 +24,38 @@ public class Application {
 
 		//System.out.println("--------------------TEST----------------------");
 		createBDD_ifNotExist();
-		//ShowDataUsingClass();
-		//ShowDataUsingNoClass();
+		ShowDataUsingClass();
+		ShowDataUsingNoClass();
 	}
 
 	public static void createBDD_ifNotExist()
 	{
-		////////////////////////////IDENTIFIANT//////////////////////////
-
-		//ORM.save(new Participant());
-
-		Identifiant id = new Identifiant();
-		id.id_i = 1;
-		id.login = "Admin";
-		id.password = "azerty";
-
-		if(ORM.load(Identifiant.class, id.id_i, null) == null)
-			ORM.save(id);
-		//ORM.remove(Identifiant.class, id.id_i);
-
-		Identifiant id2 = new Identifiant();
-		id2.id_i = 2;
-		id2.login = "Rog";
-		id2.password = "titi";
-		if(ORM.load(Identifiant.class, id2.id_i, null) == null)
-			ORM.save(id2);
 
 		//////////////////////////USER//////////////////////////
+		User u = new User();
+		u.id_user = 10;
+		u.nom = "Bourda";
+		u.prenom = "Arnaud";
+		u.login = "Admin";
+		u.password = "azerty";
+		ORM.save(u);
+
 		User u2 = new User();
 		u2.id_user = 11;
 		u2.nom = "Rabbit";
 		u2.prenom = "Roger";
-		u2.identifiant = id;
-		if(ORM.load(User.class, u2.id_user, null) == null)
-			ORM.save(u2);
+		u2.login = "DarkAngel64";
+		u2.password = "qerty";
+		ORM.save(u2);
 
 		User u3 = new User();
 		u3.id_user = 12;
 		u3.nom = "Dupont";
 		u3.prenom = "Arnaud";
-		u3.identifiant = id2;
-		if(ORM.load(User.class, u3.id_user, null) == null)
-			ORM.save(u3);
+		u3.login = "Rog";
+		u3.password = "titi";
+		ORM.save(u3);
+
 
 		//////////////////////////REALISATEUR//////////////////////////
 		Realisateur r1 = new Realisateur();

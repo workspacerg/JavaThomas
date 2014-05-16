@@ -21,15 +21,13 @@ public class User {
 
 	public volatile Date connectedAt;
 	
-	@ORM_COMPOSITION
-	@ORM_RELATION("1-1")  // ==> 0-n
-	public Identifiant identifiant = null;
+	public String login;
+	public String password;
 	
-	
-	@Override
 	public String toString() {
 		return "USER[id=" + id_user + ", nom=" + nom + ", prenom=" + prenom
-				+ ", connectedAt=" + connectedAt + ", "+identifiant+"]";
+				+ ", connectedAt=" + connectedAt + ", "+ ", login=" + login + ", "+ ", password=" + password +"]";
 	}
 }
+
 

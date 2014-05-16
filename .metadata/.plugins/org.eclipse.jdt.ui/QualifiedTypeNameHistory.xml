@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.esgi.orm.my.model.Identifiant"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Film"/>
 <fullyQualifiedTypeName name="org.esgi.module.contact.Contact"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Participant"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.User"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Identifiant"/>
 </qualifiedTypeNameHistroy>
