@@ -9,19 +9,35 @@ $(function(){
 			inputs : [
 			          {
 			        	  type : "Text",
-			        	  name : 'login',
-			        	  label : "Blah",
-			        	  emptyText : 'Login' 
-			          },{
-			        	  type : "Password",
-			        	  label : "Password",
-			        	  name : 'password',
-			        	  emptyText : 'Password' 
-			          },{
-			        	  type : "Select",
-			        	  label : "Blah",
-			        	  name : 'select',
-			        	  emptyText : 'Blah' 
+			        	  name : 'sujet',
+			        	  label : "Sujet",
+			        	  emptyText : '' 
+			          },
+			          {
+			        	  type : "Text",
+			        	  name : 'nom',
+			        	  label : "Nom",
+			        	  emptyText : '' 
+			          },
+			          {
+			        	  type : "Text",
+			        	  name : 'prenom',
+			        	  label : "Prenom",
+			        	  emptyText : '' 
+			          },
+			          {
+			        	  type : "Email",
+			        	  name : 'email',
+			        	  label : "nom@mail.fr",
+			        	  emptyText : '' 
+			          },
+			          {
+			        	  type : "Textarea", 
+			        	  name : 'message',
+			        	  label : "Message",
+			        	  emptyText : '',
+			        	  rows : "20",
+			        	  cols : "38"
 			          }
 			          ]
 		});

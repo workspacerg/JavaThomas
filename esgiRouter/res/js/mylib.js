@@ -164,6 +164,24 @@ loadMyLib = function(onloaded){
 
 	}
 	Esgi.html.inputs.Select.prototype = commons;
+	
+	Esgi.html.inputs.Textarea = function(cfg){
+		var me = this;
+		me.cfg = cfg;
+		me.el = $("<textarea rows='"+ me.cfg.rows + "' cols='" +me.cfg.cols+"' placeholder='"+me.cfg.label+"'/>");
+		me.init();
+
+	}
+	Esgi.html.inputs.Textarea.prototype = commons;
+	
+	Esgi.html.inputs.Email = function(cfg){
+		var me = this;
+		me.cfg = cfg;
+		me.el = $("<input type='email' placeholder='"+me.cfg.label+"'/>");
+		me.init();
+
+	}
+	Esgi.html.inputs.Email.prototype = commons;
 
 
 }

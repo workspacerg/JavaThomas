@@ -21,7 +21,7 @@ $context.setTitle("Accueil")
             
             <div class="Film">
 
-                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg);">
+                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg);  background-size: 100%; background-position: 0% 25%; background-repeat:no-repeat;">
 
                 </section>
                 <section class="Box-Doc-Descr">
@@ -41,7 +41,7 @@ $context.setTitle("Accueil")
 
                     <table class="TableFilm">
                     <tr>
-                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px;">
+                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
                           </td>
                       </td>
                       <td class="TableFilm-Descr-Label">Realisateur</td> 

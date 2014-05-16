@@ -6,10 +6,9 @@
 
         <article>
             
-                
                 <div class="Film2">
 
-                <section class="Film-Pic" style="background:url(fond3.jpg);">
+                <section class="Film-Pic" style="background:url(fond3.jpg); width: 10%;">
 
                 </section>
                 <section class="Box-Doc-Descr"> 
