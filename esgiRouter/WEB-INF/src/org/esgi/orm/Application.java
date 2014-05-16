@@ -8,7 +8,6 @@ import java.util.Map;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
 import org.esgi.orm.my.model.Genre;
-import org.esgi.orm.my.model.Identifiant;
 import org.esgi.orm.my.model.Participant;
 import org.esgi.orm.my.model.Realisateur;
 import org.esgi.orm.my.model.Salle;
