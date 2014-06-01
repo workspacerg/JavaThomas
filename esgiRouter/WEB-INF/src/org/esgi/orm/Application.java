@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import org.esgi.module.menu.contact.Contact;
+import org.esgi.orm.my.model.Communicate_with;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
 import org.esgi.orm.my.model.Genre;
@@ -31,6 +33,22 @@ public class Application {
 	public static void createBDD_ifNotExist()
 	{
 
+		Communicate_with c = new Communicate_with();
+		c.id_contact = 1;
+		c.nom = "Bourda";
+		c.prenom = "Arnaud";
+		c.email_address = "toto@rr.fr";
+		c.is_done = 0;
+		ORM.save(c);
+		
+		Communicate_with c1 = new Communicate_with();
+		//c1.id_contact = 10;
+		c1.nom = "toto";
+		c1.prenom = "Bim";
+		c1.email_address = "titi@gmail.com";
+		c1.is_done = 1;
+		ORM.save(c1);
+		
 		//////////////////////////USER//////////////////////////
 		User u = new User();
 		u.id_user = 10;
