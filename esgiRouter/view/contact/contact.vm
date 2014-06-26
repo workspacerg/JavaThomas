@@ -5,5 +5,8 @@ $context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")
 <div id="container">
 </div>
 
-#set ($js = $context.getProperties().get("context")+"/res/js/Module/contact.js")
+<div style="margin-top:30px" id="errorMessage">
+</div>
+
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/Contact.js")
 $context.addJSDependancy($js)

@@ -4,44 +4,50 @@ $(function(){
 
 	Esgi.module.Contact.Form = function (cfg) {
 		new Esgi.html.Form({
-			url : APP_CONTEXT+'/menu/contact/Contact',
+			url : APP_CONTEXT+'/menu/contact/SendContact',
 			renderTo : cfg.id,
 			inputs : [
 			          {
 			        	  type : "Text",
-			        	  name : 'sujet',
-			        	  label : "Sujet",
-			        	  emptyText : '' 
-			          },
-			          {
-			        	  type : "Text",
 			        	  name : 'nom',
 			        	  label : "Nom",
-			        	  emptyText : '' 
+			        	  emptyText : "",
+			        	  required : true
 			          },
 			          {
 			        	  type : "Text",
 			        	  name : 'prenom',
 			        	  label : "Prenom",
-			        	  emptyText : '' 
+			        	  emptyText : "", 
+			        	  required : true
 			          },
 			          {
 			        	  type : "Email",
 			        	  name : 'email',
 			        	  label : "nom@mail.fr",
-			        	  emptyText : '' 
+			        	  emptyText : "",
+			        	  required : true
 			          },
 			          {
 			        	  type : "Textarea", 
-			        	  name : 'message',
-			        	  label : "Message",
-			        	  emptyText : '',
+			        	  name : 'sujet',
+			        	  label : "Sujet",
+			        	  emptyText : "",
 			        	  rows : "20",
-			        	  cols : "38"
+			        	  cols : "38",
+			        	  required : false
 			          }
-			          ]
+			          ],
+			    action: AjaxComplete
 		});
 		
+	}
+	
+	function AjaxComplete(data){
+		if(data["success"])
+			$("#container").html("<h2> Votre message a bien été transmis à notre équipe.</h2>");
+		else
+			$("#errorMessage").html(data["message"]);
 	}
 
 });

@@ -11,16 +11,26 @@ $(function(){
 			        	  type : "Text",
 			        	  name : 'login',
 			        	  label : "Login",
-			        	  emptyText : 'Login' 
+			        	  emptyText : 'Login',
+			        	  required : true
 			          },{
 			        	  type : "Password",
 			        	  label : "Password",
 			        	  name : 'password',
-			        	  emptyText : 'Password' 
+			        	  emptyText : 'Password',
+			        	  required : true
 			          }
-			          ]
+			          ],
+			action : AjaxConnect
 		});
 		
+	}
+	
+	function AjaxConnect(data){
+		if(data["success"])
+			window.location.reload();
+		else
+			$("#errorMessage").html("<h1 style='color:red;'>Login ou mot de passe incorrect.</h1>");		
 	}
 
 });

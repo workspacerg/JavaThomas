@@ -8,4 +8,10 @@
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Participant"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.User"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Identifiant"/>
+<fullyQualifiedTypeName name="org.esgi.module.index.SaveInscription"/>
+<fullyQualifiedTypeName name="org.esgi.module.index.Inscription"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Communicate_with"/>
+<fullyQualifiedTypeName name="org.esgi.orm.ORM"/>
+<fullyQualifiedTypeName name="org.esgi.web.action.IContext"/>
+<fullyQualifiedTypeName name="org.esgi.tools.MapperAjax"/>
 </qualifiedTypeNameHistroy>

@@ -14,10 +14,9 @@ import org.esgi.module.file.FileDelete;
 import org.esgi.module.file.FileDownload;
 import org.esgi.module.file.FileList;
 import org.esgi.module.file.FileUpload;
-import org.esgi.module.index.Index;
-import org.esgi.module.menu.contact.Contact;
-import org.esgi.module.user.Connect;
-import org.esgi.module.user.Delete;
+import org.esgi.module.index.*;
+import org.esgi.module.menu.contact.*;
+import org.esgi.module.user.*;
 import org.esgi.web.action.IAction;
 import org.esgi.web.action.IContext;
 import org.esgi.web.layout.LayoutRenderer;
@@ -68,6 +67,9 @@ public class FrontController extends HttpServlet{
 		registerAction(new Index());
 		registerAction(new Connect());
 		registerAction(new Delete());
+		registerAction(new SaveInscription());
+		registerAction(new Inscription());
+		registerAction(new SendContact());
 
 		layoutRender = new LayoutRenderer();
 

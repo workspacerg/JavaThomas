@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.esgi.orm.ORM;
 import org.esgi.orm.my.model.User;
+import org.esgi.tools.MapperAjax;
 import org.esgi.web.action.AbstractAction;
 import org.esgi.web.action.IContext;
 
@@ -30,13 +31,11 @@ public class Connect extends AbstractAction{
 		mapWhere.put("login",login);
 		mapWhere.put("password", context.getRequest().getParameter("password"));
 		
-		ObjectMapper mapper = new ObjectMapper();
-		StringWriter sw = new StringWriter();
-		Map<String,Object> map = new HashMap<String, Object>();
+		MapperAjax ma = new MapperAjax();
 
 		if(ORM.find(User.class, mapWhere, null, null, null).size() == 1)
 		{
-			map.put("success", true);
+			ma.Add("success", true);
 						
 			HttpSession session = context.getRequest().getSession(true);
 			session.setAttribute("login",login);
@@ -44,10 +43,9 @@ public class Connect extends AbstractAction{
 			context.setAttribute("login", login);
 		}
 		else{		
-			map.put("success", false);
+			ma.Add("success", false);
 		}
 
-		mapper.writeValue(sw, map);
-		context.getResponse().getWriter().print(sw.toString());
+		ma.Write(context);
 	}
 }

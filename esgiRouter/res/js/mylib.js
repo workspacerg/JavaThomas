@@ -15,6 +15,7 @@ loadMyLib = function(onloaded){
 	 **  @cfg.renderTo : Dom css identifier
 	 **  @cfg.url : url to submit form.
 	 **  @cfg.inputs : list of inputs cfg
+	 **  @cfg.action : action to perform at click
 	 */
 
 	global.Esgi.html.Form = function(cfg) {
@@ -31,7 +32,7 @@ loadMyLib = function(onloaded){
 			initInputs : function(){
 				var me = this;
 				me._inputs = {};
-				me.table = $('<table id="connexion" />');
+				me.table = $('<table />');
 				
 				
 				var colgroup = $('<colgroup/>');
@@ -71,23 +72,29 @@ loadMyLib = function(onloaded){
 			},
 			onButtonClick : function(e) {
 				var me = this, data = {};
+				var error = false;
 				$.each(me._inputs, function(key, item) {
+					//alert(item.isEmpty());
+					if(item.isEmpty()){
+						$("#errorMessage").html("<h2 style='color:red'>Veuillez entrer une valeur pour : "+item.getName()+"</h2>");
+						error = true;
+					}
 					data[key] = item.getValue();
 				});
+				
+				if(error){
+					e.preventDefault();
+					return false;
+				}
+							
 				$.ajax({
 					url : me.cfg.url,
 					method : 'POST',
 					data : data,
 					success : function(response) {
 						obj = JSON.parse(response);
-
-						if(obj["success"]){
-							window.location.reload();
-						}
-						else
-						{
-							$("#errorMsg").html("<br> Login ou mot de passe incorrect.")
-						}
+						// Appel de l'action
+						me.cfg.action.call(this,obj);
 					}
 
 				})
@@ -132,6 +139,17 @@ loadMyLib = function(onloaded){
 			},
 			getValue : function(){
 				return $(this.el).val();
+			},
+			isEmpty : function(){
+				if(!this.cfg.required)
+					return false;
+				
+				if($.trim($(this.el).val()) != '')
+					return false;
+				return true;
+			},
+			getName : function(){
+				return this.cfg.name;
 			}
 	}
 
