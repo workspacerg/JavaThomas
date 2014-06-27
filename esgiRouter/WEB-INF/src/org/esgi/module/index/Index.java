@@ -1,4 +1,4 @@
-package org.esgi.module.index;
+﻿package org.esgi.module.index;
 
 import java.io.File;
 import java.io.Writer;
@@ -17,7 +17,7 @@ public class Index extends AbstractAction{
 	@Override
 	public void execute(IContext context) throws Exception {		
 		//Initialisation des paramètres de la vue
-		context.addCSSDependancy((String)context.getProperties().get("file.css"));
+		
 		if(context.getRequest().getSession().getAttribute("login") != null){
 			List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
 			context.setAttribute("films", films);
@@ -26,7 +26,7 @@ public class Index extends AbstractAction{
 	
 	@Override
 	public String getRoute() {
-		return "/";
+		return "^/$";
 	}
 	
 

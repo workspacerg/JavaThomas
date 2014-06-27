@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.esgi.orm.ORM;
 import org.esgi.orm.my.model.User;
+import org.esgi.tools.MapperAjax;
 import org.esgi.web.action.AbstractAction;
 import org.esgi.web.action.IContext;
 
@@ -15,36 +16,33 @@ public class SaveInscription extends AbstractAction {
 
 	@Override
 	public void execute(IContext context) throws Exception {		
-		Map<String,Object> mapWhere = new HashMap<String, Object>();
 		String login = context.getRequest().getParameter("login");
+		Map<String,Object> mapWhere = new HashMap<String, Object>();
 		mapWhere.put("login",login);
 		
-		ObjectMapper mapper = new ObjectMapper();
-		StringWriter sw = new StringWriter();
-		Map<String,Object> map = new HashMap<String, Object>();
-
 		boolean existLogin = ORM.find(User.class,mapWhere,null,null,null).size() > 0;
 		
+		MapperAjax ma = new MapperAjax();
+		
 		if(existLogin){
-			map.put("success", false);
-			map.put("message", "Le login entrÈ Èxiste dÈj‡");
+			ma.Add("success", false);
+			ma.Add("message", "Le login entr√© √©xiste d√©j√†");
 		}
 		else{				
-			User user = new User();  
+			User user = new User();
 			user.nom = context.getRequest().getParameter("nom");
 			user.prenom = context.getRequest().getParameter("prenom");
 			user.login = login;
 			
 			Object saveuser = ORM.save(user);
 			boolean isSave = saveuser != null;
-			map.put("success", isSave);
+			ma.Add("success", isSave);
 			
 			if(!isSave)
-				map.put("message","Enregistrement de votre profil ÈchouÈ.");
+				ma.Add("message","Enregistrement de votre profil √©chou√©.");
 		}
 		
-		mapper.writeValue(sw, map);
-		context.getResponse().getWriter().print(sw.toString());
+		ma.Write(context);
 	}
 	
 	@Override

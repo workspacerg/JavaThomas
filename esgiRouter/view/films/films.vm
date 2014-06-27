@@ -1,4 +1,4 @@
-<div id="Content">   
+﻿<div id="Content">   
 
         <h1>Iron-Man</h1>
 
@@ -23,7 +23,7 @@
                 <table class="TableFilm">
                     <tr>
                       <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(affich.jpg); background-size: 200px;"><img src="affiche3.jpg" height="262" width="200"></td>
-                      <td class="TableFilm-Descr-Label">Realisateur</td> 
+                      <td class="TableFilm-Descr-Label">Réalisateur</td> 
                       <td class="TableFilm-Descr-Label2">:</td>      
                       <td class="TableFilm-Descr-value">Jon Favreau</td>
                       </tr>

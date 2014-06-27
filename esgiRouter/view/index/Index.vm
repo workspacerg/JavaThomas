@@ -8,7 +8,7 @@ $context.setTitle("Accueil")
         <h1>Films</h1>
 
 		#foreach($film in $films)
-		
+				
 		#set($parti = "")
 				
 		#foreach($participant in $film.getParticipants())
@@ -44,7 +44,7 @@ $context.setTitle("Accueil")
                       <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
                           </td>
                       </td>
-                      <td class="TableFilm-Descr-Label">Realisateur</td> 
+                      <td class="TableFilm-Descr-Label">Réalisateur</td> 
                       <td class="TableFilm-Descr-Label2">:</td>      
                       <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
                       </tr>

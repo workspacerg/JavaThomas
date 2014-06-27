@@ -1,10 +1,10 @@
-$(function(){
+﻿$(function(){
 	Esgi.module = Esgi.module || {}
 	Esgi.module.Contact = Esgi.module.Contact || {}
 
 	Esgi.module.Contact.Form = function (cfg) {
 		new Esgi.html.Form({
-			url : APP_CONTEXT+'/menu/contact/SendContact',
+			url : APP_CONTEXT+'/Contact/SendContact',
 			renderTo : cfg.id,
 			inputs : [
 			          {
@@ -17,14 +17,14 @@ $(function(){
 			          {
 			        	  type : "Text",
 			        	  name : 'prenom',
-			        	  label : "Prenom",
+			        	  label : "Prénom",
 			        	  emptyText : "", 
 			        	  required : true
 			          },
 			          {
 			        	  type : "Email",
 			        	  name : 'email',
-			        	  label : "nom@mail.fr",
+			        	  label : "Adresse e-mail",
 			        	  emptyText : "",
 			        	  required : true
 			          },
@@ -33,8 +33,8 @@ $(function(){
 			        	  name : 'sujet',
 			        	  label : "Sujet",
 			        	  emptyText : "",
-			        	  rows : "20",
-			        	  cols : "38",
+			        	  rows : "15",
+			        	  cols : "35",
 			        	  required : false
 			          }
 			          ],
@@ -44,8 +44,10 @@ $(function(){
 	}
 	
 	function AjaxComplete(data){
-		if(data["success"])
-			$("#container").html("<h2> Votre message a bien été transmis à notre équipe.</h2>");
+		if(data["success"]){
+			$("#container").html("<h2> Votre message a bien été transmis à  notre équipe.</h2>");
+			$("#container").append("<a href=\" /esgiRouter \">Retour à  l'accueil</a>");
+		}
 		else
 			$("#errorMessage").html(data["message"]);
 	}

@@ -70,6 +70,7 @@ public class FrontController extends HttpServlet{
 		registerAction(new SaveInscription());
 		registerAction(new Inscription());
 		registerAction(new SendContact());
+		registerAction(new Logout());
 
 		layoutRender = new LayoutRenderer();
 

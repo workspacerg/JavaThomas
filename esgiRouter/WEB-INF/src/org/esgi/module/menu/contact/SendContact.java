@@ -13,13 +13,13 @@ public class SendContact extends AbstractAction {
 	@Override
 	public void execute(IContext context) throws Exception {
 		String nom = context.getRequest().getParameter("nom");
-		String prénom = context.getRequest().getParameter("prenom");
+		String prenom = context.getRequest().getParameter("prenom");
 		String sujet = context.getRequest().getParameter("sujet");
 		String mail = context.getRequest().getParameter("email");
 		
 		Communicate_with cw = new Communicate_with();
 		cw.nom = nom;
-		cw.prenom = prénom;
+		cw.prenom = prenom;
 		cw.email_address = mail;
 		cw.subject = sujet;
 		cw.is_done = 0;
@@ -32,14 +32,14 @@ public class SendContact extends AbstractAction {
 		ma.Add("success", isSave);
 		
 		if(!isSave)
-			ma.Add("message", "Une erreur a été rencontré pendant la sauvegarde de votre message.");
+			ma.Add("message", "Une erreur a Ã©tÃ© rencontrÃ© pendant la sauvegarde de votre message.");
 		
 		ma.Write(context);
 	}
 
 	@Override
 	public String getRoute() {
-		return "/menu/contact/SendContact";
+		return "/Contact/SendContact";
 	}
 	@Override
 	public String getLayout() {

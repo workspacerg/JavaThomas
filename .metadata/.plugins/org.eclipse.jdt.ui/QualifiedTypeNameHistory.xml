@@ -14,4 +14,6 @@
 <fullyQualifiedTypeName name="org.esgi.orm.ORM"/>
 <fullyQualifiedTypeName name="org.esgi.web.action.IContext"/>
 <fullyQualifiedTypeName name="org.esgi.tools.MapperAjax"/>
+<fullyQualifiedTypeName name="java.lang.ProcessBuilder.Redirect"/>
+<fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Redirect"/>
 </qualifiedTypeNameHistroy>

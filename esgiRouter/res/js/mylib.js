@@ -1,4 +1,4 @@
-
+﻿
 
 var global = this,
 loadMyLib = function(onloaded){
@@ -15,7 +15,7 @@ loadMyLib = function(onloaded){
 	 **  @cfg.renderTo : Dom css identifier
 	 **  @cfg.url : url to submit form.
 	 **  @cfg.inputs : list of inputs cfg
-	 **  @cfg.action : action to perform at click
+	 **  @cfg.action : action to perform on click
 	 */
 
 	global.Esgi.html.Form = function(cfg) {
@@ -72,12 +72,20 @@ loadMyLib = function(onloaded){
 			},
 			onButtonClick : function(e) {
 				var me = this, data = {};
+				if(!$(this.el)[0].checkValidity()){
+					$(this.el)[0].removeClass('success').addClass('error');
+					e.preventDefault();
+					return false;
+				}
+				
+				//$(this.el)[0].removeClass('error').addClass('success');
+				
 				var error = false;
 				$.each(me._inputs, function(key, item) {
-					//alert(item.isEmpty());
 					if(item.isEmpty()){
 						$("#errorMessage").html("<h2 style='color:red'>Veuillez entrer une valeur pour : "+item.getName()+"</h2>");
 						error = true;
+						return false;
 					}
 					data[key] = item.getValue();
 				});
@@ -157,7 +165,6 @@ loadMyLib = function(onloaded){
 	Esgi.html.inputs.Text = function(cfg){
 		var me = this;
 		me.cfg = cfg;
-		
 		me.el = $("<input placeholder='"+me.cfg.label+"'/>");
 		this.init();
 
@@ -195,7 +202,7 @@ loadMyLib = function(onloaded){
 	Esgi.html.inputs.Email = function(cfg){
 		var me = this;
 		me.cfg = cfg;
-		me.el = $("<input type='email' placeholder='"+me.cfg.label+"'/>");
+		me.el = $("<input type='email' name='"+me.cfg.label+"' placeholder='"+me.cfg.label+"'/>");
 		me.init();
 
 	}

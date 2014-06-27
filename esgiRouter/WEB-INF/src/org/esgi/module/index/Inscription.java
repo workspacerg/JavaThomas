@@ -6,12 +6,12 @@ import org.esgi.web.action.IContext;
 public class Inscription extends AbstractAction {
 	@Override
 	public void execute(IContext context) throws Exception {		
-		
+		context.setTitle("Inscription");
 	}
 	
 	@Override
 	public String getRoute() {
-		return "/Register$";
+		return "^/Register$";
 	}
 
 }

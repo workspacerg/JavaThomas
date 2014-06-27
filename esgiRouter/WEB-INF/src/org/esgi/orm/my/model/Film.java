@@ -1,4 +1,4 @@
-package org.esgi.orm.my.model;
+﻿package org.esgi.orm.my.model;
 
 import java.util.Date;
 import java.util.List;

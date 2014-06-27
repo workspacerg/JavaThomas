@@ -3853,3 +3853,933 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:35.800
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:35.874
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:35.900
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:149)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$3.run(SelectionListenerWithASTManager.java:134)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:35.971
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:149)
+	at org.eclipse.wst.jsdt.internal.ui.viewsupport.SelectionListenerWithASTManager$3.run(SelectionListenerWithASTManager.java:134)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:35.995
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:35.997
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:497)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.033
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.034
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.063
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.064
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.088
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.090
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.115
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.116
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.139
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.141
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.165
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.167
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.190
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.191
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.214
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.215
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.237
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.238
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.260
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.262
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 2 2014-06-26 21:18:36.285
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.wst.jsdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.wst.jsdt.ui 4 0 2014-06-26 21:18:36.286
+!MESSAGE Error in JSDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.wst.jsdt.core.dom.ASTNode.setSourceRange(ASTNode.java:2490)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1023)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1487)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:738)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1424)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationFragment(ASTConverter.java:2644)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convertToVariableDeclarationStatement(ASTConverter.java:2669)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.checkAndAddMultipleLocalDeclaration(ASTConverter.java:318)
+	at org.eclipse.wst.jsdt.core.dom.ASTConverter.convert(ASTConverter.java:1149)
+	at org.eclipse.wst.jsdt.core.dom.JavaScriptUnitResolver.convert(JavaScriptUnitResolver.java:303)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:887)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:647)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider$1.run(ASTProvider.java:581)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.createAST(ASTProvider.java:574)
+	at org.eclipse.wst.jsdt.internal.ui.javaeditor.ASTProvider.getAST(ASTProvider.java:509)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:146)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:126)
+	at org.eclipse.wst.jsdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:221)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:269)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SESSION 2014-06-27 12:20:01.670 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_09
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-06-27 12:20:41.403
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-06-27 12:20:41.428
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Rayane'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2014-06-27 20:37:28.881 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_09
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-06-27 20:38:28.739
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-06-27 20:38:28.764
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Rayane'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

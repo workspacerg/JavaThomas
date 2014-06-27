@@ -63,10 +63,15 @@ public class LayoutRenderer {
 					e.printStackTrace();
 				}
 			
-			if(context.getRequest().getSession().getAttribute("login")==null && current)
+			if(context.getRequest().getSession().getAttribute("login")==null && current && (!action.getRoute().equals("^/Register$") && !action.getRoute().equals("^/Contact$")))
 				nameVelocity = "index/connexion";
+
+			context.addCSSDependancy((String)context.getProperties().get("file.css"));
+			//context.getResponse().setContentType("text/html;charset=UTF-8");
 			
 			File tpl = new File(tplRepo, nameVelocity+".vm");
+			//System.out.println(tpl.getPath());
+			System.out.println(context.getResponse().getContentType());
 			System.out.println(tpl.getPath());
 			VelocityContext contextv = new VelocityContext();
 			contextv.put("context", context);
