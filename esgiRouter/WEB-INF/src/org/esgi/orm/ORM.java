@@ -113,7 +113,12 @@ public class ORM implements IORM {
 
 				String value;
 				if(o.getClass().getField(name).get(o) != null)
-					value =  o.getClass().getField(name).get(o).toString();
+					{
+						value =  o.getClass().getField(name).get(o).toString();
+					
+						if(type.toString().equals(Boolean.class.getSimpleName()))
+							value = value.equalsIgnoreCase("true")?"1": "0";
+					}
 				else
 					value = null;
 				//System.out.println(name+" = "+value);
@@ -276,10 +281,20 @@ public class ORM implements IORM {
 
 				else if(type.getCanonicalName().toString().equals(String.class.getName()))
 					field.set(myObject, (value));
-
+				
 				else if(type.getSimpleName().toString().equals(Date.class.getSimpleName()))
-					continue;
-				//field.set(myObject, (Date.valueOf(value)));
+					{
+						if(value == null)
+							field.set(myObject, null);
+						else
+							field.set(myObject, ( java.sql.Date.valueOf(value)));
+					}
+
+				else if(type.getSimpleName().toString().equals(Boolean.class.getSimpleName()))
+				{
+					Boolean convert = value.equals("1")?true: false ;
+					field.set(myObject, (convert));
+				}
 
 				else if(containsAnotations(field.getAnnotations(), "ORM_COMPOSITION"))
 				{

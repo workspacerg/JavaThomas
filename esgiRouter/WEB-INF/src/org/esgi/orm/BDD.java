@@ -52,10 +52,10 @@ public class BDD
 		catch (SQLException exp) {
 			try {
 				String url_src = "jdbc:mysql://localhost/";
-				this.maconnexion = DriverManager.getConnection(url_src, "root", "root");
+				this.maconnexion = DriverManager.getConnection(url_src, "root", "");
 				CreationBase();
 				System.out.println( "Creation de la base reussi" );
-				this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
+				this.maconnexion = DriverManager.getConnection(url_base, "root", "");
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -112,7 +112,7 @@ public class BDD
 		{
 			System.out.println(e);
 			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
-			System.out.println("Problème d'insertion : "+sql);
+			System.out.println("Problème d'insertion : "+sql+"\n");
 			return;
 		}
 	}

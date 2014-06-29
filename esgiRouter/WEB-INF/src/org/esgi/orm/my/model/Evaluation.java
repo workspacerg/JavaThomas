@@ -1,5 +1,7 @@
 package org.esgi.orm.my.model;
 
+import java.sql.Date;
+
 import org.esgi.orm.my.annotations.ORM_COMPOSITION;
 import org.esgi.orm.my.annotations.ORM_PK;
 import org.esgi.orm.my.annotations.ORM_RELATION;
@@ -14,6 +16,7 @@ public class Evaluation {
 	@ORM_PK
 	public Integer id_evaluation;
 	public Integer note;
+	public java.sql.Date date;
 	public String commentaire;
 	
 	@ORM_COMPOSITION
@@ -32,15 +35,7 @@ public class Evaluation {
 		return commentaire;
 	}
 	
-	public User getUser(){
-		return user;
-	}
-	
-	public Film getFilm(){
-		return film;
-	}
-	
 	public String toString() {
-		return " EVALUATION[id_evaluation=" + id_evaluation + ", note=" + note + ", commentaire=" + commentaire + ", " + user + film +"]";
+		return " EVALUATION[id_evaluation=" + id_evaluation + ", note=" + note + ", date=" + date + ", commentaire=" + commentaire + ", " + user + film +"]";
 	}
 }
