@@ -35,7 +35,7 @@
 
 
 <body>
-#set ($login = $context.getRequest().getSession(true).getAttribute("login"))
+#set ($login = $context.getRequest().getSession().getAttribute("login"))
   $context.getFragment("shared/MainHeader")
   $context.getFragment("__CURRENT__")
 #if ($login)

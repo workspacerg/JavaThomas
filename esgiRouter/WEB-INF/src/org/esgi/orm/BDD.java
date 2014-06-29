@@ -46,7 +46,7 @@ public class BDD
 	{
 		String url_base = "jdbc:mysql://localhost/"+bdd_cible;
 		try {
-			this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
+			this.maconnexion = DriverManager.getConnection(url_base, "root", "");
 			System.out.println( "Chargement de la base reussi" );
 		}
 		catch (SQLException exp) {

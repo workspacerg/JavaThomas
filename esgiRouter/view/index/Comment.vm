@@ -34,6 +34,8 @@
 	                     #end
                      </div>
                      
+                     <input type="hidden" name="login" id="login" value="$context."/>
+                     
                     <table style="margin-left:35%;margin-top:5%;margin-bottom:10%">
 	                    <tr>
 	                    	<td colspan="2">

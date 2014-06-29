@@ -27,6 +27,7 @@ public class Comment extends AbstractAction{
 
 	@Override
 	public void execute(IContext context) throws Exception {
+		context.setTitle("Commentaires");
 		String path = context.getRequest().getPathInfo();
 		int idx = path.lastIndexOf("/")+1;
 		int filmIdx = Integer.parseInt(path.substring(idx));
@@ -38,7 +39,8 @@ public class Comment extends AbstractAction{
 		context.setAttribute("evaluations", evals);
 		if(evals.size() > 0){
 			context.setAttribute("film", evals.get(0).film);
-			context.setAttribute("average", getAverage(evals));
+			context.setAttribute("average", Math.round(getAverage(evals)));
+			context.setTitle("Commentaires : "+evals.get(0).film.titre);
 		}
 	}
 	

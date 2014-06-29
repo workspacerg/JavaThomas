@@ -26,6 +26,7 @@ public class MovieDetail extends AbstractAction{
 
 	@Override
 	public void execute(IContext context) throws Exception {
+		context.setTitle("Description film");
 		String path = context.getRequest().getPathInfo();
 		int idx = path.lastIndexOf("/")+1;
 		int filmIdx = Integer.parseInt(path.substring(idx));
@@ -35,8 +36,8 @@ public class MovieDetail extends AbstractAction{
 		
 		List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, mapWhere,null,null,null);
 		if(films != null && films.size() == 1){
-			System.out.println(films.get(0).getSeancesTomorrow().size());
 			context.setAttribute("film", films.get(0));
+			context.setTitle("Description film : "+films.get(0).titre);
 		}
 	}
 }
