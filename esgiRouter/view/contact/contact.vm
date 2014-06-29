@@ -4,12 +4,12 @@
 <div id="Content">   
 <h1> Contact </h1>
 </div>
-<div id="container">
+<div id="container" style="top: 35%">
 
 </div>
 
 
 
-#set ($js = $context.getProperties().get("context")+"/res/js/Module/Contact.js")
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/contact.js")
 $context.addJSDependancy($js)
 $context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")
