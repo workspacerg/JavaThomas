@@ -21,10 +21,7 @@ public class Application {
 	public static void main(String[] args) 
 	{
 		//System.out.println(Arrays.toString(User.class.getAnnotations()));
-
-
-
-		//System.out.println("--------------------TEST----------------------");
+		
 		createBDD_ifNotExist();
 		ShowDataUsingClass();
 		ShowDataUsingNoClass();
@@ -107,6 +104,7 @@ public class Application {
 		Film f1 = new Film();
 		f1.id_film = 1;
 		f1.titre = "Jurassic Park";
+		f1.estAffiche = false;
 		f1.realisateur = r1;
 		f1.genre = g1;
 		f1.description = "John Parker Hammond, le PDG de la puissante compagnie InGen, parvient à donner vie à des dinosaures grâce au clonage et décide de les utiliser dans le cadre d’un parc d'attractions qu’il compte ouvrir sur une île. Avant l'ouverture, il fait visiter le parc à un groupe d'experts pour obtenir leur aval. Pendant la visite, une tempête éclate et un informaticien corrompu par une entreprise rivale en profite pour couper les systèmes de sécurité afin de voler des embryons de dinosaures. En l'absence de tout système de sécurité pendant plusieurs heures,les dinosaures s'échappent sans mal, mais le cauchemar des visiteurs ne fait que commencer...";
@@ -116,6 +114,7 @@ public class Application {
 		Film f2 = new Film();
 		f2.id_film = 2;
 		f2.titre = "Star wars : episode 1";
+		f2.estAffiche = true;
 		f2.description = "La galaxie est gérée sous la forme d'une République galactique, par le Sénat galactique qui regroupe les représentants des différentes entités appartenant à la République et dont le siège se situe sur la planète Coruscant. La République existe depuis plus de 25 000 ans, dont mille pendant lesquels elle a fonctionné sous cette forme sans crise majeure.\n\nLes chevaliers Jedi, détenteurs d'un pouvoir mystique grâce à la Force, sont les gardiens de la paix et de la justice à travers la galaxie.";
 		f2.realisateur = r2;
 		f2.genre = g2;
@@ -156,6 +155,7 @@ public class Application {
 		Evaluation e1 = new Evaluation();
 		e1.id_evaluation = 1;
 		e1.note = 15;
+		e1.date = java.sql.Date.valueOf("2014-03-22");
 		e1.commentaire = "Ce film est trés bien realisé";
 		e1.film = f1;
 		e1.user = u2;
@@ -165,6 +165,7 @@ public class Application {
 		Evaluation e2 = new Evaluation();
 		e2.id_evaluation = 2;
 		e2.note = 8;
+		e2.date = java.sql.Date.valueOf("2014-02-14");
 		e2.commentaire = "Ce film n'est pas du tout réaliste";
 		e2.film = f1;
 		e2.user = u3;
@@ -174,6 +175,7 @@ public class Application {
 		Evaluation e3 = new Evaluation();
 		e3.id_evaluation = 3;
 		e3.note = 17;
+		e3.date = java.sql.Date.valueOf("2014-05-24");
 		e3.commentaire = "Trés bon film";
 		e3.film = f2;
 		e3.user = u2;
@@ -205,6 +207,7 @@ public class Application {
 		se1.version = "VF";
 		se1.salle = s2;
 		se1.film = f1;
+		se1.weekEnd = false;
 		if(ORM.load(Seance.class, se1.id_seance, null) == null)
 			ORM.save(se1);
 
@@ -216,6 +219,7 @@ public class Application {
 		se2.version = "VO";
 		se2.salle = s1;
 		se2.film = f1;
+		se2.weekEnd = true;
 		if(ORM.load(Seance.class, se2.id_seance, null) == null)
 			ORM.save(se2);
 
