@@ -25,41 +25,42 @@
                 <section class="Film-Doc">
                     <table id="TabFilm-Doc">
                         <tr>                               
-                            <td style="text-align: center; padding-right: 20px;"><div id="clickSeance" style="cursor:pointer;"><b>-->Voir les séances<--</b></div></td>
+                            <td style="text-align: center; padding-right: 20px; background-color: #FF9500;padding: 9px; color: white; text-decoration: none;"><div id="clickSeance" style="cursor:pointer;"><b>Voir les sÃ©ances</b></div></td>
                         </tr>
                     </table>
                 </section>
 				
 		        <div id="seanceDiv" style="display:none">
-                	<table style="margin-left:40%">
-                		<tr> <td>Aujourd'hui : </td>
+                	<table style="margin: auto">
+                		<tr> 
+                		<td style="color:#FF9500">Aujourd'hui : </td>
                 			#set ($today = $film.getSeancesToday())
                 			#if($today.size()>0) 
 	                			#foreach($seance in $today)
-	                				<td><b style="color:red">$seance.getHeure() ($seance.getVersion()) | </b></td>
+	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
 	                			#end
 	                		#else
-	                			<td><b style="color:red">Aucune séance</b></td>
+	                			<td><b>Aucune sÃ©ance</b></td>
                 			#end
                 		</tr>
-                		<tr> <td>Demain : </td>
+                		<tr> <td style="color:#FF9500">Demain : </td>
                 			#set ($tomorrow = $film.getSeancesTomorrow())
                 			#if($tomorrow.size()>0) 
 	                			#foreach($seance in $tomorrow)
-	                				<td><b style="color:red">$seance.getHeure() ($seance.getVersion()) | </b></td>
+	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
 	                			#end
 	                		#else
-	                			<td><b style="color:red">Aucune séance</b></td>
+	                			<td><b>Aucune sÃ©ance</b></td>
                 			#end
                 		</tr>
                 	</table>
                 </div>
-                    <table class="TableFilm">
+                    <table class="TableFilm detailFilmContent">
                     <tr>
                       <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
                           </td>
                       </td>
-                      <td class="TableFilm-Descr-Label">Réalisateur</td> 
+                      <td class="TableFilm-Descr-Label">RÃ©alisateur</td> 
                       <td class="TableFilm-Descr-Label2">:</td>      
                       <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
                       </tr>
@@ -75,10 +76,11 @@
                       <td class="TableFilm-Descr-value">$film.getDescription()</td>
                     </tr>
                     <tr>
-                    	<td style="text-align: right"><a href="/esgiRouter/Comment/$film.getId()">$film.getEvaluations().size() Commentaires<a></td>
+                    <td></td>
+                    <td></td>
+                    	<td style="text-align: right;"><a href="/esgiRouter/Comment/$film.getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">$film.getEvaluations().size() Commentaires<a></td>
                     </tr>
                     </table>
-               
 
         </article>
         

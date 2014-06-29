@@ -194,6 +194,34 @@ footer{
 
 }
 
+.detailFilmContent{
+	
+	background-color: white;
+	width: 80%;
+	margin: auto;
+	padding: 20px;
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	border-top: 4px solid #61D7A4 ; /*Vert claire*/
+	color: black;
+	margin-bottom: 50px;
+	
+}
+
+#seanceDiv{
+	
+	background-color: white;
+	width: 50%;
+	margin: auto;
+	padding: 10px;
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	border-top: 4px solid #61D7A4 ; /*Vert claire*/
+	color: black;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	
+}
+
+
 
 
 /*---------------------------------------------------------------*/
@@ -326,29 +354,30 @@ footer{
 }
 
 #errorMessage{
-	position: absolute;
-	top: 70px;
-	left: 20px;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 	width: 352px;
 	background-color: white;
 	border-left: 4px solid #61D7A4 ; /*Vert claire*/
 	border-top: 4px solid #61D7A4 ; /*Vert claire*/
     visibility: hidden;
+    text-align:center;
 }
 
 #errorMessage h2{
 	font-size: 1.3em;
 	font-family: 'Dancing Script', 'cursive';
-	padding-left: 10px;
+	
 	color: A8383B;
 }
 
 @-webkit-keyframes notificationError {
-    0%   {top: -100px;}
-    100% {top: 70px;}
+    0%   {bottom: -100px;}
+    100% {bottom: 20px;}
 }
 
 @keyframes notificationError {
-    0%   {top: -100px;}
-    100% {top: 70px;}
+    0%   {bottom: -100px;}
+    100% {bottom: 20px;}
 }
