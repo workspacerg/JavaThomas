@@ -6,7 +6,7 @@
 	<div id="Content">   
 
 		#if($avg)
-			<h1>Commentaires et notes : $film.getTitre() <b style="color:red">($avg)</b></h1>
+			<h1>Commentaires et notes : $film.getTitre() <b style="color: #FF9500">($avg)</b></h1>
 		#else
         	<h1>Commentaires et notes : $film.getTitre()</h1>
         #end
@@ -14,40 +14,46 @@
 		<article>
             
 
-                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg); margin-left:15%; background-size: 70%; background-position: 0% 25%; background-repeat:no-repeat;">
+                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg); width: 70%; margin-left:15%; background-position: 0% 25%; background-repeat:no-repeat; ">
 
                 </section>
 					
 					<div id="comments">
 	                    #foreach($evaluation in $evaluations)
-		                    <div style="background-color:gray; width:60%;margin-left:20%;margin-top:2%;">
-			                     <table style="width:100%;color:white;border:1px solid black;">
-				                    <tr>
-				                    	<td style="color:red"><b><u> $evaluation.getUser().getLogin()</u></b> </td>
+		                    <div class="comment">
+			                     <table style="">
+				                    <tr class="ligne1">
+				                    	<td class="login"><b> $evaluation.getUser().getLogin()</b></td>
+				                    	<td colspan="7" style="text-align:right;color: #FF9500"> $evaluation.getNote()/20 </td>
 				                    </tr>
 				                    <tr>
-				                        <td  colspan="7" rowspan="4" style="padding-left:5%;">$evaluation.getCommentaire()</td>
-				                        <td style="text-align:right;color:red"><b> $evaluation.getNote()/20! </b></td>
+				                        <td  colspan="7" rowspan="4" style="padding-left:10px; padding: 20px; border-top: 2px solid #61D7A4">$evaluation.getCommentaire()</td>
 				                     </tr>
 				                  </table>
 			                 </div>
 	                     #end
+	                     
                      </div>
                      
                      <input type="hidden" name="login" id="login" value="$context."/>
                      
-                    <table style="margin-left:35%;margin-top:5%;margin-bottom:10%">
+                    <table class="formCom" >
 	                    <tr>
-	                    	<td colspan="2">
-	               				<textarea rows="6" cols="50" name="commentPlace" id="commentPlace" placeholder="Ajouter un commentaire"></textarea>
+	                    	<td colspan="2" style="text-align:center;font-family: 'Dancing Script', 'cursive'; color:#FF9500">
+	               				<h1>Donnez votre avie ! </h1>
+	               			</td>
+	               		</tr>
+	                    <tr>
+	                    	<td colspan="2" style="margin: auto;">
+	               				<textarea style="padding : 10px;" rows="6" cols="100" name="commentPlace" id="commentPlace" placeholder="Ajouter un commentaire"></textarea>
 	               			</td>
 	               		</tr>
 	               		<tr>
 	               			<td>
-	               			Quelle note attribuez vous à ce film ?
+	               			Quelle note attribuez vous ï¿½ ce film ?
 	               			</td>
-	               			<td>
-	               				<input style="width:3em" name="note" id="note" type="number" step="1" value="0" min="0" max="20">
+	               			<td style="text-align: right;" >
+	               				<input style="width:5em; height:2.6em; text-align: center;" name="note" id="note" type="number" step="1" value="0" min="0" max="20">
 	               			</td>
 	               		</tr>
 	               		<tr>
