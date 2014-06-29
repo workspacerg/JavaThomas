@@ -9,7 +9,7 @@ public class Profil extends AbstractAction {
 
 	@Override
 	public void execute(IContext context) throws Exception {
-		context.setTitle("Contact");
+		context.setTitle("Profil");
 	}
 
 	@Override
