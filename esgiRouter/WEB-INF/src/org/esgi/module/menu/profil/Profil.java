@@ -14,7 +14,7 @@ public class Profil extends AbstractAction {
 
 	@Override
 	public String getRoute() {
-		return "^/Contact(?:/)?$";
+		return "^/Profil(?:/)?$";
 	}
 
 }

@@ -40,7 +40,7 @@
                     <table class="formCom" >
 	                    <tr>
 	                    	<td colspan="2" style="text-align:center;font-family: 'Dancing Script', 'cursive'; color:#FF9500">
-	               				<h1>Donnez votre avie ! </h1>
+	               				<h1>Donnez votre avis ! </h1>
 	               			</td>
 	               		</tr>
 	                    <tr>
@@ -50,7 +50,7 @@
 	               		</tr>
 	               		<tr>
 	               			<td>
-	               			Quelle note attribuez vous ï¿½ ce film ?
+	               			Quelle note attribuez vous à ce film ?
 	               			</td>
 	               			<td style="text-align: right;" >
 	               				<input style="width:5em; height:2.6em; text-align: center;" name="note" id="note" type="number" step="1" value="0" min="0" max="20">
