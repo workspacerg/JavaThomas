@@ -83,7 +83,11 @@ loadMyLib = function(onloaded){
 				var error = false;
 				$.each(me._inputs, function(key, item) {
 					if(item.isEmpty()){
-						$("#errorMessage").html("<h2 style='color:red'>Veuillez entrer une valeur pour : "+item.getName()+"</h2>");
+						var message = $("#errorMessage");
+						message.css("visibility","visible");
+						message.css("-webkit-animation","notificationError 1s");
+						message.css("animation","notificationError 1s");
+						$("#errorMessage").html("<h2>Veuillez entrer une valeur pour : "+item.getName()+"</h2>");
 						error = true;
 						return false;
 					}

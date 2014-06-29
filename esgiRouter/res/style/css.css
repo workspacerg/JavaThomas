@@ -324,3 +324,31 @@ footer{
 	background-color: white ; /*Vert claire*/
 	color: 61D7A4;
 }
+
+#errorMessage{
+	position: absolute;
+	top: 70px;
+	left: 20px;
+	width: 352px;
+	background-color: white;
+	border-left: 4px solid #61D7A4 ; /*Vert claire*/
+	border-top: 4px solid #61D7A4 ; /*Vert claire*/
+    visibility: hidden;
+}
+
+#errorMessage h2{
+	font-size: 1.3em;
+	font-family: 'Dancing Script', 'cursive';
+	padding-left: 10px;
+	color: A8383B;
+}
+
+@-webkit-keyframes notificationError {
+    0%   {top: -100px;}
+    100% {top: 70px;}
+}
+
+@keyframes notificationError {
+    0%   {top: -100px;}
+    100% {top: 70px;}
+}

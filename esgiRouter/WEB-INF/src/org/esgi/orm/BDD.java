@@ -46,16 +46,16 @@ public class BDD
 	{
 		String url_base = "jdbc:mysql://localhost/"+bdd_cible;
 		try {
-			this.maconnexion = DriverManager.getConnection(url_base, "root", "");
+			this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
 			System.out.println( "Chargement de la base reussi" );
 		}
 		catch (SQLException exp) {
 			try {
 				String url_src = "jdbc:mysql://localhost/";
-				this.maconnexion = DriverManager.getConnection(url_src, "root", "");
+				this.maconnexion = DriverManager.getConnection(url_src, "root", "root");
 				CreationBase();
 				System.out.println( "Creation de la base reussi" );
-				this.maconnexion = DriverManager.getConnection(url_base, "root", "");
+				this.maconnexion = DriverManager.getConnection(url_base, "root", "root");
 
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
