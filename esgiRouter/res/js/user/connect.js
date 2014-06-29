@@ -33,8 +33,14 @@ $(function(){
 			else
 				window.location.reload();
 		}
-		else
-			$("#errorMessage").html("<h1 style='color:red;'>Login ou mot de passe incorrect.</h1>");		
+		else{
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
+			$("#errorMessage").html("<h2>Login ou mot de passe incorrect.</h2>");		
+		}
+			
 	}
 
 });
