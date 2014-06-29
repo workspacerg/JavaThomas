@@ -32,6 +32,14 @@ public class Evaluation {
 		return commentaire;
 	}
 	
+	public User getUser(){
+		return user;
+	}
+	
+	public Film getFilm(){
+		return film;
+	}
+	
 	public String toString() {
 		return " EVALUATION[id_evaluation=" + id_evaluation + ", note=" + note + ", commentaire=" + commentaire + ", " + user + film +"]";
 	}

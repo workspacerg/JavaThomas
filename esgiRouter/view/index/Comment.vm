@@ -1,0 +1,71 @@
+#set ($evaluations = $context.getAttribute("evaluations"))
+#set ($film = $context.getAttribute("film"))
+#set ($avg = $context.getAttribute("average"))
+
+
+	<div id="Content">   
+
+		#if($avg)
+			<h1>Commentaires et notes : $film.getTitre() <b style="color:red">($avg)</b></h1>
+		#else
+        	<h1>Commentaires et notes : $film.getTitre()</h1>
+        #end
+		
+		<article>
+            
+
+                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg); margin-left:15%; background-size: 70%; background-position: 0% 25%; background-repeat:no-repeat;">
+
+                </section>
+					
+					<div id="comments">
+	                    #foreach($evaluation in $evaluations)
+		                    <div style="background-color:gray; width:60%;margin-left:20%;margin-top:2%;">
+			                     <table style="width:100%;color:white;border:1px solid black;">
+				                    <tr>
+				                    	<td style="color:red"><b><u> $evaluation.getUser().getLogin()</u></b> </td>
+				                    </tr>
+				                    <tr>
+				                        <td  colspan="7" rowspan="4" style="padding-left:5%;">$evaluation.getCommentaire()</td>
+				                        <td style="text-align:right;color:red"><b> $evaluation.getNote()/20! </b></td>
+				                     </tr>
+				                  </table>
+			                 </div>
+	                     #end
+                     </div>
+                     
+                    <table style="margin-left:35%;margin-top:5%;margin-bottom:10%">
+	                    <tr>
+	                    	<td colspan="2">
+	               				<textarea rows="6" cols="50" name="commentPlace" id="commentPlace" placeholder="Ajouter un commentaire"></textarea>
+	               			</td>
+	               		</tr>
+	               		<tr>
+	               			<td>
+	               			Quelle note attribuez vous à ce film ?
+	               			</td>
+	               			<td>
+	               				<input style="width:3em" name="note" id="note" type="number" step="1" value="0" min="0" max="20">
+	               			</td>
+	               		</tr>
+	               		<tr>
+	               			<td colspan="2" style="text-align:center">
+	               				<input type="submit" name="validComment" id="validComment" value="Envoyer">
+	               			</td>
+	               		</tr>
+               		</table>
+               		
+               		<input type="hidden" name="idfilm" id="idfilm" value="$film.getId()"/>
+
+        </article>
+        
+        
+        
+        
+     </div>
+     <div id="errorMessage">
+     </div>  
+ 
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/Comment.js")
+$context.addJSDependancy($js)  
+

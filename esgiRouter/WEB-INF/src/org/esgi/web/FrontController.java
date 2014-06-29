@@ -66,10 +66,14 @@ public class FrontController extends HttpServlet{
 		registerAction(new Contact());
 		registerAction(new Index());
 		registerAction(new Connect());
+		registerAction(new Connexion());
 		registerAction(new Delete());
 		registerAction(new SaveInscription());
 		registerAction(new Inscription());
 		registerAction(new SendContact());
+		registerAction(new MovieDetail());
+		registerAction(new Comment());
+		registerAction(new SendComment());
 		registerAction(new Logout());
 
 		layoutRender = new LayoutRenderer();

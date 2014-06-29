@@ -1,4 +1,3 @@
-
 #set ($login = $context.getRequest().getSession(true).getAttribute("login"))
 <header></header>
         
@@ -13,8 +12,13 @@
                                 background-size: 30px;
                                 background-position: 6px 9px;
                                 padding-right: 0px;"><a href="/esgiRouter/Contact">Contact</a></td>
-                                
-                                #if ($login)
+                      #if(!$login)
+                     <td style="background:url(/esgiRouter/res/style/icn/no-entry@2x.png);
+                                background-repeat: no-repeat;
+                                background-size: 25px;
+                                background-position: 6px 11px;"><a href="/esgiRouter/Connect">Log in</a></td>
+                      #end         
+                      #if ($login)
                                 
                     <td style="background:url(/esgiRouter/res/style/icn/tshirt@2x.png);
                                 background-repeat: no-repeat;
@@ -30,9 +34,8 @@
                     <td style="background:url(/esgiRouter/res/style/icn/no-entry@2x.png);
                                 background-repeat: no-repeat;
                                 background-size: 25px;
-                                background-position: 6px 11px;"><a href="/esgiRouter/Logout">Log out</a></td>
-                                
-                                #end
+                                background-position: 6px 11px;"><a href="/esgiRouter/Logout">Log out</a> ($login)</td>
+                             #end
                 </tr>
             </table>
 

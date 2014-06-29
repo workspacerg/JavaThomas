@@ -51,8 +51,8 @@
 	
 	function AjaxComplete(data){
 		if(data["success"]){
-			$("#container").html("<h2> Votre enregistrement a bien ÃƒÂ©tÃƒÂ© pris en compte");
-			$("#container").append("<a href=\"/esgiRouter/\">Retour ÃƒÂ Ã‚Â  la page de connexion.</a>");
+			$("#container").html("<h2> Votre enregistrement a bien été pris en compte");
+			$("#container").append("<a href=\"/esgiRouter/\">Retour à la page de connexion.</a>");
 		}
 		else
 			$("#errorMessage").html(data["message"]);

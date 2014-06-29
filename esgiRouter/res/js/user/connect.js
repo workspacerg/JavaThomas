@@ -27,8 +27,12 @@ $(function(){
 	}
 	
 	function AjaxConnect(data){
-		if(data["success"])
-			window.location.reload();
+		if(data["success"]){
+			if(window.location.href.toString().indexOf('Connect')!=-1)
+				document.location.href ="/esgiRouter"; // En localhost le slash ne suffit pas
+			else
+				window.location.reload();
+		}
 		else
 			$("#errorMessage").html("<h1 style='color:red;'>Login ou mot de passe incorrect.</h1>");		
 	}

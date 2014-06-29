@@ -16,12 +16,10 @@ public class Index extends AbstractAction{
 
 	@Override
 	public void execute(IContext context) throws Exception {		
-		//Initialisation des paramètres de la vue
-		
-		if(context.getRequest().getSession().getAttribute("login") != null){
-			List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
-			context.setAttribute("films", films);
-		}
+		//Initialisation des paramètres de la vue	
+		context.setTitle("Accueil");
+		List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
+		context.setAttribute("films", films);
 	}
 	
 	@Override

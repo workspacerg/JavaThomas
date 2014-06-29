@@ -24,6 +24,22 @@ public class User {
 	public String login;
 	public String password;
 	
+	public String getNom(){
+		return nom;
+	}
+	
+	public String getPrenom(){
+		return prenom;
+	}
+	
+	public String getLogin(){
+		return login;
+	}
+	
+	public String getIdentity(){
+		return String.format("{0} {1}", prenom,nom);
+	}
+	
 	public String toString() {
 		return "USER[id=" + id_user + ", nom=" + nom + ", prenom=" + prenom
 				+ ", connectedAt=" + connectedAt + ", "+ ", login=" + login + ", "+ ", password=" + password +"]";

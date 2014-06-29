@@ -12,6 +12,11 @@ import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.esgi.json.JSONExtractor;
+import org.esgi.module.index.Comment;
+import org.esgi.module.index.Index;
+import org.esgi.module.index.Inscription;
+import org.esgi.module.index.MovieDetail;
+import org.esgi.module.menu.contact.Contact;
 import org.esgi.web.action.IAction;
 import org.esgi.web.action.IContext;
 import org.esgi.web.route.Router;
@@ -19,7 +24,6 @@ import org.esgi.web.route.Router;
 public class LayoutRenderer {
 
 	public void render(IAction action, IContext context, Router router) throws ServletException {
-
 
 		File tplRepo = new File(context.getProperties().getProperty("real.path")+"view");
 
@@ -55,7 +59,7 @@ public class LayoutRenderer {
 			}
 			
 			IAction a = router.find(widget, context);
-			
+
 			if (null !=a)
 				try {
 					a.execute(context);
@@ -63,15 +67,12 @@ public class LayoutRenderer {
 					e.printStackTrace();
 				}
 			
-			if(context.getRequest().getSession().getAttribute("login")==null && current && (!action.getRoute().equals("^/Register$") && !action.getRoute().equals("^/Contact$")))
-				nameVelocity = "index/connexion";
+			if(context.getRequest().getSession().getAttribute("login")==null && current && action instanceof Comment)
+				nameVelocity = "index/Connexion";
 
 			context.addCSSDependancy((String)context.getProperties().get("file.css"));
-			//context.getResponse().setContentType("text/html;charset=UTF-8");
 			
 			File tpl = new File(tplRepo, nameVelocity+".vm");
-			//System.out.println(tpl.getPath());
-			System.out.println(context.getResponse().getContentType());
 			System.out.println(tpl.getPath());
 			VelocityContext contextv = new VelocityContext();
 			contextv.put("context", context);
@@ -90,7 +91,7 @@ public class LayoutRenderer {
 					//System.out.println(sw.toString());
 
 				}
-				catch(Exception E) { }
+				catch(Exception E) { E.printStackTrace();}
 				//	System.out.println(tpl.getPath());
 				
 				

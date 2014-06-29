@@ -28,6 +28,14 @@ public class Seance {
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Salle salle;
 	
+	public String getHeure(){
+		return heure;
+	}
+	
+	public String getVersion(){
+		return version;
+	}
+	
 	public String toString() {
 		return " SEANCE[id_seance=" + id_seance + ", jour=" + jour +", mois=" + mois +", heure=" + heure + ", version=" + version + "," + film + "," + salle +"]";
 	}

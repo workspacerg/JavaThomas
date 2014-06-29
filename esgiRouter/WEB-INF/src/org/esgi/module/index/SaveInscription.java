@@ -26,7 +26,7 @@ public class SaveInscription extends AbstractAction {
 		
 		if(existLogin){
 			ma.Add("success", false);
-			ma.Add("message", "Le login entr√© √©xiste d√©j√†");
+			ma.Add("message", "Le login entrÈ Èxiste dÈj‡†");
 		}
 		else{				
 			User user = new User();
@@ -39,7 +39,7 @@ public class SaveInscription extends AbstractAction {
 			ma.Add("success", isSave);
 			
 			if(!isSave)
-				ma.Add("message","Enregistrement de votre profil √©chou√©.");
+				ma.Add("message","Enregistrement de votre profil ÈchouÈ.");
 		}
 		
 		ma.Write(context);
