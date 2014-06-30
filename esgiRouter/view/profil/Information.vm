@@ -10,30 +10,26 @@
 	<h1> Profil </h1>
 </div>
 
-<div id="container" style="top: 35%">
-	<table>
-		<tr>
-			<td>
-				<i><h2>Nom : $nom</h2></i>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i><h2>Prénom : $prenom</h2></i>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i><h2>Login : $login</h2></i>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<td style="text-align: right;"><div id="changePassword" style="background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none;">Changer le mot de passe</div></td>
-			</td>
-		</tr>
-	</table>
+<div id="container" style="top: 35%;">
+
 </div>
+
+<div class="bloc">
+
+
+<h1> Information de $login </h1>
+<div id="changePassword" style=" position: absolute; top: 20px; right: 15px;;background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none; width: 200px; text-align:center; ">Changer le mot de passe</div>
+
+	
+				<center><p><b>Nom </b>: $nom</p></i>
+
+				<i><p><b>PrÃ©nom</b> : $prenom</p></i>
+
+				<i><p><b>Login</b> : $login</p></i></center>
+
+
+</div>
+
 
 #set ($js = $context.getProperties().get("context")+"/res/js/Module/Information.js")
 $context.addJSDependancy($js)
