@@ -23,7 +23,7 @@
                     <td style="background:url(/esgiRouter/res/style/icn/tshirt@2x.png);
                                 background-repeat: no-repeat;
                                 background-size: 30px;
-                                background-position: 6px 9px; ">Profil</td>
+                                background-position: 6px 9px; "><a href="/esgiRouter/Profil">Profil</a></td>
                                 
                     <td style="background:url(/esgiRouter/res/style/icn/setting@2x.png);
                                 background-repeat: no-repeat;

@@ -1,0 +1,6 @@
+﻿$(function(){
+	$( "#changePassword" ).click(function() {
+		
+	});
+	
+});

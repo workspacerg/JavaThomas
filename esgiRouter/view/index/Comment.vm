@@ -14,7 +14,7 @@
 		<article>
             
 
-                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg); width: 70%; margin-left:15%; background-position: 0% 25%; background-repeat:no-repeat; ">
+                <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg); width: 70%; margin-left:15%; background-position: center 25%; background-repeat:no-repeat; ">
 
                 </section>
 					

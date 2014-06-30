@@ -9,6 +9,16 @@
 			e.preventDefault();
 			return false;
 		}
+		
+		if($("#note").val() > 20 || $("#note").val() < 0){
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
+			$("#errorMessage").html("<h2>Veuillez entrer une note entre 0 et 20</h2>");
+			e.preventDefault();
+			return false;
+		}
 		data = {};
 		data["commentPlace"] = $("#commentPlace").val();
 		data["note"] = $("#note").val();

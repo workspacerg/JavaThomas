@@ -16,6 +16,8 @@ import org.esgi.module.file.FileList;
 import org.esgi.module.file.FileUpload;
 import org.esgi.module.index.*;
 import org.esgi.module.menu.contact.*;
+import org.esgi.module.menu.profil.Information;
+import org.esgi.module.menu.profil.Profil;
 import org.esgi.module.user.*;
 import org.esgi.web.action.IAction;
 import org.esgi.web.action.IContext;
@@ -73,6 +75,8 @@ public class FrontController extends HttpServlet{
 		registerAction(new SendContact());
 		registerAction(new MovieDetail());
 		registerAction(new Comment());
+		registerAction(new Information());
+		registerAction(new Profil());
 		registerAction(new SendComment());
 		registerAction(new Logout());
 

@@ -1,0 +1,40 @@
+#set ($nom = $context.getAttribute("nom"))
+#set ($prenom = $context.getAttribute("prenom"))
+#set ($login = $context.getAttribute("login"))
+
+<div id="errorMessage">
+
+</div>
+
+<div id="Content">   
+	<h1> Profil </h1>
+</div>
+
+<div id="container" style="top: 35%">
+	<table>
+		<tr>
+			<td>
+				<i><h2>Nom : $nom</h2></i>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<i><h2>Prénom : $prenom</h2></i>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<i><h2>Login : $login</h2></i>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<td style="text-align: right;"><div id="changePassword" style="background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none;">Changer le mot de passe</div></td>
+			</td>
+		</tr>
+	</table>
+</div>
+
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/Information.js")
+$context.addJSDependancy($js)
+$context.addOnJsReady("new Esgi.module.Information.Form({ id : '#passwordDiv'})") 
