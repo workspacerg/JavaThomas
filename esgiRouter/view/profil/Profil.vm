@@ -1,3 +1,4 @@
+
 <div id="errorMessage">
 
 </div>
@@ -6,14 +7,22 @@
 	<h1> Profil </h1>
 </div>
 
-<div id="container" style="top: 35%">
-	<div id="info" style="cursor:pointer">
-		<h1> Mes informations </h2>
-	</div>
+<div class="bloc">
+
+
+<h1> $login </h1>
+
+	<center>
+					<div id="info" style="cursor:pointer">
+						<p> Mes informations </p>
+					</div>
 	<div id="lastComm" style="cursor:pointer">
-		<h1> Mes derniers commentaires </h1>
-	</div>
+		<p> Mes derniers commentaires </p>
+	</div></center>
+
+
 </div>
+
 
 #set ($js = $context.getProperties().get("context")+"/res/js/Module/Profil.js")
 $context.addJSDependancy($js) 

@@ -10,9 +10,7 @@
 	<h1> Profil </h1>
 </div>
 
-<div id="container" style="top: 35%;">
 
-</div>
 
 <div class="bloc">
 
@@ -27,6 +25,10 @@
 
 				<i><p><b>Login</b> : $login</p></i></center>
 
+
+</div>
+
+<div id="container" style="top: 35%;">
 
 </div>
 
