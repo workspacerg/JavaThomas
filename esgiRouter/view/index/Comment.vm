@@ -27,7 +27,7 @@
 				                    	<td colspan="7" style="text-align:right;color: #FF9500"> $evaluation.getNote()/20 </td>
 				                    </tr>
 				                    <tr>
-				                        <td  colspan="7" rowspan="4" style="padding-left:10px; padding: 20px; border-top: 2px solid #61D7A4">$evaluation.getCommentaire()</td>
+				                        <td  colspan="7" rowspan="4" style="padding-left:10px; padding: 20px; border-top: 2px solid #FF9500; color: white;">$evaluation.getCommentaire()</td>
 				                     </tr>
 				                  </table>
 			                 </div>
@@ -50,7 +50,7 @@
 	               		</tr>
 	               		<tr>
 	               			<td>
-	               			Quelle note attribuez vous à ce film ?
+	               			Quelle note attribuez vous ï¿½ ce film ?
 	               			</td>
 	               			<td style="text-align: right;" >
 	               				<input style="width:5em; height:2.6em; text-align: center;" name="note" id="note" type="number" step="1" value="0" min="0" max="20">
