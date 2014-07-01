@@ -11,6 +11,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background-color: #343443;/*NOIR BLEU*/
+	padding-bottom: 25px;
 
 
 }
@@ -204,13 +205,12 @@ footer{
 
 .detailFilmContent{
 	
-	background-color: white;
+	background-color: rgba(0, 0, 0, 0.3);
 	width: 80%;
 	margin: auto;
 	padding: 20px;
-	border-left: 4px solid #61D7A4 ; /*Vert claire*/
 	border-top: 4px solid #61D7A4 ; /*Vert claire*/
-	color: black;
+	color: white;
 	margin-bottom: 50px;
 	
 }
@@ -224,8 +224,8 @@ footer{
 	border-left: 4px solid #61D7A4 ; /*Vert claire*/
 	border-top: 4px solid #61D7A4 ; /*Vert claire*/
 	color: black;
-	margin-bottom: 30px;
-	margin-top: 30px;
+	margin-bottom: 0px;
+	margin-top: 50px;
 	
 }
 
