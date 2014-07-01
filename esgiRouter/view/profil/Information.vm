@@ -20,13 +20,13 @@
 
 				<center><i><p><b>Nom </b>: $nom</p></i>
 
-				<i><p><b>Prénom</b> : $prenom</p></i>
+				<i><p><b>Prï¿½nom</b> : $prenom</p></i>
 
 				<i><p><b>Login</b> : $login</p></i></center>
 
 </div>
 
-<div id="container" style="top: 35% !important;display:none;">
+<div id="container" style="top: 65% !important;display:none;">
 
 </div>
 

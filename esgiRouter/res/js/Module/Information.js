@@ -41,8 +41,14 @@
 			$("#container").append("<h2> Mise à jour du mot de passe effectuée.</h2>");
 			$("#container").slideUp( "slow");
 		}
-		else
+		else{
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
 			$("#errorMessage").html(data["message"]);
+		}
+			
 		
 	}
 });
