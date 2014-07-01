@@ -72,14 +72,13 @@ loadMyLib = function(onloaded){
 			},
 			onButtonClick : function(e) {
 				var me = this, data = {};
+				
 				if(!$(this.el)[0].checkValidity()){
 					$(this.el)[0].removeClass('success').addClass('error');
 					e.preventDefault();
 					return false;
 				}
-				
-				//$(this.el)[0].removeClass('error').addClass('success');
-				
+
 				var error = false;
 				$.each(me._inputs, function(key, item) {
 					if(item.isEmpty()){
@@ -150,13 +149,14 @@ loadMyLib = function(onloaded){
 					$(me.cfg.renderTo).append(me.el);
 			},
 			getValue : function(){
+				alert($(this.el).val());
 				return $(this.el).val();
 			},
 			isEmpty : function(){
 				if(!this.cfg.required)
 					return false;
 				
-				if($.trim($(this.el).val()) != '')
+				if($.trim($(this.el).val()) != '' || $(this.el).val() == null)
 					return false;
 				return true;
 			},

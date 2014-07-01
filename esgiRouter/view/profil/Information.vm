@@ -15,24 +15,22 @@
 <div class="bloc">
 
 
-<h1> Information de $login </h1>
+<h1> Mes informations </h1>
 <div id="changePassword" style=" position: absolute; top: 20px; right: 15px;;background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none; width: 200px; text-align:center; ">Changer le mot de passe</div>
 
-	
-				<center><p><b>Nom </b>: $nom</p></i>
+				<center><i><p><b>Nom </b>: $nom</p></i>
 
-				<i><p><b>PrÃ©nom</b> : $prenom</p></i>
+				<i><p><b>Prénom</b> : $prenom</p></i>
 
 				<i><p><b>Login</b> : $login</p></i></center>
 
-
 </div>
 
-<div id="container" style="top: 35%;">
+<div id="container" style="top: 35% !important;display:none;">
 
 </div>
 
 
 #set ($js = $context.getProperties().get("context")+"/res/js/Module/Information.js")
 $context.addJSDependancy($js)
-$context.addOnJsReady("new Esgi.module.Information.Form({ id : '#passwordDiv'})") 
+$context.addOnJsReady("new Esgi.module.Information.Form({ id : '#container'})")

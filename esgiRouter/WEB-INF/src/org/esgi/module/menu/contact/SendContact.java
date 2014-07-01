@@ -32,7 +32,7 @@ public class SendContact extends AbstractAction {
 		ma.Add("success", isSave);
 		
 		if(!isSave)
-			ma.Add("message", "Une erreur a été rencontré pendant la sauvegarde de votre message.");
+			ma.Add("message", "<h2>Une erreur a été rencontré pendant la sauvegarde de votre message.</h2>");
 		
 		ma.Write(context);
 	}

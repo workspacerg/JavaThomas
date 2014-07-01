@@ -1,4 +1,4 @@
-
+#set($login=$context.getRequest().getSession().getAttribute("login"))
 <div id="errorMessage">
 
 </div>

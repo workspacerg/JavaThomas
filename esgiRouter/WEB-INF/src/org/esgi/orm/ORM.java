@@ -292,8 +292,11 @@ public class ORM implements IORM {
 
 				else if(type.getSimpleName().toString().equals(Boolean.class.getSimpleName()))
 				{
-					Boolean convert = value.equals("1")?true: false ;
-					field.set(myObject, (convert));
+					Boolean realValue;
+					
+					realValue = value == null ? false : (value.equals("1")?true: false);
+
+					field.set(myObject, (realValue));
 				}
 
 				else if(containsAnotations(field.getAnnotations(), "ORM_COMPOSITION"))

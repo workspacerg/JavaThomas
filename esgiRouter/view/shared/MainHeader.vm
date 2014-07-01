@@ -1,4 +1,5 @@
 #set ($login = $context.getRequest().getSession(true).getAttribute("login"))
+#set ($isAdmin = $context.getRequest().getSession(true).getAttribute("isAdmin"))
 <header></header>
         
         <nav>
@@ -24,12 +25,13 @@
                                 background-repeat: no-repeat;
                                 background-size: 30px;
                                 background-position: 6px 9px; "><a href="/esgiRouter/Profil">Profil</a></td>
-                                
+                       #if($isAdmin)       
                     <td style="background:url(/esgiRouter/res/style/icn/setting@2x.png);
                                 background-repeat: no-repeat;
                                 background-size: 30px;
                                 background-position: 6px 9px;
                                 padding-right: 2px;">Admin</td>
+                       #end
                           
                     <td style="background:url(/esgiRouter/res/style/icn/no-entry@2x.png);
                                 background-repeat: no-repeat;

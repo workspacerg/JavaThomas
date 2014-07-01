@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Film"/>
 <fullyQualifiedTypeName name="org.esgi.module.contact.Contact"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Participant"/>
-<fullyQualifiedTypeName name="org.esgi.orm.my.model.User"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Identifiant"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.SaveInscription"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Communicate_with"/>
-<fullyQualifiedTypeName name="org.esgi.orm.ORM"/>
 <fullyQualifiedTypeName name="org.esgi.web.action.IContext"/>
 <fullyQualifiedTypeName name="java.lang.ProcessBuilder.Redirect"/>
 <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Redirect"/>
@@ -17,12 +14,20 @@
 <fullyQualifiedTypeName name="org.esgi.module.index.Inscription"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.Index"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.MovieDetail"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.Comment"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="org.esgi.tools.MapperAjax"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Profil"/>
+<fullyQualifiedTypeName name="org.esgi.orm.ORM"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.User"/>
+<fullyQualifiedTypeName name="javax.print.attribute.HashAttributeSet"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Information"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

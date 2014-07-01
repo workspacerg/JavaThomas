@@ -1,0 +1,15 @@
+<div id="errorMessage">
+
+</div>
+<div id="Content">   
+<h1> Administration </h1>
+</div>
+<div id="container" style="top: 35%">
+
+</div>
+
+
+
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/Admin.js")
+$context.addJSDependancy($js)
+$context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")

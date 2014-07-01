@@ -53,6 +53,7 @@ public class Application {
 		u.prenom = "Arnaud";
 		u.login = "Admin";
 		u.password = "azerty";
+		u.isAdmin = true;
 		ORM.save(u);
 
 		User u2 = new User();
@@ -60,7 +61,8 @@ public class Application {
 		u2.nom = "Rabbit";
 		u2.prenom = "Roger";
 		u2.login = "DarkAngel64";
-		u2.password = "qerty";
+		u2.password = "qwerty";
+		u2.isAdmin = false;
 		ORM.save(u2);
 
 		User u3 = new User();
@@ -69,6 +71,7 @@ public class Application {
 		u3.prenom = "Arnaud";
 		u3.login = "Rog";
 		u3.password = "titi";
+		u3.isAdmin = false;
 		ORM.save(u3);
 
 

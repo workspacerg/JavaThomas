@@ -1,7 +1,9 @@
 package org.esgi.module.user;
 
 import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -32,13 +34,15 @@ public class Connect extends AbstractAction{
 		mapWhere.put("password", context.getRequest().getParameter("password"));
 		
 		MapperAjax ma = new MapperAjax();
-
-		if(ORM.find(User.class, mapWhere, null, null, null).size() == 1)
+		
+		List<User> listU = new ArrayList<User>();
+		if((listU = (List<User>)(List<?>)ORM.find(User.class, mapWhere, null, null, null)).size() == 1)
 		{
 			ma.Add("success", true);
 						
 			HttpSession session = context.getRequest().getSession(true);
 			session.setAttribute("login",login);
+			session.setAttribute("isAdmin", listU.get(0).isAdmin);
 			
 			context.setAttribute("login", login);
 		}
