@@ -10,6 +10,6 @@
 
 
 
-#set ($js = $context.getProperties().get("context")+"/res/js/Module/Contact.js")
+#set ($js = $context.getProperties().get("context")+"/res/js/Module/contact.js")
 $context.addJSDependancy($js)
 $context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")
