@@ -54,30 +54,43 @@
                 
                 
                     <table class="TableFilm">
-                    <tr>
-                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
-                          </td>
-                      </td>
-                      <td class="TableFilm-Descr-Label">R�alisateur</td> 
-                      <td class="TableFilm-Descr-Label2">:</td>      
-                      <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
-                      </tr>
-                    <tr>
-                      
-                      <td class="TableFilm-Descr-Label">Participants </td>       
-                      <td class="TableFilm-Descr-Label2">:</td>       
-                      <td class="TableFilm-Descr-value">$parti.substring(0,$lastComma)</td>
-                    </tr>
-                    <tr>
-                      <td class="TableFilm-Descr-Label">Description</td>
-                      <td class="TableFilm-Descr-Label2">:</td>             
-                      <td class="TableFilm-Descr-value">$film.getDescription()</td>
-                    </tr>
-                    <tr>
-                    <td></td>
-                    <td></td>
-                    	<td style="text-align: right;padding-right: 15px;"><a href="/esgiRouter/Comment/$film.getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">$film.getEvaluations().size() Commentaires<a></td>
-                    </tr>
+	                    <tr>
+	                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
+	                          </td>
+	                      </td>
+	                      <td class="TableFilm-Descr-Label">R�alisateur</td> 
+	                      <td class="TableFilm-Descr-Label2">:</td>      
+	                      <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
+	                      </tr>
+	                    <tr>
+	                      
+	                      <td class="TableFilm-Descr-Label">Participants </td>       
+	                      <td class="TableFilm-Descr-Label2">:</td>       
+	                      <td class="TableFilm-Descr-value">$parti.substring(0,$lastComma)</td>
+	                    </tr>
+	                    <tr>
+	                      <td class="TableFilm-Descr-Label">Description</td>
+	                      <td class="TableFilm-Descr-Label2">:</td>             
+	                      <td class="TableFilm-Descr-value">$film.getDescription()</td>
+	                    </tr>
+	                    <tr>
+	                    <td></td>
+	                    <td></td>
+	                    	<td></td>
+	                    </tr>
+	                    <tr>
+	                    <td></td>
+	                    <td></td>
+	                    	<td></td>
+	                    </tr>
+	                    <tr>
+	                    <td></td>
+	                    <td></td>
+	                    	<td></td>
+	                    </tr>
+	                    <tr>
+	                    <td colspan="4"style="text-align: right;padding-right: 15px;"><a href="/esgiRouter/Comment/$film.getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">$film.getEvaluations().size() Commentaires<a></td>
+	                    </tr>
                     </table>
                  </section>
 

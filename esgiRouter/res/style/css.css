@@ -12,6 +12,7 @@ body{
 	padding: 0;
 	background-color: #343443;/*NOIR BLEU*/
 	padding-bottom: 25px;
+	min-width: 1024px;
 
 
 }
