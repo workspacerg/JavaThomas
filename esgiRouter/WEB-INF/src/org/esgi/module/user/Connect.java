@@ -43,6 +43,7 @@ public class Connect extends AbstractAction{
 			HttpSession session = context.getRequest().getSession(true);
 			session.setAttribute("login",login);
 			session.setAttribute("isAdmin", listU.get(0).isAdmin);
+			session.setAttribute("userId", listU.get(0).id_user);
 			
 			context.setAttribute("login", login);
 		}

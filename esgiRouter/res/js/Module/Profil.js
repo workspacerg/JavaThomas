@@ -4,6 +4,6 @@
 	});
 	
 	$( "#lastComm" ).click(function() {
-		window.location = "/esgiRouter/Profil/Comment";
+		window.location = "/esgiRouter/Profil/CommentHistory";
 	});
 });

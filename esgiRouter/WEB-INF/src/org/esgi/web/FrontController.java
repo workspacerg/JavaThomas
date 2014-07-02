@@ -16,6 +16,7 @@ import org.esgi.module.file.FileList;
 import org.esgi.module.file.FileUpload;
 import org.esgi.module.index.*;
 import org.esgi.module.menu.contact.*;
+import org.esgi.module.menu.profil.CommentHistory;
 import org.esgi.module.menu.profil.Information;
 import org.esgi.module.menu.profil.Profil;
 import org.esgi.module.menu.profil.SaveInformation;
@@ -78,6 +79,7 @@ public class FrontController extends HttpServlet{
 		registerAction(new Comment());
 		registerAction(new Information());
 		registerAction(new Profil());
+		registerAction(new CommentHistory());
 		registerAction(new SaveInformation());
 		registerAction(new SendComment());
 		registerAction(new Logout());
@@ -105,7 +107,6 @@ public class FrontController extends HttpServlet{
 				try {
 					action.execute(context);
 				} catch (Exception e) {
-					e.printStackTrace();
 					throw new ServletException(e);
 				}
 			}

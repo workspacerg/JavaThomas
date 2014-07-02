@@ -39,6 +39,14 @@ public class Evaluation {
 		return user;
 	}
 	
+	public Film getFilm(){
+		return film;
+	}
+	
+	public Integer getId(){
+		return id_evaluation;
+	}
+	
 	public String toString() {
 		return " EVALUATION[id_evaluation=" + id_evaluation + ", note=" + note + ", date=" + date + ", commentaire=" + commentaire + ", " + user + film +"]";
 	}

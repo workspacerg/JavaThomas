@@ -15,7 +15,7 @@
 		
 		<article>
             
-
+				
                 <section class="Film-Pic" style="background:url(/esgiRouter/res/style/img/Films/fond_#evaluate($film.getId()).jpg);  background-size: 100%; background-position: 0% 25%; background-repeat:no-repeat; position: relative; top: 20px; height: 500px;">
 
                 </section>
@@ -32,7 +32,7 @@
 	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
 	                			#end
 	                		#else
-	                			<td><b>Aucune sï¿½ance</b></td>
+	                			<td><b>Aucune séance</b></td>
                 			#end
                 		</tr>
                 		<tr> <td style="color:#FF9500">Demain : </td>
@@ -42,7 +42,7 @@
 	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
 	                			#end
 	                		#else
-	                			<td><b>Aucune sï¿½ance</b></td>
+	                			<td><b>Aucune séance</b></td>
                 			#end
                 		</tr>
                 	</table>
@@ -50,7 +50,7 @@
                 <section class="bloc" style="position: relative; top: 30px;">
                 
                 <h1 style="font-size: 2em; padding-bottom = 0;margin-top: 10px; ">$film.getTitre()</h1>
-                <div id="clickSeance"style="cursor:pointer; position: absolute; top: 15px; right: 15px;;background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none; width: 200px; text-align:center; ">Voir les sÃ©ances</div>
+                <div id="clickSeance"style="cursor:pointer; position: absolute; top: 15px; right: 15px;;background-color: #FF9500;cursor:pointer;padding: 9px; color: white; text-decoration: none; width: 200px; text-align:center; ">Voir les séances</div>
                 
                 
                     <table class="TableFilm">
@@ -58,7 +58,7 @@
 	                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($film.getId()).jpg); background-size: 200px; background-position:center; background-repeat:no-repeat;">
 	                          </td>
 	                      </td>
-	                      <td class="TableFilm-Descr-Label">Rï¿½alisateur</td> 
+	                      <td class="TableFilm-Descr-Label">Réalisateur</td> 
 	                      <td class="TableFilm-Descr-Label2">:</td>      
 	                      <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
 	                      </tr>

@@ -1,0 +1,40 @@
+#set ($film = $context.getAttribute("film"))
+#set ($evals = $context.getAttribute("evals"))
+
+<div id="errorMessage">
+
+</div>
+
+<div id="Content">   
+	<h1> Profil </h1>
+</div>
+
+
+
+<div class="bloc">
+
+<h1> Mes derniers commentaires </h1>
+		#if($evals.size() > 0)
+		#foreach($eval in $evals)
+			<article>
+                <section class="bloc" style="position: relative; top: 30px;">
+                
+                <h1 style="font-size: 2em; padding-bottom = 0;margin-top: 10px; ">$eval.getFilm().getTitre()</h1>
+                
+                    <table class="TableFilm">
+                    <tr>
+	                      <td rowspan="5" class="TableFilm-Descr-Img" style="background:url(/esgiRouter/res/style/img/Films/affiche_#evaluate($eval.getFilm().getId()).jpg); background-size: 150px; background-position:center; background-repeat:no-repeat;">
+	                          </td>
+	                      </td>         
+	                      <td class="TableFilm-Descr-value"><i>"$eval.getCommentaire()"</i></td>
+	                    </tr>	                   
+	                    <tr>
+	                    <td colspan="4"style="text-align: right;padding-right: 15px;"><a href="/esgiRouter/Comment/$eval.getFilm().getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">Voir les commentaires<a></td>
+	                    </tr>
+                    </table>
+                 </section>
+             </article>
+            #end
+            #else
+					<center><h2> Aucun commentaire n'a été ajouté </h2></center>
+           #end

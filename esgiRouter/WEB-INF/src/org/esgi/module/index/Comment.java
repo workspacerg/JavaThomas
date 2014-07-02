@@ -22,18 +22,26 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Comment extends AbstractAction{
 	@Override
 	public String getRoute() {
-		return "/Comment/[0-9]+";
+		return "^/Comment/[0-9]+(?:/[0-9]+)?$";
 	}
 
 	@Override
 	public void execute(IContext context) throws Exception {
 		context.setTitle("Commentaires");
 		String path = context.getRequest().getPathInfo();
-		int idx = path.lastIndexOf("/")+1;
-		int filmIdx = Integer.parseInt(path.substring(idx));
+		int idxFilm = -1;
+		int idxComm = -1;
+		if(path.matches("^/Comment/[0-9]+/[0-9]+$")){
+			idxComm = Integer.parseInt(path.substring(path.lastIndexOf("/")+1));
+			String seek = path.substring(path.substring(0,path.lastIndexOf("/")-1).lastIndexOf("/")+1,path.lastIndexOf("/"));
+			idxFilm = Integer.parseInt(seek);
+		}
+		else
+			idxFilm = Integer.parseInt(path.substring(path.lastIndexOf("/")+1));
 		
+		System.out.println(idxFilm);
 		Map<String,Object> mapWhere = new HashMap<String, Object>();
-		mapWhere.put("film", filmIdx);
+		mapWhere.put("film", idxFilm);
 		
 		List<Evaluation> evals = (List<Evaluation>)(List<?>)ORM.find(Evaluation.class, mapWhere,null,null,null);
 		context.setAttribute("evaluations", evals);
@@ -42,6 +50,9 @@ public class Comment extends AbstractAction{
 			context.setAttribute("average", Math.round(getAverage(evals)));
 			context.setTitle("Commentaires : "+evals.get(0).film.titre);
 		}
+		
+		if(idxComm > -1)
+			context.setAttribute("commentaire", idxComm);
 	}
 	
 	private float getAverage(List<Evaluation> eval){

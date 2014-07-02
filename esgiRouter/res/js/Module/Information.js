@@ -1,4 +1,4 @@
-ï»¿$(function(){
+$(function(){
 	
 	$("#changePassword").click(function(){
 		if($("#container").is(":visible"))
@@ -38,7 +38,12 @@
 	
 	function AjaxComplete(data){
 		if(data["success"]){
-			$("#container").append("<h2> Mise Ã  jour du mot de passe effectuÃ©e.</h2>");
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
+			$("#errorMessage").html("<h2> Mise à jour du mot de passe effectuée.</h2>");
+			$(":input").val("");
 			$("#container").slideUp( "slow");
 		}
 		else{
@@ -46,6 +51,7 @@
 			message.css("visibility","visible");
 			message.css("-webkit-animation","notificationError 1s");
 			message.css("animation","notificationError 1s");
+			alert(data["message"]);
 			$("#errorMessage").html(data["message"]);
 		}
 			

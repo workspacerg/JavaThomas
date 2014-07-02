@@ -1,7 +1,7 @@
 #set ($evaluations = $context.getAttribute("evaluations"))
 #set ($film = $context.getAttribute("film"))
 #set ($avg = $context.getAttribute("average"))
-
+#set ($comm = $context.getAttribute("commentaire"))
 
 	<div id="Content">   
 
@@ -20,7 +20,11 @@
 					
 					<div id="comments">
 	                    #foreach($evaluation in $evaluations)
+	                     	#if($comm && $comm == $evaluation.getId())
+	      					<div class="commentActual">
+	      					#else	
 		                    <div class="comment">
+		                    #end
 			                     <table style="">
 				                    <tr class="ligne1">
 				                    	<td class="login"><b> $evaluation.getUser().getLogin()</b></td>
@@ -50,7 +54,7 @@
 	               		</tr>
 	               		<tr>
 	               			<td>
-	               			Quelle note attribuez vous ï¿½ ce film ?
+	               			Quelle note attribuez vous à ce film ?
 	               			</td>
 	               			<td style="text-align: right;" >
 	               				<input style="width:5em; height:2.6em; text-align: center;" name="note" id="note" type="number" step="1" value="0" min="0" max="20">

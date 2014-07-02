@@ -1,4 +1,4 @@
-﻿
+
 
 var global = this,
 loadMyLib = function(onloaded){
@@ -102,6 +102,7 @@ loadMyLib = function(onloaded){
 					url : me.cfg.url,
 					method : 'POST',
 					data : data,
+					contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
 					success : function(response) {
 						obj = JSON.parse(response);
 						// Appel de l'action
@@ -149,7 +150,6 @@ loadMyLib = function(onloaded){
 					$(me.cfg.renderTo).append(me.el);
 			},
 			getValue : function(){
-				alert($(this.el).val());
 				return $(this.el).val();
 			},
 			isEmpty : function(){

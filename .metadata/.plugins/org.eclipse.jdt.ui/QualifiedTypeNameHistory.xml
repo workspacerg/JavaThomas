@@ -14,20 +14,21 @@
 <fullyQualifiedTypeName name="org.esgi.module.index.Inscription"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.Index"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.MovieDetail"/>
 <fullyQualifiedTypeName name="org.esgi.module.index.Comment"/>
-<fullyQualifiedTypeName name="org.esgi.tools.MapperAjax"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
-<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Profil"/>
 <fullyQualifiedTypeName name="org.esgi.orm.ORM"/>
 <fullyQualifiedTypeName name="org.esgi.orm.my.model.User"/>
-<fullyQualifiedTypeName name="javax.print.attribute.HashAttributeSet"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Information"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.esgi.tools.MapperAjax"/>
+<fullyQualifiedTypeName name="javax.print.attribute.HashAttributeSet"/>
+<fullyQualifiedTypeName name="org.esgi.module.menu.profil.SaveInformation"/>
+<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Profil"/>
+<fullyQualifiedTypeName name="org.esgi.module.menu.profil.Information"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.esgi.orm.my.model.Evaluation"/>
 </qualifiedTypeNameHistroy>

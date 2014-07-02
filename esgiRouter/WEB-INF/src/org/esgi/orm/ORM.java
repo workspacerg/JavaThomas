@@ -375,7 +375,7 @@ public class ORM implements IORM {
 		return type_id;
 	}
 
-	static public List <Object> find (Class<?> clazz, Map<String, Object> where, Map<String, Object> sort, Integer limit, Integer offset)
+	/*static public List <Object> find (Class<?> clazz, Map<String, Object> where, Map<String, Object> sort, Integer limit, Integer offset)
 	{
 		
 		List res = new LinkedList<>();		
@@ -424,5 +424,65 @@ public class ORM implements IORM {
 			//System.out.println(">"+res);
 		}				
 		return res;	
-	}
+	}*/
+	
+	 static public List <Object> find (Class<?> clazz, Map<String, Object> where, Map<String, Object> sort, Integer limit, Integer offset)
+	    {
+	       
+	        List res = new LinkedList<>();       
+	        String tables_name = clazz.getSimpleName();
+	       
+	        int pos;
+	        if(where != null && !where.isEmpty())
+	        {
+	            for (Entry<String,Object> ent : where.entrySet())
+	                if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
+	                {
+	                    if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
+	                        tables_name += ", " + ent.getKey().substring(0, pos);
+	                }
+
+	            for (Object ent : where.values())
+	                if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire
+	                {
+	                    if (!tables_name.toLowerCase().contains(ent.toString().substring(0, pos).toLowerCase()))
+	                        tables_name += ", " + ent.toString().substring(0, pos);
+	                }       
+	        }
+	       
+	        LinkedList<String> find;
+	        if(sort == null || sort.isEmpty())
+	        {
+	            find = bdd.requeteToLinkedList(tables_name, clazz.getFields()[getPositionID(clazz)].getName(), where, limit);
+	        }
+	       
+	        else
+	        {
+	            find = bdd.requeteToLinkedList(tables_name, clazz.getFields()[getPositionID(clazz)].getName(), where, sort, limit);
+	        }
+
+	        for (int i = 0; i < find.size(); i++)
+	        {       
+	            Object o = null;
+
+	            StringBuilder id_to_find = new StringBuilder();
+	            id_to_find.append(find.get(i));
+	            id_to_find.deleteCharAt(id_to_find.length()-1).deleteCharAt(0);
+
+	            if(clazz.getFields()[getPositionID(clazz)].getType().getCanonicalName().toString().equals(Integer.class.getName()))
+	                o =  ORM.load(clazz, Integer.valueOf(id_to_find.toString()), null);
+
+	            else if(clazz.getFields()[getPositionID(clazz)].getType().getCanonicalName().toString().equals(String.class.getName()))
+	                o =  ORM.load(clazz, id_to_find.toString(), null);
+
+	            else
+	                System.out.println("list type non géré");
+
+	            res.add(o);
+
+	            //System.out.println(">"+res);
+	        }               
+	        return res;   
+	    }
+
 }

@@ -1,4 +1,4 @@
-package org.esgi.module.menu.profil;
+package org.esgi.module.menu.admin;
 
 import java.io.File;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class SaveInformation extends AbstractAction {
 		
 		if(!newPass.equals(confPass)){
 			ma.Add("success", false);
-			ma.Add("message", "<h2>Les mots de passe ne sont pas identiques</h2>");
+			ma.Add("message", "<h2>Les mots de passe entrés ne sont pas identiques</h2>");
 		}
 		else{		
 			Map<String,Object> map = new HashMap<String, Object>();

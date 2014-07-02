@@ -14,6 +14,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Vector;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
+
 
 public class BDD
 {
@@ -98,7 +100,7 @@ public class BDD
 
 			ps.executeUpdate();
 		} 
-		catch (SQLIntegrityConstraintViolationException e) 
+		catch (MySQLIntegrityConstraintViolationException e) 
 		{
 			LinkedList<String> val = new LinkedList<String>();
 			val.add(value.get(0));
@@ -214,6 +216,113 @@ public class BDD
 		}
 	}
 
+	 public LinkedList<String> requeteToLinkedList(String table, String champs,Map<String, Object> where,Map<String, Object> sort, Integer limit)                      // Surcharge en fonction de la recherche
+	    { //Resultat ligne par ligne
+	        LinkedList<String> lesLignesString = new LinkedList<String>();
+	       
+	        if(countRows(table) < 1)
+	            return lesLignesString;
+	       
+	        String sql = "";
+	        try {
+
+	            sql = "SELECT " + champs + " FROM " + table + " ";
+
+	            int i;
+
+	            Map<String, Object> where_without_jointure = new Hashtable();
+	            if(where !=null && where.size() >0 )
+	            {
+	                sql+="WHERE ";
+	                StringBuilder sb = new StringBuilder();
+
+	                Iterator iterator = where.entrySet().iterator();
+	                while (iterator.hasNext()) {
+	                    Map.Entry ent = (Map.Entry) iterator.next();
+	                    String key = ent.getKey().toString();
+	                    String value = ent.getValue().toString();
+
+	                    if(key.contains(".") && value.contains(".")) //jointure
+	                    {
+	                        sb.append(key +"="+value+" and ");
+	                    }
+	                    else
+	                    {
+	                        sb.append(ent.getKey() + " = ? and ");
+	                        where_without_jointure.put(key, value);
+	                    }
+	                }
+
+	                sql += sb.delete(sb.length()-4, sb.length()-1).append(" ").toString();
+	            }
+	           
+	            if(sort !=null && sort.size() >0 )
+	            {
+	                sql+="ORDER BY ";
+	                StringBuilder sb = new StringBuilder();
+
+	                Iterator iterator = sort.entrySet().iterator();
+	                while (iterator.hasNext()) {
+	                    Map.Entry ent = (Map.Entry) iterator.next();
+	                    String key = ent.getKey().toString();
+	                    String value = ent.getValue().toString();
+	                   
+	                    sb.append(key);
+	                    if(value != null)
+	                        sb.append(" "+value);
+	                   
+	                    sb.append(", ");
+	                   
+	                }
+	                sql += sb.delete(sb.length()-2, sb.length()-1).append(" ").toString();
+	            }
+
+
+	            if (limit != null && limit > 0)
+	                sql+=" LIMIT "+limit;
+
+	            ps = this.maconnexion.prepareStatement(sql);
+
+	            //System.out.println(sql);
+	           
+	            int count = 1;
+	            if(where_without_jointure !=null && where_without_jointure.size() >0 )
+	            {
+	                for (Object ent : where_without_jointure.values())
+	                {
+	                    ps.setObject(count++, ent.toString());
+	                    //System.out.println("? = "+ent.toString());
+	                }   
+	            }
+	            ResultSet rs = ps.executeQuery();
+
+	            ResultSetMetaData md = rs.getMetaData();
+	            int nbColonnes = md.getColumnCount();
+	            Vector lesColonnes = new Vector(nbColonnes);
+
+	            for(i=1; i<=nbColonnes; i++)
+	                lesColonnes.add(md.getColumnName(i));
+
+	            Vector row;
+
+	            while(rs.next())
+	            {
+	                row = new Vector(nbColonnes);
+	                for(i=1; i<=nbColonnes; i++)
+	                {
+	                    row.add(rs.getString(i));
+	                }
+	                lesLignesString.add(row.toString());
+	            }
+	        }
+
+	        catch (SQLException e)
+	        {
+	            System.out.println(e);
+	            System.out.println("Problème de requete :"+sql);
+	        }
+	        return lesLignesString;
+	    }
 
 	public String requeteToString(String table, String champs,LinkedList<String> champs_where, LinkedList<String> values_where)  					// Surcharge en fonction de la recherche
 	{ //Resultat ligne par ligne
