@@ -29,7 +29,7 @@
 	                      <td class="TableFilm-Descr-value"><i>"$eval.getCommentaire()"</i></td>
 	                    </tr>	                   
 	                    <tr>
-	                    <td colspan="4"style="text-align: right;padding-right: 15px;"><a href="/esgiRouter/Comment/$eval.getFilm().getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">Voir les commentaires<a></td>
+	                    <td colspan="4"style="text-align: right;padding-right: 15px;"><a href="/esgiRouter/Comment/$eval.getFilm().getId()/$eval.getId()" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">Voir les commentaires<a></td>
 	                    </tr>
                     </table>
                  </section>
