@@ -510,3 +510,46 @@ footer{
     0%   {bottom: -100px;}
     100% {bottom: 20px;}
 }
+
+.labelClick p{
+	
+    -webkit-animation: animLabel 5s linear 2s infinite; /* Chrome, Safari, Opera */
+    animation: animLabel 3s linear 1s infinite;
+}
+
+@-webkit-keyframes animLabel {
+    0%   { color: white; }
+    25%  {color: #FF9500; }
+    75%  { color: white; }
+    100%  { color: white; }
+}
+
+/* Standard syntax */
+@keyframes animLabel {
+    0%   { color: white; }
+    25%  {color: #FF9500; }
+    75%  { color: white; }
+    100%  { color: white; }
+}
+
+.labelClick2 p{
+	
+    -webkit-animation: animLabel2 5s linear 2s infinite; /* Chrome, Safari, Opera */
+    animation: animLabel2 3s linear 1s infinite;
+}
+
+@-webkit-keyframes animLabel2 {
+    0%   { color: #FF9500; }
+    25%  {color: white; }
+    75%  { color: #FF9500; }
+    100%  { color: #FF9500; }
+}
+
+/* Standard syntax */
+@keyframes animLabel2 {
+    0%   { color: white; }
+    25%  {color: #FF9500; }
+    75%  { color: white; }
+    100%  { color: white; }
+}
+
