@@ -13,11 +13,11 @@
 <h1> $login </h1>
 
 	<center>
-		<div id="info" class="labelClick" style="cursor:pointer">
+		<div id="info" class="buttonGreen" style="cursor:pointer;  width: 250px;">
 			<p> Mes informations </p>
 		</div>
 	
-		<div id="lastComm"  class="labelClick2" style="cursor:pointer">
+		<div id="lastComm"  class="buttonGreen" style="cursor:pointer; width: 250px;">
 			<p> Mes derniers commentaires </p>
 		</div>
 	</center>
