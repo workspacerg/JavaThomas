@@ -2,7 +2,9 @@
 
 import java.io.File;
 import java.io.Writer;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 
@@ -18,7 +20,9 @@ public class Index extends AbstractAction{
 	public void execute(IContext context) throws Exception {		
 		//Initialisation des paramètres de la vue	
 		context.setTitle("Accueil");
-		List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, null,null,null,null);
+		Map<String,Object> map = new HashMap<String, Object>();
+		map.put("estAffiche", "1");
+		List<Film> films = (List<Film>)(List<?>)ORM.find(Film.class, map,null,null,null);
 		context.setAttribute("films", films);
 	}
 	

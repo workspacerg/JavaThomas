@@ -23,13 +23,16 @@ public class Film {
 	public String description;
 	public Boolean estAffiche;
 	
-	@ORM_COMPOSITION
+	public String realisateur;
+	public String genre;
+	
+	/*@ORM_COMPOSITION
 	@ORM_RELATION("1-1")  // ==> 0-n
 	public Realisateur realisateur;
 	
 	@ORM_COMPOSITION
 	@ORM_RELATION("1-1")  // ==> 0-n
-	public Genre genre;
+	public Genre genre;*/
 	
 	public List<Evaluation> Evaluation;
 	public List<Seance> Seance;
@@ -47,7 +50,7 @@ public class Film {
 		return id_film;
 	}
 	
-	public Realisateur getRealisateur(){
+	public String getRealisateur(){
 		return realisateur;
 	}
 	
@@ -57,6 +60,11 @@ public class Film {
 	
 	public List<Participant> getParticipants(){
 		return Participant;
+	}
+	
+	public boolean getEstAffiche(){
+		System.out.println(estAffiche);
+		return estAffiche;
 	}
 	
 	public List<Seance> getSeancesToday(){

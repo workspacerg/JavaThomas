@@ -8,8 +8,8 @@ import org.esgi.orm.my.annotations.ORM_TABLE;
 
 
 
-@ORM_SCHEMA("esgi")
-@ORM_TABLE("realisateur")
+//@ORM_SCHEMA("esgi")
+//@ORM_TABLE("realisateur")
 public class Realisateur {
 
 	@ORM_PK

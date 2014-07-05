@@ -62,6 +62,10 @@
 
 <script>
   $(function(){
+  	$(document).dblclick(function(){
+		if($("#errorMessage").is(":visible") && $.trim($("#errorMessage").html).length != 0 )
+			$("#errorMessage").css("visibility","hidden");
+	});
     console.log('Im ready');    
       #foreach($jsUrl in $context.getOnJsReady())
       	$jsUrl

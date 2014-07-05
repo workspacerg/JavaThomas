@@ -71,11 +71,11 @@ public class BDD
 		return this.maconnexion;
 	}
 
-	public void insertion(String table, LinkedList<String> champs ,LinkedList<String> value) // Surcharge en fonction de la recherche
+	public int insertion(String table, LinkedList<String> champs ,LinkedList<String> value) // Surcharge en fonction de la recherche
 	{
 		String sql ="";
 		if(value == null || value.size()<1)
-			return;
+			return -1;
 		try 
 		{
 			int i ;
@@ -93,12 +93,17 @@ public class BDD
 
 			//System.out.println("-->"+sql);
 
-			ps = this.maconnexion.prepareStatement(sql);
+			ps = this.maconnexion.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
 			for ( i = 0; i < value.size(); i++)
 				ps.setString(i+1, value.get(i));
 
-			ps.executeUpdate();
+			 ps.executeUpdate();
+			 ResultSet generatedKeys = ps.getGeneratedKeys();
+			 if (generatedKeys.next())
+		         return generatedKeys.getInt(1);
+		     else
+		    	 return -1;
 		} 
 		catch (MySQLIntegrityConstraintViolationException e) 
 		{
@@ -109,13 +114,14 @@ public class BDD
 			ch.add(champs.get(0));
 
 			update(table,  champs, value, ch, val);
+			return -1;
 		}
 		catch (SQLException e) 
 		{
 			System.out.println(e);
 			//JOptionPane.showMessageDialog(null,"Problème d'insertion : \n"+e ,"Erreur",JOptionPane.ERROR_MESSAGE);
 			System.out.println("Problème d'insertion : "+sql+"\n");
-			return;
+			return -1;
 		}
 	}
 

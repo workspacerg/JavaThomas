@@ -68,7 +68,7 @@ loadMyLib = function(onloaded){
 			},
 			render : function(){
 				this.el = $("<form/>");
-				$(this.cfg.renderTo).append(this.el)
+				$(this.cfg.renderTo).html(this.el)
 			},
 			onButtonClick : function(e) {
 				var me = this, data = {};
@@ -90,6 +90,7 @@ loadMyLib = function(onloaded){
 						error = true;
 						return false;
 					}
+
 					data[key] = item.getValue();
 				});
 				
@@ -97,39 +98,27 @@ loadMyLib = function(onloaded){
 					e.preventDefault();
 					return false;
 				}
-							
-				$.ajax({
-					url : me.cfg.url,
-					method : 'POST',
-					data : data,
-					contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
-					success : function(response) {
-						obj = JSON.parse(response);
-						// Appel de l'action
-						me.cfg.action.call(this,obj);
-					}
-
-				})
+				if(me.cfg.ajaxReplace){
+					me.cfg.ajaxReplace(me.cfg.url,data);
+				}
+				else{
+					$.ajax({
+							url : me.cfg.url,
+							method : 'POST',
+							data : data,
+							contentType: "application/x-www-form-urlencoded;charset=ISO-8859-1",
+							success : function(response) {
+								obj = JSON.parse(response);
+								// Appel de l'action
+								me.cfg.action.call(this,obj);
+							}
+		
+						});
+				}
 				e.preventDefault();
 				return false;
 			}
-
 	};
-
-	deleteUser = function(item,idx){
-		$.ajax({
-			url : APP_CONTEXT+"/user/delete",
-			method : 'POST',
-			data : item,
-			success : function(response) {
-				obj = JSON.parse(response);
-				if(obj["success"]){
-					$("#row_"+idx).remove();
-				}
-			}
-		});
-	}
-
 
 //	INPUTS
 
@@ -153,7 +142,7 @@ loadMyLib = function(onloaded){
 				return $(this.el).val();
 			},
 			isEmpty : function(){
-				if(!this.cfg.required)
+				if(!this.cfg.required || this.cfg.content)
 					return false;
 				
 				if($.trim($(this.el).val()) != '' || $(this.el).val() == null)
@@ -211,8 +200,24 @@ loadMyLib = function(onloaded){
 
 	}
 	Esgi.html.inputs.Email.prototype = commons;
+	
+	Esgi.html.inputs.File = function(cfg){
+		var me = this;
+		me.cfg = cfg;
+		me.el = $("<input type='file' id='imgFilmFile_"+me.cfg.label+"' name='"+me.cfg.label+"' accept='image/jpeg' />");
+		me.init();
 
-
+	}
+	Esgi.html.inputs.File.prototype = commons;
+	
+	Esgi.html.inputs.innerHtml = function(cfg){
+		var me = this;
+		me.cfg = cfg;
+		me.el = me.cfg.content;
+		me.init();
+	}
+	
+	Esgi.html.inputs.innerHtml.prototype = commons;
 }
 
 $(loadMyLib);

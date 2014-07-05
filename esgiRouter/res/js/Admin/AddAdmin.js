@@ -1,10 +1,10 @@
 ﻿$(function(){
 	Esgi.module = Esgi.module || {}
-	Esgi.module.Contact = Esgi.module.Contact || {}
+	Esgi.module.Admin = Esgi.module.Admin || {}
 
-	Esgi.module.Contact.Form = function (cfg) {
+	Esgi.module.Admin.AddAdmin = function (cfg) {
 		new Esgi.html.Form({
-			url : APP_CONTEXT+'/Contact/SendContact',
+			url : APP_CONTEXT+'/Admin/AddAdmin',
 			renderTo : cfg.id,
 			inputs : [
 			          {
@@ -18,8 +18,9 @@
 			        	  type : "Text",
 			        	  name : 'prenom',
 			        	  label : "Prénom",
-			        	  emptyText : "", 
+			        	  emptyText : "",
 			        	  required : true
+			        		
 			          },
 			          {
 			        	  type : "Email",
@@ -29,32 +30,42 @@
 			        	  required : true
 			          },
 			          {
-			        	  type : "Textarea", 
-			        	  name : 'sujet',
-			        	  label : "Sujet",
+			        	  type : "Text", 
+			        	  name : 'login',
+			        	  label : "Login",
 			        	  emptyText : "",
-			        	  rows : "15",
-			        	  cols : "35",
-			        	  required : false
+			        	  required : true
+			          },
+			          {
+			        	  type : "Password",
+			        	  name : 'password',
+			        	  label : "Mot de passe",
+			        	  emptyText: "",
+			        	  required : true
 			          }
-			          ],
-			    action: AjaxComplete
+			           ],
+			     action : AjaxComplete
 		});
 		
 	}
 	
 	function AjaxComplete(data){
 		if(data["success"]){
-			$("#container").html("<h2> Votre message a bien été transmis à  notre équipe.</h2>");
-			$("#container").append("<a href=\" /esgiRouter \">Retour à  l'accueil</a>");
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
+			message.html("<h2> Nouvel administrateur créé</h2>");
+			$("input").val('');
 		}
 		else{
 			var message = $("#errorMessage");
 			message.css("visibility","visible");
 			message.css("-webkit-animation","notificationError 1s");
 			message.css("animation","notificationError 1s");
-			message.html(data["message"]);
+			messsage.html(data["message"]);
 		}
+		
 	}
 
 });

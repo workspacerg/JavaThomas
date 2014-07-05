@@ -1,6 +1,8 @@
 package org.esgi.orm.my.model;
 
 import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import org.esgi.orm.my.annotations.ORM_COMPOSITION;
 import org.esgi.orm.my.annotations.ORM_PK;
@@ -45,6 +47,11 @@ public class Evaluation {
 	
 	public Integer getId(){
 		return id_evaluation;
+	}
+	
+	public String getDateString(){
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy");  
+		return date == null ? "" : df.format(date);
 	}
 	
 	public String toString() {

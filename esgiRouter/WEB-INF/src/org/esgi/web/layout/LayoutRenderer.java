@@ -17,6 +17,7 @@ import org.esgi.module.index.Index;
 import org.esgi.module.index.Inscription;
 import org.esgi.module.index.MovieDetail;
 import org.esgi.module.menu.contact.Contact;
+import org.esgi.module.menu.profil.CommentHistory;
 import org.esgi.module.menu.profil.Information;
 import org.esgi.module.menu.profil.Profil;
 import org.esgi.web.action.IAction;
@@ -69,7 +70,7 @@ public class LayoutRenderer {
 					e.printStackTrace();
 				}
 			
-			if(context.getRequest().getSession().getAttribute("login")==null && current && (action instanceof Comment || action instanceof Profil || action instanceof Information))
+			if(context.getRequest().getSession().getAttribute("login")==null && current && (action instanceof Comment || action instanceof Profil || action instanceof Information || action instanceof CommentHistory))
 				nameVelocity = "index/Connexion";
 
 			context.addCSSDependancy((String)context.getProperties().get("file.css"));

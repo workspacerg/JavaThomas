@@ -9,8 +9,8 @@ import org.esgi.orm.my.annotations.ORM_SCHEMA;
 import org.esgi.orm.my.annotations.ORM_TABLE;
 
 
-@ORM_SCHEMA("esgi")
-@ORM_TABLE("genre")
+//@ORM_SCHEMA("esgi")
+//@ORM_TABLE("genre")
 public class Genre {
 
 	@ORM_PK

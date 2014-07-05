@@ -47,7 +47,7 @@ public class Comment extends AbstractAction{
 		context.setAttribute("evaluations", evals);
 		if(evals.size() > 0){
 			context.setAttribute("film", evals.get(0).film);
-			context.setAttribute("average", Math.round(getAverage(evals)));
+			context.setAttribute("average", String.format("%.1f",getAverage(evals)));
 			context.setTitle("Commentaires : "+evals.get(0).film.titre);
 		}
 		

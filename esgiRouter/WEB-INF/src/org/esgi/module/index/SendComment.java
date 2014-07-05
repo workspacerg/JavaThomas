@@ -1,13 +1,9 @@
 package org.esgi.module.index;
 
-import java.io.StringWriter;
-import java.lang.ProcessBuilder.Redirect;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpSession;
-
 
 import org.esgi.orm.ORM;
 import org.esgi.orm.my.model.Evaluation;
@@ -16,8 +12,6 @@ import org.esgi.orm.my.model.User;
 import org.esgi.tools.MapperAjax;
 import org.esgi.web.action.AbstractAction;
 import org.esgi.web.action.IContext;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SendComment extends AbstractAction{
 	@Override
@@ -69,6 +63,8 @@ public class SendComment extends AbstractAction{
 		e.note = note;
 		e.user = u;
 		e.film = f;
+		java.util.Date d = new java.util.Date();
+		e.date = new Date(d.getTime());
 
 		Object save = ORM.save(e);
 		boolean isSave = save != null;

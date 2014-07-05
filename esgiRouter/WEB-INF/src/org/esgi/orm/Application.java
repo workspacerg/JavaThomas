@@ -76,7 +76,7 @@ public class Application {
 
 
 		//////////////////////////REALISATEUR//////////////////////////
-		Realisateur r1 = new Realisateur();
+		/*Realisateur r1 = new Realisateur();
 		r1.id_realisateur = 1;
 		r1.nom = "Speilberg";
 		r1.prenom = "Steven";
@@ -88,10 +88,10 @@ public class Application {
 		r2.nom = "Lucas";
 		r2.prenom = "George";
 		if(ORM.load(Realisateur.class, r2.id_realisateur, null) == null)
-			ORM.save(r2);
+			ORM.save(r2);*/
 
 		//////////////////////////GENRE//////////////////////////
-		Genre g1 = new Genre();
+		/*Genre g1 = new Genre();
 		g1.id_genre = 1;
 		g1.intitule = "Science-Fiction";
 		if(ORM.load(Genre.class, g1.id_genre, null) == null)
@@ -101,15 +101,15 @@ public class Application {
 		g2.id_genre = 2;
 		g2.intitule = "Aventure";
 		if(ORM.load(Genre.class, g2.id_genre, null) == null)
-			ORM.save(g2);
+			ORM.save(g2);*/
 
 		//////////////////////////FILM//////////////////////////
 		Film f1 = new Film();
 		f1.id_film = 1;
 		f1.titre = "Jurassic Park";
 		f1.estAffiche = false;
-		f1.realisateur = r1;
-		f1.genre = g1;
+		f1.realisateur = "Steven Spielberg";
+		f1.genre = "Science-Fiction";
 		f1.description = "John Parker Hammond, le PDG de la puissante compagnie InGen, parvient à donner vie à des dinosaures grâce au clonage et décide de les utiliser dans le cadre d’un parc d'attractions qu’il compte ouvrir sur une île. Avant l'ouverture, il fait visiter le parc à un groupe d'experts pour obtenir leur aval. Pendant la visite, une tempête éclate et un informaticien corrompu par une entreprise rivale en profite pour couper les systèmes de sécurité afin de voler des embryons de dinosaures. En l'absence de tout système de sécurité pendant plusieurs heures,les dinosaures s'échappent sans mal, mais le cauchemar des visiteurs ne fait que commencer...";
 		if(ORM.load(Film.class, f1.id_film, null) == null)
 			ORM.save(f1);
@@ -119,8 +119,8 @@ public class Application {
 		f2.titre = "Star wars : episode 1";
 		f2.estAffiche = true;
 		f2.description = "La galaxie est gérée sous la forme d'une République galactique, par le Sénat galactique qui regroupe les représentants des différentes entités appartenant à la République et dont le siège se situe sur la planète Coruscant. La République existe depuis plus de 25 000 ans, dont mille pendant lesquels elle a fonctionné sous cette forme sans crise majeure.\n\nLes chevaliers Jedi, détenteurs d'un pouvoir mystique grâce à la Force, sont les gardiens de la paix et de la justice à travers la galaxie.";
-		f2.realisateur = r2;
-		f2.genre = g2;
+		f2.realisateur = "Georges Lucas";
+		f2.genre = "Aventure";
 		if(ORM.load(Film.class, f2.id_film, null) == null)
 			ORM.save(f2);
 

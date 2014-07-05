@@ -1,4 +1,4 @@
-package org.esgi.module.index;
+package org.esgi.module.admin;
 
 import java.io.StringWriter;
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import org.esgi.web.action.IContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class SaveInscription extends AbstractAction {
+public class AddAdmin extends AbstractAction {
 
 	@Override
 	public void execute(IContext context) throws Exception {		
@@ -26,22 +26,22 @@ public class SaveInscription extends AbstractAction {
 		
 		if(existLogin){
 			ma.Add("success", false);
-			ma.Add("message", "Le login entré éxiste déjà ");
+			ma.Add("message", "Veuillez choisir un autre login ");
 		}
 		else{				
-			User user = new User();
-			user.nom = context.getRequest().getParameter("nom");
-			user.prenom = context.getRequest().getParameter("prenom");
-			user.password = context.getRequest().getParameter("password");
-			user.isAdmin = false;
-			user.login = login;
+			User admin = new User();
+			admin.nom = context.getRequest().getParameter("nom");
+			admin.prenom = context.getRequest().getParameter("prenom");
+			admin.password = context.getRequest().getParameter("password");
+			admin.login = login;
+			admin.isAdmin = true;
 			
-			Object saveuser = ORM.save(user);
+			Object saveuser = ORM.save(admin);
 			boolean isSave = saveuser != null;
 			ma.Add("success", isSave);
 			
 			if(!isSave)
-				ma.Add("message","Enregistrement de votre profil échoué.");
+				ma.Add("message","Enregistrement de l'administrateur impossible.");
 		}
 		
 		ma.Write(context);
@@ -49,7 +49,7 @@ public class SaveInscription extends AbstractAction {
 	
 	@Override
 	public String getRoute() {
-		return "/index/SaveInscription";
+		return "/Admin/AddAdmin";
 	}
 	
 	@Override

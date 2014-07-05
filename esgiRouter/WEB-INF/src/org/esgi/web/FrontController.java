@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.esgi.module.admin.AddAdmin;
+import org.esgi.module.admin.AddFilm;
+import org.esgi.module.admin.Admin;
+import org.esgi.module.admin.LoadFilm;
+import org.esgi.module.admin.RemoveFilm;
 import org.esgi.module.file.FileDelete;
 import org.esgi.module.file.FileDownload;
 import org.esgi.module.file.FileList;
@@ -79,9 +84,14 @@ public class FrontController extends HttpServlet{
 		registerAction(new Comment());
 		registerAction(new Information());
 		registerAction(new Profil());
+		registerAction(new AddFilm());
+		registerAction(new AddAdmin());
+		registerAction(new RemoveFilm());
+		registerAction(new LoadFilm());
 		registerAction(new CommentHistory());
 		registerAction(new SaveInformation());
 		registerAction(new SendComment());
+		registerAction(new Admin());
 		registerAction(new Logout());
 
 		layoutRender = new LayoutRenderer();

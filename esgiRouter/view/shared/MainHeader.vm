@@ -30,13 +30,13 @@
                                 background-repeat: no-repeat;
                                 background-size: 30px;
                                 background-position: 6px 9px;
-                                padding-right: 2px;">Admin</td>
+                                padding-right: 2px;"><a href="/esgiRouter/Admin">Admin</a></td>
                        #end
                           
                     <td style="background:url(/esgiRouter/res/style/icn/no-entry@2x.png);
                                 background-repeat: no-repeat;
                                 background-size: 25px;
-                                background-position: 6px 11px;"><a href="/esgiRouter/Logout">Log out</a> ($login)</td>
+                                background-position: 6px 11px;"><a href="/esgiRouter/Logout">Log out ($login)</a></td>
                              #end
                 </tr>
             </table>

@@ -2,14 +2,23 @@
 
 </div>
 <div id="Content">   
-<h1> Administration </h1>
-</div>
-<div id="container" style="top: 35%">
-
+	<h1> Administration </h1>
 </div>
 
+<div id="btnDiv" style="top: 35%;margin-left:18%;">
+</div>
+<div id="container" style="top:55%;display:none;">
+
+</div>
 
 
-#set ($js = $context.getProperties().get("context")+"/res/js/Module/Admin.js")
+
+#set ($js = $context.getProperties().get("context")+"/res/js/Admin/Admin.js")
 $context.addJSDependancy($js)
-$context.addOnJsReady("new Esgi.module.Contact.Form({ id : '#container'})")
+#set ($js = $context.getProperties().get("context")+"/res/js/Admin/AddAdmin.js")
+$context.addJSDependancy($js)
+#set ($js = $context.getProperties().get("context")+"/res/js/Admin/AddFilm.js")
+$context.addJSDependancy($js)
+#set ($js = $context.getProperties().get("context")+"/res/js/Admin/RemoveFilm.js")
+$context.addJSDependancy($js)
+$context.addOnJsReady("new Esgi.Admin.Menu('#container','#btnDiv')")

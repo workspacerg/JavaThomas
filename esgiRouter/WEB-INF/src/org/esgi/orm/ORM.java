@@ -100,9 +100,8 @@ public class ORM implements IORM {
 			LinkedList<String> champsToCreate = new LinkedList<String>();
 			LinkedList<String> mes_valeurs = new LinkedList<String>();
 			LinkedList<String> mes_types = new LinkedList<String>();
-
+			String fieldNameId = "";
 			for (Field field : o.getClass().getFields()) {
-
 				String name = field.getName();
 				String type = field.getType().getSimpleName();
 
@@ -164,6 +163,9 @@ public class ORM implements IORM {
 						mes_types.add(fk_type);
 						mes_valeurs.add(fk_val);
 					}
+					if(a.annotationType().getSimpleName().equals("ORM_PK")){
+						fieldNameId = field.getName();
+					}
 				}
 
 
@@ -188,7 +190,10 @@ public class ORM implements IORM {
 			}
 			String table_name = o.getClass().getSimpleName();
 			bdd.createTableIfNotExists(table_name, champsToCreate, mes_types);
-			bdd.insertion(table_name, mes_champs, mes_valeurs);		
+			int idx;
+			if((idx = bdd.insertion(table_name, mes_champs, mes_valeurs)) != -1)
+				o.getClass().getDeclaredField(fieldNameId).set(o,idx);
+				
 		} catch (Exception e) {System.out.println("--->1");e.printStackTrace();}
 
 		return o;
@@ -435,12 +440,21 @@ public class ORM implements IORM {
 	        int pos;
 	        if(where != null && !where.isEmpty())
 	        {
-	            for (Entry<String,Object> ent : where.entrySet())
+	        	for (Entry<String,Object> ent : where.entrySet())
+	            {
+	               
+	                if(ent.getValue() == (Object) true)
+	                    where.put(ent.getKey(), 1);
+	               
+	                else if(ent.getValue() == (Object) false)
+	                    where.put(ent.getKey(), 0);
+	               
 	                if((pos = ent.getKey().indexOf(".")) > 0)//jointure necessaire
 	                {
 	                    if (!tables_name.toLowerCase().contains(ent.getKey().substring(0, pos).toLowerCase()))
 	                        tables_name += ", " + ent.getKey().substring(0, pos);
 	                }
+	            }
 
 	            for (Object ent : where.values())
 	                if((pos = ent.toString().indexOf(".")) > 0)//jointure necessaire

@@ -16,7 +16,6 @@
 		<div id="info" class="buttonGreen" style="cursor:pointer;  width: 250px;">
 			<p> Mes informations </p>
 		</div>
-	
 		<div id="lastComm"  class="buttonGreen" style="cursor:pointer; width: 250px;">
 			<p> Mes derniers commentaires </p>
 		</div>

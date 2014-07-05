@@ -13,8 +13,11 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Film" key="selection"/>
+		<item value="container" key="selection"/>
 		<list key="findhistory">
+			<item value="container"/>
+			<item value="bloc"/>
+			<item value="comment"/>
 			<item value="Film"/>
 			<item value="table"/>
 			<item value="tabme"/>

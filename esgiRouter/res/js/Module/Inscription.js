@@ -54,8 +54,13 @@
 			$("#container").html("<h2> Votre enregistrement a bien été pris en compte</h2>");
 			$("#container").append("<a href=\"/esgiRouter/\">Retour à la page de connexion.</a>");
 		}
-		else
-			$("#errorMessage").html(data["message"]);
+		else{
+			var message = $("#errorMessage");
+			message.css("visibility","visible");
+			message.css("-webkit-animation","notificationError 1s");
+			message.css("animation","notificationError 1s");
+			messsage.html(data["message"]);
+		}
 		
 	}
 

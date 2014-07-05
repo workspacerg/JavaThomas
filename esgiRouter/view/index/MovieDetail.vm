@@ -60,7 +60,7 @@
 	                      </td>
 	                      <td class="TableFilm-Descr-Label">Réalisateur</td> 
 	                      <td class="TableFilm-Descr-Label2">:</td>      
-	                      <td class="TableFilm-Descr-value">$film.getRealisateur().getIdentity()</td>
+	                      <td class="TableFilm-Descr-value">$film.getRealisateur()</td>
 	                      </tr>
 	                    <tr>
 	                      
