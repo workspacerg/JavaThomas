@@ -45,8 +45,8 @@
 	
 	function AjaxComplete(data){
 		if(data["success"]){
-			$("#container").html("<h2> Votre message a bien été transmis à  notre équipe.</h2>");
-			$("#container").append("<a href=\" /esgiRouter \">Retour à  l'accueil</a>");
+			$("#container").html("<center><h2> Votre message a bien été transmis à  notre équipe.</h2></center>");		
+			$("#container").append('<center><a href="/esgiRouter/" style="background-color: #FF9500;padding: 9px; color: white; text-decoration: none;">Retour à l\'accueil<a></center>');
 		}
 		else{
 			var message = $("#errorMessage");

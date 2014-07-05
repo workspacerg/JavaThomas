@@ -67,33 +67,8 @@ public class Film {
 		return estAffiche;
 	}
 	
-	public List<Seance> getSeancesToday(){
-		List<Seance> list = new ArrayList<Seance>();
-		Date d = new Date(); 
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(d);
-
-		for(Seance s : Seance){
-			if(s.jour == cal.get(Calendar.DAY_OF_MONTH) && s.mois == cal.get(Calendar.MONTH)+1)
-				list.add(s);
-		}
-				
-		return list;
-	}
-	
-	public List<Seance> getSeancesTomorrow(){
-		List<Seance> list = new ArrayList<Seance>();
-		Date now = new Date();  
-		Calendar cal = Calendar.getInstance();  
-		cal.setTime(now);  
-		cal.add(Calendar.DAY_OF_YEAR, 1);
-		
-		for(Seance s : Seance){
-			if(s.jour == cal.get(Calendar.DAY_OF_MONTH) && s.mois == cal.get(Calendar.MONTH)+1)
-				list.add(s);
-		}
-		
-		return list;
+	public List<Seance> getSeances(){
+		return Seance;
 	}
 	
 	public String toString() {

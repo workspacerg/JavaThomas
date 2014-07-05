@@ -13,11 +13,8 @@ public class Seance {
 
 	@ORM_PK
 	public Integer id_seance;
-	public Integer jour;
-	public Integer mois;
 	public String heure;
 	public String version; //VO, VF, ...
-	public Boolean weekEnd;
 	
 	@ORM_COMPOSITION
 	@ORM_RELATION("1-1")  // ==> 0-n
@@ -36,7 +33,7 @@ public class Seance {
 	}
 	
 	public String toString() {
-		return " SEANCE[id_seance=" + id_seance + ", jour=" + jour +", mois=" + mois +", heure=" + heure + ", version=" + version + ", weekEnd=" + weekEnd + "," + film + "," + salle +"]";
+		return " SEANCE[id_seance=" + id_seance + ", heure=" + heure + ", version=" + version + "," + film + "," + salle +"]";
 	}
 }
 

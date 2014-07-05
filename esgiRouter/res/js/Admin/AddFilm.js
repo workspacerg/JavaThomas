@@ -29,6 +29,25 @@
 			        	  required : true
 			          },
 			          {
+			        	  type : "Text",
+			        	  name : 'version',
+			        	  label : "Version (VO,VF..)",
+			        	  emptyText : "", 
+			        	  required : true
+			          },
+			          {
+			        	  type : "Time",
+			        	  name : "seancePicker",
+			        	  label : "Heure de la première séance",
+			        	  required : true			        		 
+			          },
+			          {
+			        	  type : "Time",
+			        	  name : "intervalseancePicker",
+			        	  label : "Intervalle entre les séances",
+			        	  required : true			        		 
+			          },
+			          {
 			        	  type : "File",
 			        	  name : 'imgFilm',
 			        	  label : "imgFilm",
@@ -64,6 +83,7 @@
 			message.css("animation","notificationError 1s");
 		if(data["success"]){
 			$("input").val('');
+			$("textarea").val('');
 			$("#errorMessage").html("<h2> Le film a bien été mis à l'affiche.</h2>");
 		}
 		else

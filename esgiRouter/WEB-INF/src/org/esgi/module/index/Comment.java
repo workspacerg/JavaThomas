@@ -39,17 +39,16 @@ public class Comment extends AbstractAction{
 		else
 			idxFilm = Integer.parseInt(path.substring(path.lastIndexOf("/")+1));
 		
-		System.out.println(idxFilm);
 		Map<String,Object> mapWhere = new HashMap<String, Object>();
 		mapWhere.put("film", idxFilm);
 		
-		List<Evaluation> evals = (List<Evaluation>)(List<?>)ORM.find(Evaluation.class, mapWhere,null,null,null);
-		context.setAttribute("evaluations", evals);
-		if(evals.size() > 0){
-			context.setAttribute("film", evals.get(0).film);
-			context.setAttribute("average", String.format("%.1f",getAverage(evals)));
-			context.setTitle("Commentaires : "+evals.get(0).film.titre);
-		}
+		Film f = (Film)ORM.load(Film.class, idxFilm, null);
+		context.setAttribute("evaluations", f.Evaluation);
+		context.setAttribute("film", f);
+		context.setTitle("Commentaires : "+f.titre);
+		
+		if(f.Evaluation.size() > 0)
+			context.setAttribute("average", String.format("%.1f",getAverage(f.Evaluation)));
 		
 		if(idxComm > -1)
 			context.setAttribute("commentaire", idxComm);

@@ -204,25 +204,19 @@ public class Application {
 
 		Seance se1 = new Seance();
 		se1.id_seance = 1;
-		se1.mois = 5;
-		se1.jour = 24;
 		se1.heure = "09:15";
 		se1.version = "VF";
 		se1.salle = s2;
 		se1.film = f1;
-		se1.weekEnd = false;
 		if(ORM.load(Seance.class, se1.id_seance, null) == null)
 			ORM.save(se1);
 
 		Seance se2 = new Seance();
 		se2.id_seance = 2;
-		se2.mois = 5;
-		se2.jour = 23;
 		se2.heure = "17:45";
 		se2.version = "VO";
 		se2.salle = s1;
 		se2.film = f1;
-		se2.weekEnd = true;
 		if(ORM.load(Seance.class, se2.id_seance, null) == null)
 			ORM.save(se2);
 

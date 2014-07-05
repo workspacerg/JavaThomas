@@ -5,7 +5,7 @@
 	<h1> Administration </h1>
 </div>
 
-<div id="btnDiv" style="top: 35%;margin-left:18%;">
+<div id="btnDiv" style="top: 35%;margin-left:7%;">
 </div>
 <div id="container" style="top:55%;display:none;">
 

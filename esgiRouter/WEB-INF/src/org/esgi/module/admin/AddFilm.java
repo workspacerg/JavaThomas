@@ -22,6 +22,8 @@ import org.apache.commons.io.FilenameUtils;
 import org.esgi.orm.ORM;
 import org.esgi.orm.my.model.Evaluation;
 import org.esgi.orm.my.model.Film;
+import org.esgi.orm.my.model.Salle;
+import org.esgi.orm.my.model.Seance;
 import org.esgi.orm.my.model.User;
 import org.esgi.tools.MapperAjax;
 import org.esgi.web.action.AbstractAction;
@@ -46,13 +48,17 @@ public class AddFilm extends AbstractAction{
 		try{		
 				FileItemFactory fif = new DiskFileItemFactory(); 
 				ServletFileUpload servletFileUpload = new ServletFileUpload(fif);
+				servletFileUpload.setHeaderEncoding("UTF-8");
 				List<FileItem> fileList = servletFileUpload.parseRequest(context.getRequest());
 				
 				MapperAjax ma = new MapperAjax();
 
 				FileItem toUploadAffiche = null;
 				FileItem toUploadFond = null;
+				
 				Film f = new Film();
+				Seance s = new Seance();
+				String interval = "";
 				
 				for(FileItem fi : fileList){
 					if(!fi.isFormField()){
@@ -63,7 +69,7 @@ public class AddFilm extends AbstractAction{
 					}
 					else{
 						String fieldname = fi.getFieldName();
-						String fieldValue = fi.getString();
+						String fieldValue = fi.getString("UTF-8");
 						if(fieldname.equals("realisateur")){
 							f.realisateur = fieldValue;
 						}
@@ -75,6 +81,15 @@ public class AddFilm extends AbstractAction{
 						}
 						else if(fieldname.equals("description")){
 							f.description = fieldValue;
+						}
+						else if(fieldname.equals("version")){
+							s.version = fieldValue;
+						}
+						else if(fieldname.equals("seancePicker")){
+							s.heure = fieldValue;
+						}
+						else if(fieldname.equals("intervalseancePicker")){
+							interval = fieldValue;
 						}
 					}
 				}
@@ -88,6 +103,39 @@ public class AddFilm extends AbstractAction{
 				
 				f.estAffiche = true;
 				Film save = (Film)ORM.save(f);
+				
+				if(save != null){
+					// Avant de gérer les salles
+					Salle temp = new Salle();
+					temp.id_salle = -1;
+					s.film = save;
+					s.salle = temp;
+					ORM.save(s);
+					int hour = Integer.parseInt(s.heure.split(":")[0]);
+					int min = Integer.parseInt(s.heure.split(":")[1]);
+					
+					int hourInterval = Integer.parseInt(interval.split(":")[0]);
+					int minInterval = Integer.parseInt(interval.split(":")[1]);
+					
+					while(true){
+						hour += hourInterval;
+						min += minInterval;
+						if(min >= 60){
+							min -= 60;
+							hour+= 1;
+						}
+						
+						if(hour >= 24)
+							break;
+						
+						Seance newS = new Seance();
+						newS.film = s.film;
+						newS.heure = String.format("%d:%d", hour,min);
+						newS.version = s.version;
+						newS.salle = temp;
+						ORM.save(newS);
+					}
+				}
 				
 				boolean success = save != null && upload(context,toUploadAffiche,f,"affiche") && upload(context,toUploadFond,f,"fond") ;
 				

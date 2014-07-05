@@ -25,20 +25,9 @@
 		        <div id="seanceDiv" style="display:none">
                 	<table style="margin: auto">
                 		<tr> 
-                		<td style="color:#FF9500">Aujourd'hui : </td>
-                			#set ($today = $film.getSeancesToday())
-                			#if($today.size()>0) 
-	                			#foreach($seance in $today)
-	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
-	                			#end
-	                		#else
-	                			<td><b>Aucune séance</b></td>
-                			#end
-                		</tr>
-                		<tr> <td style="color:#FF9500">Demain : </td>
-                			#set ($tomorrow = $film.getSeancesTomorrow())
-                			#if($tomorrow.size()>0) 
-	                			#foreach($seance in $tomorrow)
+                		<td style="color:#FF9500">Horaires : </td>
+                			#if($film.getSeances().size()>0) 
+	                			#foreach($seance in $film.getSeances())
 	                				<td><b>$seance.getHeure() ($seance.getVersion()) | </b></td>
 	                			#end
 	                		#else
@@ -66,7 +55,11 @@
 	                      
 	                      <td class="TableFilm-Descr-Label">Participants </td>       
 	                      <td class="TableFilm-Descr-Label2">:</td>       
-	                      <td class="TableFilm-Descr-value">$parti.substring(0,$lastComma)</td>
+	                      #if($lastComma > -1 )  
+	                      	 <td class="TableFilm-Descr-value">$parti.substring(0,$lastComma)</td>
+	                      #else
+	                     	 <td class="TableFilm-Descr-value"><i>N/C</i></td>
+	                      #end
 	                    </tr>
 	                    <tr>
 	                      <td class="TableFilm-Descr-Label">Description</td>

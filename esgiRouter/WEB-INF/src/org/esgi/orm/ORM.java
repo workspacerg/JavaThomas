@@ -148,7 +148,7 @@ public class ORM implements IORM {
 
 
 
-						if(find(field.getType(), where, null, 1, null).size() > 0)
+						if(find(field.getType(), where, null, 1, null).size() > 0 || fk_val.equals("-1"))
 						{
 							//System.out.println("La voiture existe deja");
 						}
@@ -264,6 +264,7 @@ public class ORM implements IORM {
 						
 						Object eval = ORM.load(childClass, idToFind, myObject);
 						listIntoClass.add(eval);
+							
 					}
 					field.set(myObject, (listIntoClass));
 
@@ -307,7 +308,10 @@ public class ORM implements IORM {
 				else if(containsAnotations(field.getAnnotations(), "ORM_COMPOSITION"))
 				{
 					//System.out.println("fk = "+value);
-					field.set(myObject, ORM.load(field.getType(), value, null));
+					if(value != "-1")
+						field.set(myObject, ORM.load(field.getType(), value, null));
+					else
+						field.set(myObject, null);
 				}
 
 
